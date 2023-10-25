@@ -24,5 +24,25 @@ const config: StorybookConfig = {
     docs: {
         autodocs: "tag",
     },
+    webpackFinal: async config => {
+        if (config.module && config.module.rules) {
+            config.module.rules.push({
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [require("tailwindcss"), require("autoprefixer")],
+                            },
+                        },
+                    },
+                ],
+            });
+        }
+
+        return config;
+    },
 };
+
 export default config;
