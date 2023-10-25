@@ -1,3 +1,3 @@
 import "./styles/index.css";
 
-export { default as Button } from "./components/Button";
+export * from "./components/Button/Button";
