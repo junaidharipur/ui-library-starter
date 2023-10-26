@@ -74,7 +74,7 @@ export function Alert({ children, severity = "info", title }: AlertProps) {
             <IconContainer style={{ ..._iconColorStyles }}>
                 <Icon />
             </IconContainer>
-            <div>
+            <div className={cx("w-full")}>
                 <div className={cx("relative")}>
                     <h4
                         style={{ ..._headingTextStyles }}
