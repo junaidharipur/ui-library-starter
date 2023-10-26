@@ -1,0 +1,9 @@
+node_modules/
+lib/
+coverage/
+*.scss
+*.less
+.husky/
+.yarn/
+yarn.lock
+*.md
