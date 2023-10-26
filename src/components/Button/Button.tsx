@@ -11,8 +11,9 @@ export function Button({
     color = "primary",
     size = "Large",
     disabled = false,
+    style = {},
     ...other
-}: ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>) {
+}: ButtonProps) {
     const [isHovering, setIsHovering] = React.useState(false);
 
     const _defaultVariantStyles =
@@ -51,6 +52,7 @@ export function Button({
                 ..._outlinedVariantStyles,
                 ..._disabledStyles,
                 ..._hoverStyles,
+                ...style,
             }}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
@@ -71,11 +73,13 @@ export function Button({
     );
 }
 
-interface ButtonProps {
+export type ButtonProps = CustomProps & React.ButtonHTMLAttributes<HTMLButtonElement>;
+interface CustomProps {
     children: React.ReactNode;
     variant?: "default" | "outlined";
     color?: "primary" | "secondary" | "tertiary";
     size?: "Large" | "Medium" | "Small";
     disabled?: boolean;
     icon?: React.ReactNode;
+    style?: React.CSSProperties;
 }
