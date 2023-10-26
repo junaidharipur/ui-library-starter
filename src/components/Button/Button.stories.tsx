@@ -11,7 +11,7 @@ import { PlusIcon } from "../icons/PlusIcon";
 const meta: Meta<typeof Button> = {
     component: Button,
     tags: ["autodocs"],
-};
+}; 
 
 export default meta;
 type Story = StoryObj<typeof Button>;
