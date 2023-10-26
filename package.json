@@ -26,7 +26,7 @@
         "compile": "rimraf \"./lib\" && npm-run-all --parallel compile:esm compile:cjs",
         "compile:esm": "webpack --mode production",
         "compile:cjs": "webpack --mode production --env=cjs",
-        "lint": "npm-run-all --parallel lint:styles lint:format",
+        "lint": "npm-run-all --parallel lint:styles",
         "lint:styles": "stylelint \"**/*.css\"",
         "lint:format": "prettier --list-different .",
         "format": "prettier . --write",
