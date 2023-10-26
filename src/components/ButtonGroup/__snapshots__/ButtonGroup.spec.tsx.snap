@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`group-button component is rendering properly 1`] = `
+<div>
+  <div
+    class="inline-block border rounded-md overflow-hidden"
+  >
+    <div
+      class="flex items-center"
+    >
+      <div
+        class="border-r last:border-r-0"
+      >
+        <button
+          class="rounded-md px-7 py-3 border font-medium text-black flex justify-center items-center text-base px-7 py-3 loading-6"
+          role="button"
+          style="border-radius: 0; border-right-width: 1px;"
+        >
+          About
+        </button>
+      </div>
+      <div
+        class="border-r last:border-r-0"
+      >
+        <button
+          class="rounded-md px-7 py-3 border font-medium text-black flex justify-center items-center text-white text-base px-7 py-3 loading-6"
+          role="button"
+          style="background: rgb(0, 154, 238); color: white; border-radius: 0; border-right-width: 1px;"
+        >
+          Services
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

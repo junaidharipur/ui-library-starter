@@ -4083,19 +4083,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-onboarding@npm:^1.0.8":
-  version: 1.0.8
-  resolution: "@storybook/addon-onboarding@npm:1.0.8"
-  dependencies:
-    "@storybook/telemetry": ^7.1.0-alpha.32
-    react-confetti: ^6.1.0
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: f7f27869a06fd84058d4144aa94d72ace862ef726a083dd0f3cffae9916d7264ef4e8d154585eb6143eda85e4b21ee784e9114b9ca7905b82baab77738f8d0cf
-  languageName: node
-  linkType: hard
-
 "@storybook/addon-outline@npm:7.5.0":
   version: 7.5.0
   resolution: "@storybook/addon-outline@npm:7.5.0"
@@ -4794,7 +4781,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/telemetry@npm:7.5.0, @storybook/telemetry@npm:^7.1.0-alpha.32":
+"@storybook/telemetry@npm:7.5.0":
   version: 7.5.0
   resolution: "@storybook/telemetry@npm:7.5.0"
   dependencies:
@@ -4975,6 +4962,20 @@ __metadata:
   version: 0.1.5
   resolution: "@swc/types@npm:0.1.5"
   checksum: 6aee11f62d3d805a64848e0bd5f0e0e615f958e327a9e1260056c368d7d28764d89e38bd8005a536c9bf18afbcd303edd84099d60df34a2975d62540f61df13b
+  languageName: node
+  linkType: hard
+
+"@tailwindcss/typography@npm:^0.5.10":
+  version: 0.5.10
+  resolution: "@tailwindcss/typography@npm:0.5.10"
+  dependencies:
+    lodash.castarray: ^4.4.0
+    lodash.isplainobject: ^4.0.6
+    lodash.merge: ^4.6.2
+    postcss-selector-parser: 6.0.10
+  peerDependencies:
+    tailwindcss: "*"
+  checksum: 9e7cbef6611e64542c658b651805594febb22d0f17b4bf435a67cc901f4972a9483d49420e070b19e46193b336264a058b771a0a7931ab03610a9aaa06078c0b
   languageName: node
   linkType: hard
 
@@ -11822,6 +11823,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.castarray@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.castarray@npm:4.4.0"
+  checksum: fca8c7047e0ae2738b0b2503fb00157ae0ff6d8a1b716f87ed715b22560e09de438c75b65e01a7e44ceb41c5b31dce2eb576e46db04beb9c699c498e03cbd00f
+  languageName: node
+  linkType: hard
+
 "lodash.debounce@npm:^4.0.8":
   version: 4.0.8
   resolution: "lodash.debounce@npm:4.0.8"
@@ -14032,6 +14040,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-selector-parser@npm:6.0.10":
+  version: 6.0.10
+  resolution: "postcss-selector-parser@npm:6.0.10"
+  dependencies:
+    cssesc: ^3.0.0
+    util-deprecate: ^1.0.2
+  checksum: 46afaa60e3d1998bd7adf6caa374baf857cc58d3ff944e29459c9a9e4680a7fe41597bd5b755fc81d7c388357e9bf67c0251d047c640a09f148e13606b8a8608
+  languageName: node
+  linkType: hard
+
 "postcss-selector-parser@npm:^6.0.10, postcss-selector-parser@npm:^6.0.11, postcss-selector-parser@npm:^6.0.13, postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4":
   version: 6.0.13
   resolution: "postcss-selector-parser@npm:6.0.13"
@@ -14425,17 +14443,6 @@ __metadata:
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
   checksum: e432b7cb0df57e8f0bcdc3b012d2e93fcbcb6092c9e0f85654788d5ebfc4442536d8cc35b2418061ba3c4afb8b7788cc101c606d86a1732407921de7a9244c8d
-  languageName: node
-  linkType: hard
-
-"react-confetti@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "react-confetti@npm:6.1.0"
-  dependencies:
-    tween-functions: ^1.2.0
-  peerDependencies:
-    react: ^16.3.0 || ^17.0.1 || ^18.0.0
-  checksum: 24b6975df144d2bf09d8e1c95ddc49e547775f911efaa8d96b49e522659d931539e9d9e48cc0db3a01f3a671be7e3824e6e728db85096f5527db5d1c69ebb153
   languageName: node
   linkType: hard
 
@@ -16456,13 +16463,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tween-functions@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "tween-functions@npm:1.2.0"
-  checksum: 880708d680eff5c347ddcb9f922ad121703a91c78ce308ed309073e73a794b633eb0b80589a839365803f150515ad34c9646809ae8a0e90f09e62686eefb1ab6
-  languageName: node
-  linkType: hard
-
 "type-check@npm:^0.4.0, type-check@npm:~0.4.0":
   version: 0.4.0
   resolution: "type-check@npm:0.4.0"
@@ -16662,11 +16662,11 @@ __metadata:
     "@storybook/addon-essentials": ^7.5.0
     "@storybook/addon-interactions": ^7.5.0
     "@storybook/addon-links": ^7.5.0
-    "@storybook/addon-onboarding": ^1.0.8
     "@storybook/blocks": ^7.5.0
     "@storybook/react": ^7.5.0
     "@storybook/react-webpack5": ^7.5.0
     "@storybook/testing-library": ^0.2.2
+    "@tailwindcss/typography": ^0.5.10
     "@testing-library/jest-dom": ^6.1.4
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.5.1
