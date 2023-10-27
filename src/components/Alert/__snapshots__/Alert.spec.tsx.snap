@@ -4,11 +4,11 @@ exports[`group-button component is rendering properly 1`] = `
 <div>
   <div
     class="p-[35px] rounded-lg flex items-start"
-    style="background: rgb(233, 249, 255); border-left: 6px solid #0B76B7;"
+    style="background: rgb(233, 249, 255); border-left: 6px solid #1484CD;"
   >
     <div
       class="inline-block rounded-md p-2 mr-[22px]"
-      style="background: rgb(11, 118, 183);"
+      style="background: rgb(20, 132, 205);"
     >
       <svg
         fill="none"
@@ -46,7 +46,9 @@ exports[`group-button component is rendering properly 1`] = `
         </defs>
       </svg>
     </div>
-    <div>
+    <div
+      class="w-full"
+    >
       <div
         class="relative"
       >

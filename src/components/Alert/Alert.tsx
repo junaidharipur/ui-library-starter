@@ -20,18 +20,18 @@ function IconContainer({ children, style = {} }: { children: React.ReactNode; st
 export function Alert({ children, severity = "info", title }: AlertProps) {
     const _severityTypeStypes: React.CSSProperties =
         severity === "info"
-            ? { background: colors.blueLight, borderLeft: `6px solid ${colors.blue}` }
+            ? { background: colors.blueLight6, borderLeft: `6px solid ${colors.blueDark}` }
             : severity === "warning"
-            ? { background: colors.yellowLight, borderLeft: `6px solid ${colors.yellow}` }
+            ? { background: colors.yellowLight4, borderLeft: `6px solid ${colors.yellow}` }
             : severity === "success"
-            ? { background: colors.greenLight, borderLeft: `6px solid ${colors.green}` }
+            ? { background: colors.greenLight6, borderLeft: `6px solid ${colors.green}` }
             : severity === "error"
-            ? { background: colors.redLight, borderLeft: `6px solid ${colors.red}` }
+            ? { background: colors.redLight6, borderLeft: `6px solid ${colors.red}` }
             : {};
 
     const _iconColorStyles: React.CSSProperties =
         severity === "info"
-            ? { background: colors.blue }
+            ? { background: colors.blueDark }
             : severity === "warning"
             ? { background: colors.yellow }
             : severity === "success"
@@ -42,24 +42,24 @@ export function Alert({ children, severity = "info", title }: AlertProps) {
 
     const _headingTextStyles: React.CSSProperties =
         severity === "info"
-            ? { color: colors.infoTitle }
-            : severity === "warning"
-            ? { color: colors.warningTitle }
-            : severity === "success"
-            ? { color: colors.successTitle }
-            : severity === "error"
-            ? { color: colors.errorTitle }
-            : {};
-
-    const _descTextStyles: React.CSSProperties =
-        severity === "info"
             ? { color: colors.infoText }
             : severity === "warning"
             ? { color: colors.warningText }
             : severity === "success"
             ? { color: colors.successText }
             : severity === "error"
-            ? { color: colors.errorText }
+            ? { color: colors.dangerText }
+            : {};
+
+    const _descTextStyles: React.CSSProperties =
+        severity === "info"
+            ? { color: colors.primaryText }
+            : severity === "warning"
+            ? { color: colors.yellowLight5 }
+            : severity === "success"
+            ? { color: colors.primaryText }
+            : severity === "error"
+            ? { color: colors.redLight }
             : {};
 
     const Icon = () => {
