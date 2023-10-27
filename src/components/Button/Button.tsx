@@ -16,25 +16,67 @@ export function Button({
 }: ButtonProps) {
     const [isHovering, setIsHovering] = React.useState(false);
 
-    const _defaultVariantStyles =
+    const _defaultVariantStyles: React.CSSProperties =
         variant === "default"
             ? {
-                  background: colors[color],
+                  background:
+                      color === "primary"
+                          ? colors.primary
+                          : color === "secondary"
+                          ? colors.secondary
+                          : color === "tertiary"
+                          ? colors.dark
+                          : "normal",
                   color: "white",
               }
             : {};
-    const _outlinedVariantStyles =
+    const _outlinedVariantStyles: React.CSSProperties =
         variant === "outlined"
             ? {
-                  color: colors[color],
-                  borderColor: colors[color],
+                  color:
+                      color === "primary"
+                          ? colors.primary
+                          : color === "secondary"
+                          ? colors.secondary
+                          : color === "tertiary"
+                          ? colors.dark
+                          : "normal",
+                  borderColor:
+                      color === "primary"
+                          ? colors.primary
+                          : color === "secondary"
+                          ? colors.secondary
+                          : color === "tertiary"
+                          ? colors.dark
+                          : "normal",
               }
             : {};
-    const _disabledStyles = disabled
-        ? { background: colors.greyLight, color: colors.greyDark, borderColor: "transparent" }
+    const _disabledStyles: React.CSSProperties = disabled
+        ? { background: colors.grey3, color: colors.dark5, borderColor: "transparent" }
         : {};
-    const _hoverStyles = isHovering
-        ? { background: variant === "default" ? colors[`${color}Dark`] : colors[`${color}Light`] }
+
+    const __defaultVariantHoverBackground =
+        color === "primary"
+            ? colors.blueDark
+            : variant === "default" && color === "secondary"
+            ? colors.tealDark
+            : color === "tertiary"
+            ? colors.primaryText
+            : "noramal";
+
+    const __outlinedVariantHoverBackground =
+        color === "primary"
+            ? colors.blueLight5
+            : color === "secondary"
+            ? colors.tealLight3
+            : color === "tertiary"
+            ? colors.grey4
+            : "normal";
+
+    const _hoverStyles: React.CSSProperties = isHovering
+        ? {
+              background: variant === "default" ? __defaultVariantHoverBackground : __outlinedVariantHoverBackground,
+          }
         : {};
 
     return (
@@ -62,7 +104,7 @@ export function Button({
                 <span
                     className={cx("mr-2 w-5", {
                         ["w-[18px]"]: size === "Small",
-                        ["text-grey-dark"]: disabled,
+                        ["text-grey-3"]: disabled,
                     })}
                 >
                     {Icon}
