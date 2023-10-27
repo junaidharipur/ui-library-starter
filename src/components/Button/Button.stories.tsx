@@ -11,7 +11,7 @@ import { PlusIcon } from "../icons/PlusIcon";
 const meta: Meta<typeof Button> = {
     component: Button,
     tags: ["autodocs"],
-}; 
+};
 
 export default meta;
 type Story = StoryObj<typeof Button>;
@@ -80,7 +80,7 @@ export const IconDefault: Story = {
     },
     render: props => (
         <Button
-            icon={<PlusIcon fill={props.variant === "outlined" ? colors[props.color || "primary"] : "white"} />}
+            icon={<PlusIcon fill={props.variant === "outlined" ? (colors as any)[props.color!] : colors.white} />}
             {...props}
         >
             Button

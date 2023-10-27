@@ -1,17 +1,38 @@
 import React, { ReactElement } from "react";
+import "./dropdown.css";
+import { Icondropdown } from "../icons/InputIcons";
+import cx from "classnames";
 
-type Props = {};
+type OptionsProps = {
+    options: string[];
+    variant: "md" | "sm";
+};
 
-export function Dropdown(props: Props): ReactElement {
+export function Dropdown({ options, variant }: OptionsProps): ReactElement {
     return (
-        <div>
+        <div className="selectdiv">
             {" "}
-            <select name="dropdown" id="dropdown" className="border border-purple-500 focus:ring-primary focus:outline-primary focus:border-primary rounded-md pl-3 py-3 w-full">
-                <option className="bg-green-400 border border-green-950 rounded-lg" value="volvo">Volvo</option>
-                <option className="bg-green-400 border border-green-950 rounded-lg"  value="saab">Saab</option>
-                <option className="bg-green-400 border border-green-950 rounded-lg"  value="opel">Opel</option>
-                <option className="bg-green-400 border border-green-950 rounded-lg"  value="audi">Audi</option>
+            <select
+                name="dropdown"
+                id="dropdown"
+                className={cx(
+                    "text-tertiary-dark text-base border border-input-border-normal-500 focus:ring-primary focus:outline-primary focus:border-primary rounded-md  px-3  w-full",
+                    {
+                        "py-3": variant === "md",
+
+                        "py-[5px]": variant === "sm",
+                    },
+                )}
+            >
+                {options?.map(option => (
+                    <option value={option} className="py-3 cursor-pointer">
+                        {option}
+                    </option>
+                ))}
             </select>
+            {/* <div className="absolute right-5 top-7">
+                <Icondropdown />
+            </div> */}
         </div>
     );
 }
