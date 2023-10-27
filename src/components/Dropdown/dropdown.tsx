@@ -6,18 +6,19 @@ type OptionsProps = {
     options: string[];
     variant: "md" | "sm";
     outlined: boolean;
+    defaultValue: string
 };
 
-export function Dropdown({ options, variant, outlined }: OptionsProps): ReactElement {
+export function Dropdown({ options, variant, outlined,defaultValue }: OptionsProps): ReactElement {
 
     const [showdropdown, setshowdropdown] = useState(false);
-    const [value, setvalue] = useState(options[0]);
+    const [value, setvalue] = useState(defaultValue);
 
     const Textclasses = {
         "text-base font-normal": variant === "md",
         "text-sm font-medium": variant === "sm",
     };
-    
+
     return (
         <div className="relative">
             <div

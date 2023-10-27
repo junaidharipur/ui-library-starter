@@ -16,10 +16,10 @@ const options = [
 ];
 
 test("Input component should rendering properly.", async () => {
-    render(<Dropdown variant="md" options={options} outlined={true} />);
+    render(<Dropdown variant="md" options={options} outlined={true} defaultValue={options[0]} />);
 });
 test("Dropdown component renders with initial options", () => {
-    render(<Dropdown variant="md" options={options} outlined={true} />);
+    render(<Dropdown variant="md" options={options} outlined={true} defaultValue={options[0]} />);
 
     options.forEach(option => {
         const optionElement = screen.getByText(/option/i);
