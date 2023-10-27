@@ -21,7 +21,7 @@ export const Default: Story = {
         palceholder: "A Form Field",
         type: "text",
         size: "small",
-        name:"formfield"
+        name: "formfield",
     },
     render: props => <FormInput {...props} />,
 };
@@ -35,8 +35,7 @@ export const InputWithIcon: Story = {
         size: "small",
         type: "password",
         icon: Iconeye,
-        name:"pass"
-
+        name: "pass",
     },
     render: props => <FormInput {...props} />,
 };
