@@ -31,7 +31,7 @@ export function FormInput({
             <label
                 aria-labelledby={name}
                 htmlFor={name}
-                className={cx("block", {
+                className={cx("block text-black", {
                     "text-lg font-medium ": size === "large",
                     "text-base font-medium leading-6": size === "medium",
                     "text-sm font-normal leading-6 ": size === "small",
@@ -52,11 +52,11 @@ export function FormInput({
                     value={value}
                     onChange={onChange}
                     className={cx(
-                        "border text-green-90 placeholder-[##9CA3AF] text-sm rounded-md focus:ring-[#009AEE] focus:outline-[#009AEE] focus:border-[#009AEE] block w-full",
+                        "border placeholder-input-placeholder text-sm rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
                         {
-                            "border-[#DFE4EA]": variant === "normal",
-                            "border-green-500": variant === "success",
-                            "border-red-400": variant === "error",
+                            "border-input-border-normal": variant === "normal",
+                            "border-input-success": variant === "success",
+                            "border-input-error": variant === "error",
                         },
                         {
                             "py-3 pl-5 pr-4 ": size === "large",
@@ -70,8 +70,8 @@ export function FormInput({
             <p
                 className={cx(" text-xs font-normal leading-5", {
                     "text-[#4B5563]": variant === "normal",
-                    "text-green-400": variant === "success",
-                    "text-red-400": variant === "error",
+                    "text-input-success": variant === "success",
+                    "text-input-error": variant === "error",
                 })}
             >
                 {helperText}

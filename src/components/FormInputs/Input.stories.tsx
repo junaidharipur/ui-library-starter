@@ -2,7 +2,7 @@ import * as React from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
 import { FormInput } from "./FormInput";
-import { Iconeye } from "../icons/Iconeye";
+import { InfoSuccess, Iconeye, InfoError, InfoNormal } from "../icons/InputIcons";
 
 const meta: Meta<typeof FormInput> = {
     title: "Components/Forms Inputs",
@@ -21,7 +21,7 @@ export const Default: Story = {
         palceholder: "A Form Field",
         type: "text",
         size: "small",
-        name:"formfield"
+        name: "formfield",
     },
     render: props => <FormInput {...props} />,
 };
@@ -35,8 +35,49 @@ export const InputWithIcon: Story = {
         size: "small",
         type: "password",
         icon: Iconeye,
-        name:"pass"
-
+        name: "pass",
     },
     render: props => <FormInput {...props} />,
+};
+export const SuccessInputWithIcon: Story = {
+    render: props => (
+        <FormInput
+            label="Form Field"
+            variant="success"
+            helperText="This is Helper Text"
+            palceholder="Type Your Text"
+            size="medium"
+            type="text"
+            icon={InfoSuccess}
+            name="success"
+        />
+    ),
+};
+export const ErrorInputWithIcon: Story = {
+    render: props => (
+        <FormInput
+            label="Form Field"
+            variant="error"
+            helperText="This is Helper Text"
+            palceholder="Type Your Text"
+            size="medium"
+            type="text"
+            icon={InfoError}
+            name="error"
+        />
+    ),
+};
+export const NormalInputWithIcon: Story = {
+    render: props => (
+        <FormInput
+            label="Form Field"
+            variant="normal"
+            helperText="This is Helper Text"
+            palceholder="Type Your Text"
+            size="medium"
+            type="text"
+            icon={InfoNormal}
+            name="normal"
+        />
+    ),
 };
