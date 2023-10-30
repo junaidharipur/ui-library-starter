@@ -3,6 +3,9 @@ module.exports = {
     content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
     theme: {
         extend: {
+            boxShadow: {
+                dropdown: " 0px 1px 3px 0px rgba(166, 175, 195, 0.40)",
+            },
             colors: {
                 primary: "#009AEE",
                 secondary: "#25CBA1",
