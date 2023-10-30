@@ -10,3 +10,29 @@
 html {
     font-family: Inter, sans-serif;
 }
+
+.shadow-1 {
+    box-shadow: 0 1px 3px 0 rgb(166 175 195 / 40%);
+}
+
+.shadow-2 {
+    box-shadow: 0 5px 12px 0 rgba(0 0 0 / 10%);
+}
+
+.shadow-3 {
+    box-shadow: 0 4px 12px 0 rgb(13 10 44 / 6%);
+}
+
+.shadow-4 {
+    box-shadow: 0 10px 15px 0 rgb(5 13 29 / 18%);
+}
+
+.shadow-5 {
+    box-shadow:
+        0 12px 34px 0 rgb(13 10 44 / 8%),
+        0 34px 26px 0 rgb(13 10 44 / 8%);
+}
+
+.shadow-6 {
+    box-shadow: 0 20px 20px 0 rgb(5 13 29 / 20%);
+}
