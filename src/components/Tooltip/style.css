@@ -1,0 +1,164 @@
+.tooltip-wrapper {
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+
+    .icon {
+        cursor: pointer;
+    }
+    .description {
+        display: none;
+        text-align: start;
+       
+        border-radius: 5px;
+        position: absolute;
+        min-width: 150px;
+        width: auto !important;
+        max-width: 300px;
+         word-wrap: nowrap;
+
+        word-wrap: break-word;
+        &::before {
+            position: absolute;
+            content: "";
+            height: 0;
+            width: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid #1F2A37;
+            transform: rotate(-90deg);
+        }
+    }
+    .descriptionlight {
+        display: none;
+        text-align: start;
+       
+        border-radius: 5px;
+        position: absolute;
+        min-width: 150px;
+        width: auto;
+        max-width: 300px;
+         word-wrap: nowrap;
+
+        word-wrap: break-word;
+        &::before {
+            position: absolute;
+            content: "";
+            height: 0;
+            width: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid #fff;
+            transform: rotate(-90deg);
+        }
+    }
+
+    &:hover {
+        .description {
+            display: block;
+        }
+        .descriptionlight {
+            display: block;
+        }
+    }
+}
+.right {
+    .description {
+        top: 3px;
+        margin-left: 107%;
+        padding: 6px 0.6rem;
+        &::before {
+            left: -10px;
+            top: 30%;
+            transform: rotate(-90deg);
+        }
+    }
+    .descriptionlight {
+        top: 3px;
+        margin-left: 105%;
+        padding: 6px 0.6rem;
+
+        &::before {
+            left: -10px;
+            top: 30%;
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+.bottom {
+    .description {
+        margin-top: 3%;
+        left: 30%;
+        padding: 6px 0.6rem;
+        min-width: 160px;
+        &::before {
+            top: 0.3rem;
+            left: 50%;
+            transform: rotate(0);
+            margin-top: -7%;
+        }
+    }
+    .descriptionlight {
+        margin-top: 3%;
+        left: 30%;
+        padding: 6px 0.6rem;
+        &::before {
+            top: 0.4rem;
+            left: 50%;
+            transform: rotate(0);
+         }
+    }
+}
+
+.top {
+    .description {
+        bottom: 102%;
+        margin-left: 0%;
+        padding: 6px 0.6rem;
+        &::before {
+            left: 50%;
+            transform: rotate(180deg);
+            bottom: -8px;
+        }
+    }
+    .descriptionlight {
+        bottom: 102%;
+        margin-left: 0%;
+        padding: 6px 0.6rem;
+        &::before {
+            left: 50%;
+            transform: rotate(180deg);
+            bottom: -8px;
+        }
+    }
+}
+
+.left {
+    .description {
+        right: 0;
+        margin-right: 105%;
+        top: 0;
+        padding: 6px 0.6rem;
+        &::before {
+            transform: rotate(90deg);
+            right: 0;
+            top: 0.7rem;
+            margin-right: -10px;
+            
+        }
+    }
+    .descriptionlight {
+        right: 0;
+        margin-right: 105%;
+        top: 0;
+        padding: 6px 0.6rem;
+        &::before {
+            transform: rotate(90deg);
+            right: 0;
+            top: 0.7rem;
+            margin-right: -10px;
+            
+        }
+    }
+}
