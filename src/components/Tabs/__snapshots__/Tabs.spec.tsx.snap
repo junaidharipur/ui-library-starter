@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`group-button component is rendering properly 1`] = `
+<div>
+  <div
+    class="flex items-center"
+  >
+    <p
+      class="inline-block py-4 mx-5 first:ml-[25px] text-sm leading-6 font-medium text-primary-text cursor-pointer border-b-2 text-primary border-primary"
+    >
+      TITLE_1
+    </p>
+    <p
+      class="inline-block py-4 mx-5 first:ml-[25px] text-sm leading-6 font-medium text-primary-text cursor-pointer border-b-2 border-white"
+    >
+      TITLE_2
+    </p>
+  </div>
+  <div>
+    <div>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+    </div>
+  </div>
+</div>
+`;
