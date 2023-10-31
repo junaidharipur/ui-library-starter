@@ -12,6 +12,7 @@ export function Button({
     size = "Large",
     disabled = false,
     style = {},
+    className,
     ...other
 }: ButtonProps) {
     const [isHovering, setIsHovering] = React.useState(false);
@@ -83,12 +84,16 @@ export function Button({
         <button
             role="button"
             disabled={disabled}
-            className={cx("rounded-md px-7 py-3 border font-medium text-black flex justify-center items-center", {
-                ["text-white"]: variant === "default",
-                ["text-base px-7 py-3 loading-6"]: size === "Large",
-                ["text-base px-7 py-[8px] loading-6"]: size === "Medium",
-                ["text-sm leading-[22px] px-7 py-[5px]"]: size === "Small",
-            })}
+            className={cx(
+                "rounded-md px-7 py-3 border font-medium text-black flex justify-center items-center",
+                {
+                    ["text-white"]: variant === "default",
+                    ["text-base px-7 py-3 loading-6"]: size === "Large",
+                    ["text-base px-7 py-[8px] loading-6"]: size === "Medium",
+                    ["text-sm leading-[22px] px-7 py-[5px]"]: size === "Small",
+                },
+                className,
+            )}
             style={{
                 ..._defaultVariantStyles,
                 ..._outlinedVariantStyles,
