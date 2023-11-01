@@ -40,3 +40,13 @@ export const Default: Story = {
     argTypes: {},
     render: props => <ConfirmationModal {...props} />,
 };
+
+export const Danger: Story = {
+    args: {
+        variant: "danger",
+        title: "Deactivate Your Account",
+        desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum been.",
+    },
+    argTypes: {},
+    render: props => <ConfirmationModal {...props} />,
+};
