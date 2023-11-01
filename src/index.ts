@@ -16,3 +16,4 @@ export * from "./components/Avatar/avatar";
 export * from "./components/Tabs/Tabs";
 export * from "./components/Tooltip/tooltip";
 export * from "./components/Notification/Notification";
+export * from "./components/Toggle/Toggle";
