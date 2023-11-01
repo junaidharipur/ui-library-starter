@@ -12,19 +12,6 @@ const meta: Meta<typeof Tooltip> = {
 export default meta;
 type Story = StoryObj<typeof Tooltip>;
 
-export const Default: Story = {
-    args: {
-        direction: "right",
-        description: "Tooltip on right",
-        dark: true,
-    },
-    render: props => (
-        <Tooltip {...props}>
-            {" "}
-            <button>Click me!</button>
-        </Tooltip>
-    ),
-};
 export const Left: Story = {
     args: {
         direction: "left",
@@ -53,10 +40,25 @@ export const Right: Story = {
         </Tooltip>
     ),
 };
-export const Top: Story = {
+export const TopWithoutTitle: Story = {
     args: {
         direction: "top",
-        description: "Tooltip on top",
+        description: "The users wants to find a specific page or site.",
+        dark: true,
+        classdiv: "flex justify-center mt-[5rem] ",
+    },
+    render: props => (
+        <Tooltip {...props}>
+            {" "}
+            <h2>Tooltip on top </h2>
+        </Tooltip>
+    ),
+};
+export const TopWithTitle: Story = {
+    args: {
+        direction: "top",
+        title: "Navigational",
+        description: "The users wants to find a specific page or site.",
         dark: true,
         classdiv: "flex justify-center mt-[5rem] ",
     },
@@ -77,7 +79,7 @@ export const Bottom: Story = {
     render: props => (
         <Tooltip {...props}>
             {" "}
-            <h2>Tooltip on bottom </h2>
+            <h2>Tooltip </h2>
         </Tooltip>
     ),
 };

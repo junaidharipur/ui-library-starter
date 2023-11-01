@@ -1,40 +1,56 @@
 import React from "react";
-import "./style.css";
 import cx from "classnames";
+import "../../styles/style.css";
 
 type position = "top" | "bottom" | "left" | "right";
 interface Props {
     children: React.ReactNode;
     direction: position;
     description: string;
-    className: string;
     dark: boolean;
-    classdiv: string
+    classdiv?: string;
+    title?: string;
 }
 
-export function Tooltip({ children, description, direction, className,classdiv, dark }: Props) {
+export function Tooltip({ children, description, direction, classdiv, dark, title }: Props) {
     const getDirection = () => {
-        const appendedClass = className ? className : "";
         switch (direction) {
             case "top":
             case "right":
             case "left":
-                return `${direction} ${appendedClass}`;
+                return `${direction}`;
             default:
-                return `bottom ${appendedClass}`;
+                return `bottom`;
         }
     };
     return (
         <div className={cx(classdiv)}>
             <div className={`tooltip-wrapper ${getDirection()}`}>
-               {children}
+                <span className="relative">{children}</span>
                 <div
                     className={cx({
-                        "bg-dark-2 text-white description": dark,
-                        "bg-white text-black descriptionlight shadow-dropdown": !dark,
+                        "bg-dark-2   description": dark,
+                        "bg-white  descriptionlight shadow-dropdown": !dark,
                     })}
                 >
-                    {description}
+                    {title && title !== "" && (
+                        <p
+                            className={cx("text-sm leading-[22px] font-medium", {
+                                "text-white": dark,
+                                "text-dark": !dark,
+                            })}
+                        >
+                            {title}
+                        </p>
+                    )}
+                    <p
+                        className={cx("text-[12px] font-normal", {
+                            "text-dark-6": dark,
+                            " text-dark-5": !dark,
+                        })}
+                    >
+                        {description}
+                    </p>
                 </div>
             </div>
         </div>

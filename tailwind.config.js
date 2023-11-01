@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./src/**/*.{html,js,jsx,ts,tsx}", "./node_modules/flowbite/**/*.js"],
+    content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
     theme: {
         extend: {
             boxShadow: {
@@ -94,5 +94,5 @@ module.exports = {
             },
         },
     },
-    plugins: [require("@tailwindcss/typography"), require("flowbite/plugin")],
+    plugins: [require("@tailwindcss/typography")],
 };
