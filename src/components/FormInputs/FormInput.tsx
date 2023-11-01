@@ -54,9 +54,9 @@ export function FormInput({
                     className={cx(
                         "border placeholder-input-placeholder text-sm rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
                         {
-                            "border-input-border-normal": variant === "normal",
-                            "border-input-success": variant === "success",
-                            "border-input-error": variant === "error",
+                            "border-stroke": variant === "normal",
+                            "border-green": variant === "success",
+                            "border-red": variant === "error",
                         },
                         {
                             "py-3 pl-5 pr-4 ": size === "large",
@@ -70,8 +70,8 @@ export function FormInput({
             <p
                 className={cx(" text-xs font-normal leading-5", {
                     "text-[#4B5563]": variant === "normal",
-                    "text-input-success": variant === "success",
-                    "text-input-error": variant === "error",
+                    "text-green": variant === "success",
+                    "text-red": variant === "error",
                 })}
             >
                 {helperText}
