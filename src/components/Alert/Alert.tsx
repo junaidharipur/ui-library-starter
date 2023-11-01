@@ -17,7 +17,7 @@ function IconContainer({ children, style = {} }: { children: React.ReactNode; st
     );
 }
 
-export function Alert({ children, severity = "info", title }: AlertProps) {
+export function Alert({ children, severity = "info", title, onCloseClick }: AlertProps) {
     const _severityTypeStypes: React.CSSProperties =
         severity === "info"
             ? { background: colors.blueLight6, borderLeft: `6px solid ${colors.blueDark}` }
@@ -82,7 +82,9 @@ export function Alert({ children, severity = "info", title }: AlertProps) {
                     >
                         {title}
                     </h4>
-                    <CloseIcon className={cx("absolute top-0 right-0 w-5 cursor-pointer")} />
+                    <div onClick={onCloseClick} className={cx("absolute top-0 right-0 w-5 cursor-pointer")}>
+                        <CloseIcon />
+                    </div>
                 </div>
                 <p style={{ ..._descTextStyles }} className={cx("text-base leading-6 font-normal")}>
                     {children}
@@ -96,4 +98,5 @@ interface AlertProps {
     severity?: "error" | "warning" | "info" | "success";
     title: string;
     children: React.ReactNode;
+    onCloseClick?: () => void;
 }
