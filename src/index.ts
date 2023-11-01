@@ -12,3 +12,4 @@ export * from "./components/FormInputs/FormInput";
 export * from "./components/Avatar/avatar";
 export * from "./components/Tabs/Tabs";
 export * from "./components/Notification/Notification";
+export * from "./components/Toggle/Toggle";
