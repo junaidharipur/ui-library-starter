@@ -7,6 +7,26 @@ const meta: Meta<typeof Popover> = {
     title: "Components/Popover",
     component: Popover,
     tags: ["autodocs"],
+    parameters: {
+        docs: {
+            story: {
+                height: "250px",
+            },
+        },
+        backgrounds: {
+            default: "grey",
+            values: [
+                {
+                    name: "white",
+                    value: "#FFFFFF",
+                },
+                {
+                    name: "grey",
+                    value: "#E5E5E5",
+                },
+            ],
+        },
+    },
 };
 
 export default meta;
