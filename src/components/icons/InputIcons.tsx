@@ -112,3 +112,15 @@ export function IcondropdownUp() {
         </svg>
     );
 }
+
+//POPOVER ICON
+export function PopOverIcon() {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10" fill="rgba(0, 0, 0, 0.10)">
+            <path
+                d="M8.25671 0.825883C8.65395 0.384502 9.34605 0.384502 9.74329 0.825882L18 10L0 10L8.25671 0.825883Z"
+                fill="white"
+            />
+        </svg>
+    );
+}
