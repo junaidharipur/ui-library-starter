@@ -7,9 +7,10 @@ type OptionsProps = {
     variant: "md" | "sm";
     outlined: boolean;
     defaultValue: string;
+    getSelectedData: (data: string) => void;
 };
 
-export function Dropdown({ options, variant, outlined, defaultValue }: OptionsProps): ReactElement {
+export function Dropdown({ options, variant, outlined, defaultValue, getSelectedData }: OptionsProps): ReactElement {
     const [showdropdown, setshowdropdown] = useState(false);
     const [value, setvalue] = useState(defaultValue);
 
@@ -61,6 +62,7 @@ export function Dropdown({ options, variant, outlined, defaultValue }: OptionsPr
                                 "text-primary-text": value !== option,
                             })}
                             onClick={() => {
+                                getSelectedData(option);
                                 setvalue(option);
                                 setshowdropdown(false);
                             }}
