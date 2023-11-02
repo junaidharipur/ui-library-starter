@@ -20,7 +20,6 @@ export const Warning: Story = {
     render: props => {
         const [checked, setChecked] = React.useState(false);
 
-        console.log(checked);
         return (
             <div>
                 <Toggle checked={checked} defaultChecked={checked} setToggle={setChecked} {...props} />
