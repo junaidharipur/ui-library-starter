@@ -5,13 +5,14 @@ type Props = { children: React.ReactNode; title: string; description: string };
 
 export function Popover({ children, title, description }: Props) {
     const [isShow, setisShow] = useState(false);
+
     return (
-        <div className="">
-            <div className="cursor-pointer" onClick={() => setisShow(!isShow)}>
+        <div className=" relative flex justify-center">
+            <div className=" cursor-pointer" onClick={() => setisShow(!isShow)}>
                 {children}
             </div>
             {isShow && (
-                <div className="w-auto max-w-[20rem]">
+                <div className="z-10 absolute min-w-[15rem] mt-7 w-auto max-w-[20rem]">
                     <div className="flex justify-center ">
                         <PopOverIcon />
                     </div>

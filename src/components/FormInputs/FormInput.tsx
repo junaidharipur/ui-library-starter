@@ -1,5 +1,5 @@
+import React, { ChangeEvent, ReactElement } from "react";
 import cx from "classnames";
-import React, { ReactElement } from "react";
 
 interface InputProps {
     variant?: "success" | "error" | "normal";
@@ -7,7 +7,7 @@ interface InputProps {
     label?: string;
     helperText?: string;
     value?: string;
-    onChange?: () => void;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
     palceholder: string;
     type: string;
     icon?: React.ComponentType;
