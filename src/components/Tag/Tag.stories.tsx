@@ -13,7 +13,9 @@ export default meta;
 type Story = StoryObj<typeof Tag>;
 
 export const Default: Story = {
-    args: {},
+    args: {
+        disabled: false,
+    },
     argTypes: {},
     render: props => <Tag {...props}>Tag</Tag>,
 };
