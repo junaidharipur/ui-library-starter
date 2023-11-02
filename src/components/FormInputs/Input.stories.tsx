@@ -12,8 +12,7 @@ const meta: Meta<typeof FormInput> = {
 
 export default meta;
 type Story = StoryObj<typeof FormInput>;
-
-export const Default: Story = {
+ export const Default: Story = {
     args: {
         label: "Form Field",
         variant: "normal",
@@ -22,6 +21,8 @@ export const Default: Story = {
         type: "text",
         size: "small",
         name: "formfield",
+        value: "",
+        onChange: (value) => console.log(value) // Add this line to handle the change event
     },
     render: props => <FormInput {...props} />,
 };
