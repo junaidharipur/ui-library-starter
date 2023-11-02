@@ -7,12 +7,22 @@ import { ToggleCircularActiveIcon } from "../icons/ToggleCircularActiveIcon";
 import { ToggleCircularUnActiveIcon } from "../icons/ToggleCircularUnActiveIcon";
 import { ToggleCrossIcon } from "../icons/ToggleCrossIcon";
 
-export function Toggle({ defaultChecked = false, setToggle, variant = "default" }: ToggleProps) {
+export function Toggle({
+    setToggle,
+    defaultChecked = false,
+    variant = "default",
+    checked: controlledChecked = false,
+}: ToggleProps) {
     const [checked, setChecked] = React.useState(defaultChecked);
 
     const handleToggle = () => {
         setChecked(prev => !prev);
     };
+
+    React.useEffect(() => {
+        setToggle && setToggle(controlledChecked);
+        setChecked(controlledChecked);
+    }, [controlledChecked]);
 
     React.useEffect(() => {
         setToggle && setToggle(checked);
@@ -54,8 +64,8 @@ export function Toggle({ defaultChecked = false, setToggle, variant = "default" 
             className={cx("h-8 w-[55px] bg-dark rounded-full relative cursor-pointer transition-all select-none", {
                 ["bg-primary"]: checked && variant === "default",
                 ["bg-grey-3 "]: checked && variant !== "default",
-                ["bg-grey-3"]: !checked,
                 ["bg-grey-8"]: variant === "dual-circle",
+                ["bg-grey-3"]: !checked,
             })}
         >
             {Icon}
@@ -67,4 +77,5 @@ interface ToggleProps {
     defaultChecked?: boolean;
     setToggle?: React.Dispatch<React.SetStateAction<boolean>>;
     variant?: "default" | "checkmark" | "dual-circle";
+    checked?: boolean;
 }
