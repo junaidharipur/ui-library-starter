@@ -31,15 +31,13 @@ const TabContext = React.createContext(initialValues);
 export const DefaultRenderer = ({ title, isActive, activeTabHandler, size }: RendererProps) => {
     return (
         <p
-            className={cx(
-                "inline-block first:ml-[25px] text-sm leading-6 font-medium text-primary-text cursor-pointer",
-                {
-                    [`border-b-2 text-primary border-primary`]: isActive,
-                    ["border-b-2 border-white"]: !isActive,
-                    ["py-4 mx-5"]: size === "Medium",
-                    ["py-[9px] mx-5"]: size === "Small",
-                },
-            )}
+            className={cx("inline-block first:ml-[25px] text-sm leading-6 font-medium cursor-pointer", {
+                ["text-primary-text"]: !isActive,
+                [`border-b-2 text-primary border-primary`]: isActive,
+                ["border-b-2 border-white"]: !isActive,
+                ["py-4 mx-5"]: size === "Medium",
+                ["py-[9px] mx-5"]: size === "Small",
+            })}
             onClick={activeTabHandler}
         >
             {title}
