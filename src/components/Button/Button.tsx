@@ -13,6 +13,7 @@ export function Button({
     disabled = false,
     style = {},
     className,
+    fullWidth,
     ...other
 }: ButtonProps) {
     const [isHovering, setIsHovering] = React.useState(false);
@@ -91,6 +92,7 @@ export function Button({
                     ["text-base px-7 py-3 loading-6"]: size === "Large",
                     ["text-base px-7 py-[8px] loading-6"]: size === "Medium",
                     ["text-sm leading-[22px] px-7 py-[5px]"]: size === "Small",
+                    ["w-full"]: fullWidth,
                 },
                 className,
             )}
@@ -129,4 +131,5 @@ interface CustomProps {
     disabled?: boolean;
     icon?: React.ReactNode;
     style?: React.CSSProperties;
+    fullWidth?: boolean;
 }

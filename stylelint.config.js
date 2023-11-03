@@ -9,6 +9,6 @@ module.exports = {
         ],
         "declaration-block-trailing-semicolon": null,
         "no-descending-specificity": null,
-        "unit-allowed-list": ["px", "vh", "vw", "%", "rem","deg"],
+        "unit-allowed-list": ["px", "vh", "vw", "%", "rem", "deg"],
     },
 };

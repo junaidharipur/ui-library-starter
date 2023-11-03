@@ -3,7 +3,7 @@ import * as React from "react";
 import { render, screen } from "@testing-library/react";
 import { Alert } from "./Alert";
 
-test("group-button component is rendering properly", () => {
+test("Alert component is rendering properly", () => {
     const ALERT_TITLE = "TITLE";
 
     const { container } = render(

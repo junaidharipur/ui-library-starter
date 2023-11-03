@@ -20,6 +20,7 @@ export const colors = {
     grey5: "#CED4DA",
     grey6: "#CED4DA",
     grey7: "#CED4DA",
+    grey8: "#EAEEFB",
     blueDark: "#1484CD",
     blue: "#00ADF2",
     blueLight: "#00BFFF",
