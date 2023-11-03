@@ -33,7 +33,7 @@ const itemsWithHomeIcon: BreadcrumbsItem[] = [
     {
         path: "#",
         text: "Home",
-        icon: props => <HomeIcon {...props} />,
+        icon: props => <HomeIcon width={14} {...props} />,
     },
     {
         path: "##",
