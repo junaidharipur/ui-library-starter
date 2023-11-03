@@ -7,14 +7,15 @@ import { colors } from "../../utils/colors";
 
 interface ValueTypes {
     titles: string[];
-    setTitles: React.Dispatch<React.SetStateAction<string[]>>;
     activeIndex: number;
+    setTitles: React.Dispatch<React.SetStateAction<string[]>>;
     setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 interface RendererProps {
     title: string;
     isActive: boolean;
+    size: "Small" | "Medium";
     activeTabHandler: () => void;
 }
 
@@ -27,14 +28,16 @@ const initialValues: ValueTypes = {
 
 const TabContext = React.createContext(initialValues);
 
-export const DefaultRenderer = ({ title, isActive, activeTabHandler }: RendererProps) => {
+export const DefaultRenderer = ({ title, isActive, activeTabHandler, size }: RendererProps) => {
     return (
         <p
             className={cx(
-                "inline-block py-4 mx-5 first:ml-[25px] text-sm leading-6 font-medium text-primary-text cursor-pointer",
+                "inline-block first:ml-[25px] text-sm leading-6 font-medium text-primary-text cursor-pointer",
                 {
                     [`border-b-2 text-primary border-primary`]: isActive,
                     ["border-b-2 border-white"]: !isActive,
+                    ["py-4 mx-5"]: size === "Medium",
+                    ["py-[9px] mx-5"]: size === "Small",
                 },
             )}
             onClick={activeTabHandler}
@@ -59,7 +62,7 @@ export const ButtonRenderer = ({ title, isActive, activeTabHandler }: RendererPr
     );
 };
 
-export function Tabs({ children, titleRenderer: TitleRenderer = DefaultRenderer }: TabsProps) {
+export function Tabs({ children, titleRenderer: TitleRenderer = DefaultRenderer, size = "Small" }: TabsProps) {
     const [titles, setTitles] = React.useState<string[]>([]);
     const [activeIndex, setActiveIndex] = React.useState<number>(0);
 
@@ -71,6 +74,7 @@ export function Tabs({ children, titleRenderer: TitleRenderer = DefaultRenderer 
                         key={title + index}
                         isActive={index === activeIndex}
                         title={title}
+                        size={size}
                         activeTabHandler={() => setActiveIndex(index)}
                     />
                 ))}
@@ -100,6 +104,7 @@ Tabs.Tab = Tab;
 interface TabsProps {
     children: React.ReactNode;
     titleRenderer?: React.FC<RendererProps>;
+    size?: "Small" | "Medium";
 }
 
 interface TabProps {
