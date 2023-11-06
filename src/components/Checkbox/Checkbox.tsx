@@ -31,6 +31,7 @@ export function Checkbox({ label, checked = false, boxType = "default", value, o
             {label && <Typography variant="body2-regular">{label}</Typography>}
             <input
                 checked={isChecked}
+                onChange={e => onChange(e.target.value)}
                 value={value}
                 type="checkbox"
                 className={cx("appearance-none opacity-0")}
