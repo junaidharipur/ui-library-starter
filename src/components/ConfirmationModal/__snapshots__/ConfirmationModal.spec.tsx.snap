@@ -3,7 +3,7 @@
 exports[`ConfirmationModal component is rendering properly 1`] = `
 <div>
   <div
-    class="absolute translate-x-[-50%] translate-y-[-50%] w-[530px] rounded-[20px] p-[50px] shadow-2 bg-white z-50 flex flex-col justify-center items-center left-1/2 top-[22vh]"
+    class="absolute translate-x-[-50%] translate-y-[-50%] w-[530px] rounded-[20px] p-[50px] shadow-2 bg-white z-50 left-1/2 top-[22vh] hidden"
   >
     <h3
       class="text-[24px] font-semibold leading-[30px]"
@@ -13,13 +13,6 @@ exports[`ConfirmationModal component is rendering properly 1`] = `
     <span
       class="inline-block w-[90px] h-[3px] bg-primary rounded-xl mt-[18px]"
     />
-    <div
-      class="mt-6 text-center text-primary-text"
-    >
-      <p
-        class="text-base leading-6 font-normal"
-      />
-    </div>
     <div
       class="w-full flex items-center justify-between mt-[35px]"
     >
