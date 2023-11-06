@@ -59,9 +59,9 @@ export function FormInput({
                             "border-red": variant === "error",
                         },
                         {
-                            "py-3 pl-5 pr-4 ": size === "large",
-                            "py-2 pl-5 pr-4": size === "medium",
-                            "py-[5px] pl-5 pr-4 ": size === "small",
+                            "py-2 pl-5 pr-4 ": size === "large",
+                            "py-[5px] pl-5 pr-4": size === "medium",
+                            "py-[3px] pl-5 pr-4 ": size === "small",
                         },
                     )}
                     placeholder={palceholder}
