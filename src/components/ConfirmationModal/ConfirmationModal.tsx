@@ -18,7 +18,7 @@ export function ConfirmationModal({
     open = false,
     onClose,
     iconBgColor = colors.redLight5,
-    actionButtonBgColor = colors.primary,
+    actionButtonBgColor,
 }: ConfirmationModalProps) {
     const [_open, set_Open] = React.useState(open || false);
 
@@ -70,10 +70,11 @@ export function ConfirmationModal({
                 <Button
                     className="ml-[9px]"
                     fullWidth
+                    color="primary"
                     onClick={onActionButtonClick}
                     style={{
                         borderColor: colors.stroke,
-                        background: actionButtonBgColor,
+                        ...(actionButtonBgColor ? { background: actionButtonBgColor } : {}),
                     }}
                 >
                     {actionButtonText}
