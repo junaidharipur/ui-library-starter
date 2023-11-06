@@ -1,6 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import "../../styles/style.css";
+import "../../styles/tooltip.css";
 
 type position = "top" | "bottom" | "left" | "right";
 interface Props {
