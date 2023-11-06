@@ -4,6 +4,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ConfirmationModal } from "./ConfirmationModal";
 
+import { WarningIcon } from "../icons/WarningRedIcon";
+import { colors } from "../../utils/colors";
+
 const meta: Meta<typeof ConfirmationModal> = {
     component: ConfirmationModal,
     tags: ["autodocs"],
@@ -34,6 +37,7 @@ type Story = StoryObj<typeof ConfirmationModal>;
 
 export const Default: Story = {
     args: {
+        open: true,
         title: "Your Message Sent Successfully",
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
     },
@@ -41,11 +45,14 @@ export const Default: Story = {
     render: props => <ConfirmationModal {...props} />,
 };
 
-export const Danger: Story = {
+export const WithIcon: Story = {
     args: {
-        variant: "danger",
+        open: true,
+        actionButtonBgColor: colors.redDark,
         title: "Deactivate Your Account",
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum been.",
+        actionButtonText: "Deactivate",
+        icon: () => <WarningIcon />,
     },
     argTypes: {},
     render: props => <ConfirmationModal {...props} />,
