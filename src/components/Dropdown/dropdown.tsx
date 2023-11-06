@@ -4,7 +4,7 @@ import cx from "classnames";
 
 type OptionsProps = {
     options: string[];
-    variant: "md" | "sm";
+    variant: "md" | "sm" | "lg";
     outlined: boolean;
     defaultValue: string;
     getSelectedData: (data: string) => void;
@@ -25,9 +25,10 @@ export function Dropdown({ options, variant, outlined, defaultValue, getSelected
                 className={cx(
                     "  flex justify-between   text-base border border-input-border-normal-500 focus:ring-primary focus:outline-primary focus:border-primary rounded-md  px-3  w-full",
                     {
-                        "py-3": variant === "md",
+                        "py-2 px-5": variant === "lg",
+                        "py-[5px] px-5": variant === "md",
 
-                        "py-[5px]": variant === "sm",
+                        "py-[3px] px-4": variant === "sm",
                         "bg-dark-8": !outlined,
                     },
                 )}
@@ -62,9 +63,9 @@ export function Dropdown({ options, variant, outlined, defaultValue, getSelected
                                 "text-primary-text": value !== option,
                             })}
                             onClick={() => {
-                                getSelectedData(option);
                                 setvalue(option);
                                 setshowdropdown(false);
+                                getSelectedData(option);
                             }}
                         >
                             {option}

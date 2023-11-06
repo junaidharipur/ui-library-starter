@@ -16,9 +16,29 @@ const options = [
 ];
 
 const meta: Meta<typeof Dropdown> = {
-    title: "Components/Form Dropdown",
+    title: "Components/Dropdown",
     component: Dropdown,
     tags: ["autodocs"],
+    parameters: {
+        docs: {
+            story: {
+                height: "400px",
+            },
+        },
+        backgrounds: {
+            default: "white",
+            values: [
+                {
+                    name: "white",
+                    value: "#FFFFFF",
+                },
+                {
+                    name: "grey",
+                    value: "#E5E5E5",
+                },
+            ],
+        },
+    },
 };
 
 export default meta;

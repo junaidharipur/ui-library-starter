@@ -48,7 +48,7 @@ export function Toggle({ setState, defaultState = false, variant = "default", st
                 {checked ? <ToggleCheckedIcon /> : <ToggleCrossIcon />}
             </span>
         ) : (
-            variant === "dual-circle" && (
+            variant === "mini-circle" && (
                 <span
                     className={cx("rounded-full absolute top-1/2 translate-y-[-50%] flex items-center justify-start", {
                         ["right-[-2px]"]: checked,
@@ -66,7 +66,7 @@ export function Toggle({ setState, defaultState = false, variant = "default", st
             className={cx("h-8 w-[55px] bg-dark rounded-full relative cursor-pointer transition-all select-none", {
                 ["bg-primary"]: checked && variant === "default",
                 ["bg-grey-3 "]: checked && variant !== "default",
-                ["bg-grey-8"]: variant === "dual-circle",
+                ["bg-grey-8"]: variant === "mini-circle",
                 ["bg-grey-3"]: !checked,
             })}
         >
@@ -78,6 +78,6 @@ export function Toggle({ setState, defaultState = false, variant = "default", st
 interface ToggleProps {
     defaultState?: boolean;
     setState?: React.Dispatch<React.SetStateAction<boolean>>;
-    variant?: "default" | "checkmark" | "dual-circle";
+    variant?: "default" | "checkmark" | "mini-circle";
     state?: boolean;
 }
