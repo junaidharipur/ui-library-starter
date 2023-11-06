@@ -1,5 +1,6 @@
 import React, { ChangeEvent, ReactElement } from "react";
 import cx from "classnames";
+import { Typography } from "../Typography/Typography";
 
 interface InputProps {
     variant?: "success" | "error" | "normal";
@@ -31,13 +32,13 @@ export function FormInput({
             <label
                 aria-labelledby={name}
                 htmlFor={name}
-                className={cx("block text-black", {
+                className={cx("block text-dark", {
                     "text-lg font-medium ": size === "large",
                     "text-base font-medium leading-6": size === "medium",
                     "text-sm font-normal leading-6 ": size === "small",
                 })}
             >
-                {label}
+                <Typography variant="body2-regular">{label}</Typography>
             </label>
             <div className="relative">
                 {Icon && (
@@ -48,11 +49,10 @@ export function FormInput({
                 <input
                     name={name}
                     type={type}
-                    id={name}
                     value={value}
                     onChange={onChange}
                     className={cx(
-                        "border placeholder-input-placeholder text-sm rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
+                        " border placeholder-input-placeholder text-base font-normal rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
                         {
                             "border-stroke": variant === "normal",
                             "border-green": variant === "success",
