@@ -46,6 +46,7 @@ export const Danger: Story = {
         variant: "danger",
         title: "Deactivate Your Account",
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum been.",
+        actionButtonText: "Deactivate",
     },
     argTypes: {},
     render: props => <ConfirmationModal {...props} />,

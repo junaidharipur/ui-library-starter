@@ -13,6 +13,8 @@ export function ConfirmationModal({
     title,
     desc,
     position = "top-center",
+    actionButtonText = "View Details",
+    onActionButtonClick,
 }: ConfirmationModalProps) {
     return (
         <div
@@ -49,6 +51,7 @@ export function ConfirmationModal({
                     Cancel
                 </Button>
                 <Button
+                    onClick={onActionButtonClick}
                     className="ml-[9px]"
                     fullWidth
                     style={{
@@ -56,7 +59,7 @@ export function ConfirmationModal({
                         ...(variant === "danger" ? { background: colors.redDark } : {}),
                     }}
                 >
-                    View Details
+                    {actionButtonText}
                 </Button>
             </div>
         </div>
@@ -68,4 +71,6 @@ interface ConfirmationModalProps {
     desc?: string;
     variant?: "default" | "danger";
     position?: "top-center" | "center";
+    actionButtonText?: string;
+    onActionButtonClick?: () => void;
 }
