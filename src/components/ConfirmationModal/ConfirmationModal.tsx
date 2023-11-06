@@ -9,25 +9,25 @@ import { Typography } from "../Typography/Typography";
 import { Button } from "../Button/Button";
 
 export function ConfirmationModal({
-    variant = "default",
     title,
     desc,
     position = "top-center",
     actionButtonText = "View Details",
     onActionButtonClick,
     icon: Icon,
-    iconBgColor,
-    open: _open = false,
+    open = false,
     onClose,
+    iconBgColor = colors.redLight5,
+    actionButtonBgColor = colors.primary,
 }: ConfirmationModalProps) {
-    const [open, setOpen] = React.useState(_open);
+    const [_open, set_Open] = React.useState(open || false);
 
     React.useEffect(() => {
-        setOpen(_open);
-    }, [_open]);
+        set_Open(open);
+    }, [open]);
 
     const handleCloseClick = () => {
-        setOpen(prev => !prev);
+        set_Open(prev => !prev);
         onClose && onClose();
     };
 
@@ -39,44 +39,41 @@ export function ConfirmationModal({
                 {
                     ["left-1/2 top-[22vh]"]: position === "top-center",
                     ["left-1/2 top-1/2"]: position === "center",
-                    ["flex flex-col justify-center items-center"]: open,
-                    ["hidden"]: !open,
+                    ["flex flex-col justify-center items-center"]: _open,
+                    ["hidden"]: !_open,
                 },
             )}
         >
-            {variant === "danger" && (
-                <div
-                    style={{ ...(iconBgColor ? { background: iconBgColor } : {}) }}
-                    className={cx("p-[18px] bg-red-light-5 rounded-full mb-[22px]")}
-                >
-                    {Icon ? <Icon /> : <WarningIcon />}
+            {Icon && (
+                <div style={{ background: iconBgColor }} className={cx("p-[18px] rounded-full mb-[22px]")}>
+                    {<Icon />}
                 </div>
             )}
             <Typography variant="h3">{title}</Typography>
-            {variant === "default" && (
-                <span className={cx("inline-block w-[90px] h-[3px] bg-primary rounded-xl mt-[18px]")} />
+            {!Icon && <span className={cx("inline-block w-[90px] h-[3px] bg-primary rounded-xl mt-[18px]")} />}
+            {desc && (
+                <div className="mt-6 text-center text-primary-text">
+                    <Typography variant="body2-regular">{desc}</Typography>
+                </div>
             )}
-            <div className="mt-6 text-center text-primary-text">
-                <Typography variant="body2-regular">{desc}</Typography>
-            </div>
             <div className={cx("w-full flex items-center justify-between mt-[35px]")}>
                 <Button
-                    onClick={handleCloseClick}
                     className="mr-[9px]"
                     fullWidth
                     variant="outlined"
                     color="tertiary"
+                    onClick={handleCloseClick}
                     style={{ borderColor: colors.stroke }}
                 >
                     Cancel
                 </Button>
                 <Button
-                    onClick={onActionButtonClick}
                     className="ml-[9px]"
                     fullWidth
+                    onClick={onActionButtonClick}
                     style={{
                         borderColor: colors.stroke,
-                        ...(variant === "danger" ? { background: colors.redDark } : {}),
+                        background: actionButtonBgColor,
                     }}
                 >
                     {actionButtonText}
@@ -88,13 +85,13 @@ export function ConfirmationModal({
 
 interface ConfirmationModalProps {
     title: string;
-    desc?: string;
-    variant?: "default" | "danger";
-    position?: "top-center" | "center";
-    actionButtonText?: string;
-    onActionButtonClick?: () => void;
-    icon?: React.FC;
-    iconBgColor?: string;
     open?: boolean;
+    desc?: string;
+    icon?: React.FC;
+    actionButtonText?: string;
+    actionButtonBgColor?: string;
+    iconBgColor?: string;
+    position?: "top-center" | "center";
+    onActionButtonClick?: () => void;
     onClose?: () => void;
 }
