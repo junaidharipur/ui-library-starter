@@ -3,7 +3,7 @@ import { Icondropdownbottom, IcondropdownUp } from "../icons/InputIcons";
 import cx from "classnames";
 
 type OptionsProps = {
-    options: string[];
+    options: { value: string; label: string }[];
     variant: "md" | "sm" | "lg";
     outlined: boolean;
     defaultValue: string;
@@ -56,19 +56,20 @@ export function Dropdown({ options, variant, outlined, defaultValue, getSelected
                         "z-10 absolute  bg-white w-full flex flex-col gap-3 justify-between  py-3 border rounded-lg h-auto max-h-[20rem] overflow-auto mt-3 shadow-dropdown",
                     )}
                 >
-                    {options?.map(option => (
+                    {options?.map((option, index) => (
                         <p
+                            key={index}
                             className={cx("py-3 cursor-pointer hover:bg-primary pl-3 hover:text-white", Textclasses, {
-                                "bg-primary text-white": value === option,
-                                "text-primary-text": value !== option,
+                                "bg-primary text-white": value === option?.value,
+                                "text-primary-text": value !== option?.value,
                             })}
                             onClick={() => {
-                                setvalue(option);
+                                setvalue(option?.label);
                                 setshowdropdown(false);
-                                getSelectedData(option);
+                                getSelectedData(option?.value);
                             }}
                         >
-                            {option}
+                            {option?.label}
                         </p>
                     ))}
                 </div>

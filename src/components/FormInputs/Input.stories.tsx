@@ -20,7 +20,7 @@ type Story = StoryObj<typeof FormInput>;
         palceholder: "A Form Field",
         type: "text",
         size: "small",
-        name: "formfield",
+        name: "defaultform",
         value: "",
         onChange: (value) => console.log(value) // Add this line to handle the change event
     },
@@ -29,7 +29,7 @@ type Story = StoryObj<typeof FormInput>;
 
 export const InputWithIcon: Story = {
     args: {
-        label: "Form Field",
+        label: "Form Field 01",
         variant: "normal",
         helperText: "This is Helper Text",
         palceholder: "Type Your Password",
@@ -43,7 +43,7 @@ export const InputWithIcon: Story = {
 export const SuccessInputWithIcon: Story = {
     render: props => (
         <FormInput
-            label="Form Field"
+            label="Form Field 01"
             variant="success"
             helperText="This is Helper Text"
             palceholder="Type Your Text"
@@ -57,7 +57,7 @@ export const SuccessInputWithIcon: Story = {
 export const ErrorInputWithIcon: Story = {
     render: props => (
         <FormInput
-            label="Form Field"
+            label="Form Field 2"
             variant="error"
             helperText="This is Helper Text"
             palceholder="Type Your Text"
@@ -71,7 +71,7 @@ export const ErrorInputWithIcon: Story = {
 export const NormalInputWithIcon: Story = {
     render: props => (
         <FormInput
-            label="Form Field"
+            label="Form Field 3"
             variant="normal"
             helperText="This is Helper Text"
             palceholder="Type Your Text"

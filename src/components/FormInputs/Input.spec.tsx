@@ -10,7 +10,7 @@ test("Input component should rendering properly.", async () => {
 
 test("renders label and placeholder correctly", () => {
     render(<FormInput name="formfiled" label="Test Label" palceholder="Test Placeholder" type="normal" />);
-    const ElemgetByLabelText = screen.getByLabelText(/Test Label/i);
+    const ElemgetByLabelText = screen.getByText(/Test Label/i);
     const ElemgetByPlaceholderText = screen.getByPlaceholderText(/Test Placeholder/i);
 
     expect(ElemgetByLabelText).toBeInTheDocument();
