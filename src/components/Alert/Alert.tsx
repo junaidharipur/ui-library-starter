@@ -18,7 +18,7 @@ function IconContainer({ children, style = {} }: { children: React.ReactNode; st
 }
 
 export function Alert({ children, severity = "info", title, onCloseClick }: AlertProps) {
-    const _severityTypeStypes: React.CSSProperties =
+    const _severityTypeStyles: React.CSSProperties =
         severity === "info"
             ? { background: colors.blueLight6, borderLeft: `6px solid ${colors.blueDark}` }
             : severity === "warning"
@@ -70,7 +70,7 @@ export function Alert({ children, severity = "info", title, onCloseClick }: Aler
     };
 
     return (
-        <div className={cx("p-[35px] rounded-lg flex items-start")} style={{ ..._severityTypeStypes }}>
+        <div className={cx("p-[35px] rounded-lg flex items-start")} style={{ ..._severityTypeStyles }}>
             <IconContainer style={{ ..._iconColorStyles }}>
                 <Icon />
             </IconContainer>

@@ -14,19 +14,17 @@ export function Breadcrumbs({
     size = "Small",
     ...other
 }: BreadcrumbsProps) {
+    const _getActiveColor = (index: number) => ({
+        color:
+            items.length !== index + 1 ? color : activeColor && items.length !== index ? activeColor : colors.primary,
+    });
+
     return (
         <div className={cx("mr flex items-center leading-6 font-medium text-base", className)} {...other}>
             {items.map(({ path, icon: Icon, text }, index) => (
                 <div
                     key={path + index}
-                    style={{
-                        color:
-                            items.length !== index + 1
-                                ? color
-                                : activeColor && items.length !== index
-                                ? activeColor
-                                : colors.primary,
-                    }}
+                    style={{ ..._getActiveColor(index) }}
                     className={cx("first:pl-[30px] flex items-center", {
                         ["py-[25px] mr-3 rounded-lg"]: size === "Medium",
                         ["mr-3 py-[5px]"]: size === "Small",
