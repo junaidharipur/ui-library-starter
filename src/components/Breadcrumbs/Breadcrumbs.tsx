@@ -7,14 +7,15 @@ import { colors } from "../../utils/colors";
 
 export function Breadcrumbs({
     items,
-    currentItemRenderer: Renderer,
     className,
+    currentItemRenderer: Renderer,
     color = colors.primaryText,
     activeColor = colors.primary,
+    size = "Small",
     ...other
 }: BreadcrumbsProps) {
     return (
-        <div className={cx("mr flex items-center leading-6 font-medium text-base rounded-lg", className)} {...other}>
+        <div className={cx("mr flex items-center leading-6 font-medium text-base", className)} {...other}>
             {items.map(({ path, icon: Icon, text }, index) => (
                 <div
                     key={path + index}
@@ -26,7 +27,10 @@ export function Breadcrumbs({
                                 ? activeColor
                                 : colors.primary,
                     }}
-                    className={cx("py-[25px] first:pl-[30px] flex items-center mr-3")}
+                    className={cx("first:pl-[30px] flex items-center", {
+                        ["py-[25px] mr-3 rounded-lg"]: size === "Medium",
+                        ["mr-3 py-[5px]"]: size === "Small",
+                    })}
                 >
                     {Icon && (
                         <span className="mr-2">
@@ -54,4 +58,5 @@ interface BreadcrumbsProps {
     className?: string;
     color?: string;
     activeColor?: string;
+    size?: "Small" | "Medium";
 }

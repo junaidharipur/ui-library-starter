@@ -5,6 +5,7 @@ module.exports = {
         extend: {
             boxShadow: {
                 dropdown: " 0px 1px 3px 0px rgba(166, 175, 195, 0.40)",
+                popover: " 0px 5px 12px 0px rgba(0, 0, 0, 0.10);",
             },
             colors: {
                 primary: "#009AEE",
@@ -29,6 +30,8 @@ module.exports = {
                 "grey-6": "#CED4DA",
                 "grey-7": "#CED4DA",
                 "grey-8": "#EAEEFB",
+                "grey-9": "#EFF2FF",
+                "grey-10": "#E7EAED",
                 "blue-dark": "#1484CD",
                 blue: "#00ADF2",
                 "blue-light": "#00BFFF",
@@ -43,6 +46,7 @@ module.exports = {
                 "teal-light": "#20D9D2",
                 "teal-light-2": "#72DDC3",
                 "teal-light-3": "#C2F5E9",
+                "teal-light-4": "#25CBA1",
                 orange: "#F27430",
                 "orange-dark": "#E1580E",
                 "orange-light": "#F59460",

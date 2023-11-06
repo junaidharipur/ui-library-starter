@@ -6,12 +6,12 @@ exports[`group-button component is rendering properly 1`] = `
     class="flex items-center"
   >
     <p
-      class="inline-block py-4 mx-5 first:ml-[25px] text-sm leading-6 font-medium text-primary-text cursor-pointer border-b-2 text-primary border-primary"
+      class="inline-block first:ml-[25px] text-sm leading-6 font-medium cursor-pointer border-b-2 text-primary border-primary py-[9px] mx-5"
     >
       TITLE_1
     </p>
     <p
-      class="inline-block py-4 mx-5 first:ml-[25px] text-sm leading-6 font-medium text-primary-text cursor-pointer border-b-2 border-white"
+      class="inline-block first:ml-[25px] text-sm leading-6 font-medium cursor-pointer text-primary-text border-b-2 border-white py-[9px] mx-5"
     >
       TITLE_2
     </p>
