@@ -17,60 +17,60 @@ function IconContainer({ children, style = {} }: { children: React.ReactNode; st
     );
 }
 
-export function Alert({ children, severity = "info", title, onCloseClick }: AlertProps) {
-    const _severityTypeStyles: React.CSSProperties =
-        severity === "info"
+export function Alert({ children, kind = "info", title, onCloseClick }: AlertProps) {
+    const _kindTypeStyles: React.CSSProperties =
+        kind === "info"
             ? { background: colors.blueLight6, borderLeft: `6px solid ${colors.blueDark}` }
-            : severity === "warning"
+            : kind === "warning"
             ? { background: colors.yellowLight4, borderLeft: `6px solid ${colors.yellow}` }
-            : severity === "success"
+            : kind === "success"
             ? { background: colors.greenLight6, borderLeft: `6px solid ${colors.green}` }
-            : severity === "error"
+            : kind === "error"
             ? { background: colors.redLight6, borderLeft: `6px solid ${colors.red}` }
             : {};
 
     const _iconColorStyles: React.CSSProperties =
-        severity === "info"
+        kind === "info"
             ? { background: colors.blueDark }
-            : severity === "warning"
+            : kind === "warning"
             ? { background: colors.yellow }
-            : severity === "success"
+            : kind === "success"
             ? { background: colors.green }
-            : severity === "error"
+            : kind === "error"
             ? { background: colors.red }
             : {};
 
     const _headingTextStyles: React.CSSProperties =
-        severity === "info"
+        kind === "info"
             ? { color: colors.infoText }
-            : severity === "warning"
+            : kind === "warning"
             ? { color: colors.warningText }
-            : severity === "success"
+            : kind === "success"
             ? { color: colors.successText }
-            : severity === "error"
+            : kind === "error"
             ? { color: colors.dangerText }
             : {};
 
     const _descTextStyles: React.CSSProperties =
-        severity === "info"
+        kind === "info"
             ? { color: colors.primaryText }
-            : severity === "warning"
+            : kind === "warning"
             ? { color: colors.yellowLight5 }
-            : severity === "success"
+            : kind === "success"
             ? { color: colors.primaryText }
-            : severity === "error"
+            : kind === "error"
             ? { color: colors.redLight }
             : {};
 
     const Icon = () => {
-        if (severity === "success") return <CheckmarkCircleIcon />;
-        else if (severity === "warning") return <WarningIcon />;
-        else if (severity === "error") return <CrossCircleIcon />;
-        else if (severity === "info") return <InformationAltIcon />;
+        if (kind === "success") return <CheckmarkCircleIcon />;
+        else if (kind === "warning") return <WarningIcon />;
+        else if (kind === "error") return <CrossCircleIcon />;
+        else if (kind === "info") return <InformationAltIcon />;
     };
 
     return (
-        <div className={cx("p-[35px] rounded-lg flex items-start")} style={{ ..._severityTypeStyles }}>
+        <div className={cx("p-[35px] rounded-lg flex items-start")} style={{ ..._kindTypeStyles }}>
             <IconContainer style={{ ..._iconColorStyles }}>
                 <Icon />
             </IconContainer>
@@ -95,7 +95,7 @@ export function Alert({ children, severity = "info", title, onCloseClick }: Aler
 }
 
 interface AlertProps {
-    severity?: "error" | "warning" | "info" | "success";
+    kind?: "error" | "warning" | "info" | "success";
     title: string;
     children: React.ReactNode;
     onCloseClick?: () => void;

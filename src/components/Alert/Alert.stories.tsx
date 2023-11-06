@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Alert>;
 export const Warning: Story = {
     args: {
         title: "Attention needed",
-        severity: "warning",
+        kind: "warning",
     },
     argTypes: {},
     render: props => (
