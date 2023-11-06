@@ -14,15 +14,16 @@ type Story = StoryObj<typeof Toggle>;
 
 export const Warning: Story = {
     args: {
-        checked: false,
+        defaultState: false,
+        state: false,
     },
     argTypes: {},
     render: props => {
-        const [checked, setChecked] = React.useState(false);
+        const [checked, setChecked] = React.useState(props.state!);
 
         return (
             <div>
-                <Toggle checked={checked} defaultChecked={checked} setToggle={setChecked} {...props} />
+                <Toggle state={checked} setToggle={setChecked} {...props} />
                 <p>Checked: {JSON.stringify(checked)}</p>
             </div>
         );
