@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import "react-calendar/dist/Calendar.css";
-import "./calendar.css";
+import "../../styles/calendar.css";
 
 import cx from "classnames";
 import RcCalender from "react-calendar";

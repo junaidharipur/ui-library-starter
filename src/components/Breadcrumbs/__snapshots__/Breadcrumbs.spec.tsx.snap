@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`group-button component is rendering properly 1`] = `
+exports[`Breadcrumbs component is rendering properly 1`] = `
 <div>
   <div
-    class="mr flex items-center leading-6 font-medium text-base rounded-lg"
+    class="mr flex items-center leading-6 font-medium text-base"
   />
 </div>
 `;
