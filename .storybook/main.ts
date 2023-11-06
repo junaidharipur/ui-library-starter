@@ -15,6 +15,14 @@ const config: StorybookConfig = {
         getAbsolutePath("@storybook/addon-links"),
         getAbsolutePath("@storybook/addon-essentials"),
         getAbsolutePath("@storybook/addon-interactions"),
+        {
+            name: "@storybook/addon-storysource",
+            options: {
+                loaderOptions: {
+                    injectStoryParameters: false,
+                },
+            },
+        },
     ],
     framework: {
         name: getAbsolutePath("@storybook/react-webpack5"),
@@ -23,6 +31,7 @@ const config: StorybookConfig = {
     docs: {
         autodocs: "tag",
     },
+    // Require to process tailwind styles
     webpackFinal: async config => {
         if (config.module && config.module.rules) {
             config.module.rules.push({
