@@ -4,17 +4,38 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Dropdown } from "./dropdown";
 
 const options = [
-    "option1",
-    "option2",
-    "option3",
-    "option13",
-    "option22",
-    "option23",
-    "option221",
-    "option22",
-    "option3",
+    {
+        label: "option1",
+        value: "option1",
+    },
+    {
+        label: "option2",
+        value: "option2",
+    },
+    {
+        label: "option3",
+        value: "option3",
+    },
+    {
+        label: "option4",
+        value: "option4",
+    },
+    {
+        label: "option5",
+        value: "option5",
+    },
+    {
+        label: "option6",
+        value: "option6",
+    },
+    {
+        label: "option7",
+        value: "option7",
+    },
 ];
-
+const getSelectedData = (data: string) => {
+    console.log(data);
+};
 const meta: Meta<typeof Dropdown> = {
     title: "Components/Dropdown",
     component: Dropdown,
@@ -49,7 +70,8 @@ export const Default: Story = {
         variant: "md",
         options: options,
         outlined: true,
-        defaultValue: options[2],
+        defaultValue: options[2].value,
+        getSelectedData: getSelectedData,
     },
     render: props => <Dropdown {...props} />,
 };

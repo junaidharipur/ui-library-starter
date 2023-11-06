@@ -47,11 +47,10 @@ export function FormInput({
                 <input
                     name={name}
                     type={type}
-                    id={name}
                     value={value}
                     onChange={onChange}
                     className={cx(
-                        "border placeholder-input-placeholder text-sm rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
+                        " border placeholder-input-placeholder text-base font-normal rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
                         {
                             "border-stroke": variant === "normal",
                             "border-green": variant === "success",
