@@ -18,9 +18,19 @@ module.exports = function (env, argv) {
         module: {
             rules: [
                 {
-                    test: /\.css$/i,
-                    include: path.resolve(__dirname, "src"),
-                    use: ["style-loader", "css-loader", "postcss-loader"],
+                    test: /\.css$/,
+                    use: [
+                        "style-loader",
+                        "css-loader",
+                        {
+                            loader: "postcss-loader",
+                            options: {
+                                postcssOptions: {
+                                    plugins: [require("tailwindcss"), require("autoprefixer")],
+                                },
+                            },
+                        },
+                    ],
                 },
                 {
                     test: /\.(js|ts)x?$/,

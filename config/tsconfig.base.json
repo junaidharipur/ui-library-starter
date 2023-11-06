@@ -21,6 +21,13 @@
         "rootDir": "../src"
     },
     "compileOnSave": false,
-    "exclude": ["../node_modules", "../lib"],
+    "exclude": [
+        "../node_modules",
+        "../lib",
+        "../src/**/*.spec.tsx",
+        "../src/**/*.spec.ts",
+        "../src/**/*.stories.tsx",
+        "../src/**/*.stories.ts"
+    ],
     "include": ["../src/**/*"]
 }
