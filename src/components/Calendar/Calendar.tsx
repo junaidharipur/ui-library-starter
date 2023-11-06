@@ -4,7 +4,7 @@ import "react-calendar/dist/Calendar.css";
 import "../../styles/calendar.css";
 
 import cx from "classnames";
-import RcCalender from "react-calendar";
+import ReactCalender from "react-calendar";
 import { Button } from "../Button/Button";
 
 export function Calendar({ value = new Date(), onChange, onRemoveClick, onDoneClick }: CalendarProps) {
@@ -23,7 +23,7 @@ export function Calendar({ value = new Date(), onChange, onRemoveClick, onDoneCl
 
     return (
         <div className={cx("shadow-4 inline-block overflow-hidden bg-white rounded-xl")}>
-            <RcCalender value={value} onChange={onChange} />
+            <ReactCalender value={value} onChange={onChange} />
             <div className="flex items-center justify-between px-6 pt-2 pb-10">
                 <Button onClick={onRemoveClick} className="mr-[5px]" fullWidth color="tertiary">
                     Remove
