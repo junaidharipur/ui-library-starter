@@ -15,22 +15,41 @@ export function ConfirmationModal({
     position = "top-center",
     actionButtonText = "View Details",
     onActionButtonClick,
+    icon: Icon,
+    iconBgColor,
+    open: _open = false,
+    onClose,
 }: ConfirmationModalProps) {
+    const [open, setOpen] = React.useState(_open);
+
+    React.useEffect(() => {
+        setOpen(_open);
+    }, [_open]);
+
+    const handleCloseClick = () => {
+        setOpen(prev => !prev);
+        onClose && onClose();
+    };
+
     return (
         <div
             className={cx(
                 "absolute translate-x-[-50%] translate-y-[-50%]",
                 "w-[530px] rounded-[20px] p-[50px] shadow-2 bg-white z-50",
-                "flex flex-col justify-center items-center",
                 {
                     ["left-1/2 top-[22vh]"]: position === "top-center",
                     ["left-1/2 top-1/2"]: position === "center",
+                    ["flex flex-col justify-center items-center"]: open,
+                    ["hidden"]: !open,
                 },
             )}
         >
             {variant === "danger" && (
-                <div className={cx("p-[18px] bg-red-light-5 rounded-full mb-[22px]")}>
-                    <WarningIcon />
+                <div
+                    style={{ ...(iconBgColor ? { background: iconBgColor } : {}) }}
+                    className={cx("p-[18px] bg-red-light-5 rounded-full mb-[22px]")}
+                >
+                    {Icon ? <Icon /> : <WarningIcon />}
                 </div>
             )}
             <Typography variant="h3">{title}</Typography>
@@ -42,6 +61,7 @@ export function ConfirmationModal({
             </div>
             <div className={cx("w-full flex items-center justify-between mt-[35px]")}>
                 <Button
+                    onClick={handleCloseClick}
                     className="mr-[9px]"
                     fullWidth
                     variant="outlined"
@@ -73,4 +93,8 @@ interface ConfirmationModalProps {
     position?: "top-center" | "center";
     actionButtonText?: string;
     onActionButtonClick?: () => void;
+    icon?: React.FC;
+    iconBgColor?: string;
+    open?: boolean;
+    onClose?: () => void;
 }

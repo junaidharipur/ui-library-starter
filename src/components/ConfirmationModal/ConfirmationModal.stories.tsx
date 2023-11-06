@@ -34,6 +34,7 @@ type Story = StoryObj<typeof ConfirmationModal>;
 
 export const Default: Story = {
     args: {
+        open: true,
         title: "Your Message Sent Successfully",
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
     },
@@ -43,6 +44,7 @@ export const Default: Story = {
 
 export const Danger: Story = {
     args: {
+        open: true,
         variant: "danger",
         title: "Deactivate Your Account",
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum been.",
