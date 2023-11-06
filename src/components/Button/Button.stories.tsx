@@ -5,6 +5,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { colors } from "../../utils/colors";
 
 import { Button } from "./Button";
+import { ButtonGroup } from "../ButtonGroup/ButtonGroup";
 import { PlusIcon } from "../icons/PlusIcon";
 
 const meta: Meta<typeof Button> = {
@@ -79,7 +80,7 @@ export const IconDefault: Story = {
     },
     render: props => (
         <Button
-            icon={<PlusIcon fill={props.variant === "outlined" ? colors[props.color || "primary"] : "white"} />}
+            icon={<PlusIcon fill={props.variant === "outlined" ? (colors as any)[props.color!] : colors.white} />}
             {...props}
         >
             Button
