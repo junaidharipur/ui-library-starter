@@ -21,11 +21,6 @@ export const Warning: Story = {
     render: props => {
         const [checked, setChecked] = React.useState(props.state!);
 
-        return (
-            <div>
-                <Toggle state={checked} setToggle={setChecked} {...props} />
-                <p>Checked: {JSON.stringify(checked)}</p>
-            </div>
-        );
+        return <Toggle state={checked} setState={setChecked} {...props} />;
     },
 };

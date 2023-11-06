@@ -7,7 +7,7 @@ import { ToggleCircularActiveIcon } from "../icons/ToggleCircularActiveIcon";
 import { ToggleCircularUnActiveIcon } from "../icons/ToggleCircularUnActiveIcon";
 import { ToggleCrossIcon } from "../icons/ToggleCrossIcon";
 
-export function Toggle({ setToggle, defaultState = false, variant = "default", state = false }: ToggleProps) {
+export function Toggle({ setState, defaultState = false, variant = "default", state = false }: ToggleProps) {
     const isMounted = React.useRef(false);
     const [checked, setChecked] = React.useState(() => defaultState);
 
@@ -17,12 +17,12 @@ export function Toggle({ setToggle, defaultState = false, variant = "default", s
 
     React.useEffect(() => {
         setChecked(state);
-        setToggle && setToggle(state);
+        setState && setState(state);
     }, [state]);
 
     React.useEffect(() => {
         if (isMounted.current) {
-            setToggle && setToggle(checked);
+            setState && setState(checked);
         } else {
             setChecked(state || defaultState);
         }
@@ -77,7 +77,7 @@ export function Toggle({ setToggle, defaultState = false, variant = "default", s
 
 interface ToggleProps {
     defaultState?: boolean;
-    setToggle?: React.Dispatch<React.SetStateAction<boolean>>;
+    setState?: React.Dispatch<React.SetStateAction<boolean>>;
     variant?: "default" | "checkmark" | "dual-circle";
     state?: boolean;
 }
