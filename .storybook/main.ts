@@ -26,7 +26,9 @@ const config: StorybookConfig = {
     ],
     framework: {
         name: getAbsolutePath("@storybook/react-webpack5"),
-        options: {},
+        options: {
+            fastRefresh: true,
+        },
     },
     docs: {
         autodocs: "tag",
