@@ -6,7 +6,6 @@ import { Typography } from "../Typography/Typography";
 import { UncheckedIcon } from "../icons/UncheckedIcon";
 import { RectangularChecked } from "../icons/RectangularChecked";
 import { CheckmarkedChecked } from "../icons/CheckmarkChecked";
-import { InputType } from "zlib";
 
 export function Checkbox({ label, checked = false, boxType = "default", value, onChange, ...other }: CheckboxProps) {
     const [isChecked, setIsChecked] = React.useState(false);

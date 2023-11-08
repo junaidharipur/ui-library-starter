@@ -16,7 +16,24 @@ export const Default: Story = {
     args: {
         label: "Checkbox Text",
     },
-    argTypes: {},
+    argTypes: {
+        label: {
+            table: {
+                type: { summary: "string" },
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
+        value: {
+            table: {
+                defaultValue: { summary: '"" ' },
+            },
+        },
+        onChange: {
+            table: {
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
+    },
     render: props => {
         return <Checkbox {...props} />;
     },
