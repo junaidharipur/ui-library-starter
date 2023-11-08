@@ -2,19 +2,6 @@ import React, { ChangeEvent, ReactElement } from "react";
 import cx from "classnames";
 import { Typography } from "../Typography/Typography";
 
-interface InputProps {
-    variant?: "success" | "error" | "normal";
-    size?: "small" | "medium" | "large";
-    label?: string;
-    helperText?: string;
-    value?: string;
-    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-    palceholder: string;
-    type: string;
-    icon?: React.ComponentType;
-    name: string;
-}
-
 export function FormInput({
     variant,
     size,
@@ -27,7 +14,7 @@ export function FormInput({
     name,
     onChange,
 }: InputProps): ReactElement {
-    return (    
+    return (
         <div className="flex flex-col gap-[5px]">
             <span
                 className={cx("block text-dark", {
@@ -76,4 +63,16 @@ export function FormInput({
             </p>
         </div>
     );
+}
+interface InputProps {
+    variant?: "success" | "error" | "normal";
+    size?: "small" | "medium" | "large";
+    label?: string;
+    helperText?: string;
+    value?: string;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    palceholder: string;
+    type: string;
+    icon?: React.ComponentType;
+    name: string;
 }

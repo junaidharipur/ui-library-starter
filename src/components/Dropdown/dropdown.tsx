@@ -2,14 +2,6 @@ import React, { ReactElement, useState } from "react";
 import { Icondropdownbottom, IcondropdownUp } from "../icons/InputIcons";
 import cx from "classnames";
 
-type OptionsProps = {
-    options: { value: string; label: string }[];
-    variant: "md" | "sm" | "lg";
-    outlined: boolean;
-    defaultValue: string;
-    getSelectedData: (data: string) => void;
-};
-
 export function Dropdown({ options, variant, outlined, defaultValue, getSelectedData }: OptionsProps): ReactElement {
     const [showdropdown, setshowdropdown] = useState(false);
     const [value, setvalue] = useState(defaultValue);
@@ -67,7 +59,7 @@ export function Dropdown({ options, variant, outlined, defaultValue, getSelected
                             onClick={() => {
                                 setvalue(option?.label);
                                 setshowdropdown(false);
-                                getSelectedData(option?.value);
+                                getSelectedData && getSelectedData(option?.value);
                             }}
                         >
                             {option?.label}
@@ -78,3 +70,10 @@ export function Dropdown({ options, variant, outlined, defaultValue, getSelected
         </div>
     );
 }
+type OptionsProps = {
+    options: { value: string; label: string }[];
+    variant: "md" | "sm" | "lg";
+    outlined: boolean;
+    defaultValue: string;
+    getSelectedData?: (data: string) => void;
+};
