@@ -2,83 +2,29 @@ import * as React from "react";
 
 import cx from "classnames";
 
-import { colors } from "../../utils/colors";
+import { AlertIcon } from "./Icon";
 import { CloseIcon } from "../icons/CloseIcon";
-import { WarningIcon } from "../icons/WarningIcon";
-import { CheckmarkCircleIcon } from "../icons/CheckmarkCircleIcon";
-import { CrossCircleIcon } from "../icons/CrossCircleIcon";
-import { InformationAltIcon } from "../icons/InformationAltIcon";
 
-function IconContainer({ children, style = {} }: { children: React.ReactNode; style?: React.CSSProperties }) {
+export function Alert({ children, kind = "info", title = "Title Text", onCloseClick }: AlertProps) {
     return (
-        <div className={`inline-block rounded-md p-2 mr-[22px]`} style={{ ...style }}>
-            {children}
-        </div>
-    );
-}
-
-export function Alert({ children, kind = "info", title, onCloseClick }: AlertProps) {
-    const _kindTypeStyles: React.CSSProperties =
-        kind === "info"
-            ? { background: colors.blueLight6, borderLeft: `6px solid ${colors.blueDark}` }
-            : kind === "warning"
-            ? { background: colors.yellowLight4, borderLeft: `6px solid ${colors.yellow}` }
-            : kind === "success"
-            ? { background: colors.greenLight6, borderLeft: `6px solid ${colors.green}` }
-            : kind === "error"
-            ? { background: colors.redLight6, borderLeft: `6px solid ${colors.red}` }
-            : {};
-
-    const _iconColorStyles: React.CSSProperties =
-        kind === "info"
-            ? { background: colors.blueDark }
-            : kind === "warning"
-            ? { background: colors.yellow }
-            : kind === "success"
-            ? { background: colors.green }
-            : kind === "error"
-            ? { background: colors.red }
-            : {};
-
-    const _headingTextStyles: React.CSSProperties =
-        kind === "info"
-            ? { color: colors.infoText }
-            : kind === "warning"
-            ? { color: colors.warningText }
-            : kind === "success"
-            ? { color: colors.successText }
-            : kind === "error"
-            ? { color: colors.dangerText }
-            : {};
-
-    const _descTextStyles: React.CSSProperties =
-        kind === "info"
-            ? { color: colors.primaryText }
-            : kind === "warning"
-            ? { color: colors.yellowLight5 }
-            : kind === "success"
-            ? { color: colors.primaryText }
-            : kind === "error"
-            ? { color: colors.redLight }
-            : {};
-
-    const Icon = () => {
-        if (kind === "success") return <CheckmarkCircleIcon />;
-        else if (kind === "warning") return <WarningIcon />;
-        else if (kind === "error") return <CrossCircleIcon />;
-        else if (kind === "info") return <InformationAltIcon />;
-    };
-
-    return (
-        <div className={cx("p-[35px] rounded-lg flex items-start")} style={{ ..._kindTypeStyles }}>
-            <IconContainer style={{ ..._iconColorStyles }}>
-                <Icon />
-            </IconContainer>
+        <div
+            className={cx("p-[35px] rounded-lg flex items-start border-l-[6px]", {
+                ["border-blue-dark bg-blue-light-6"]: kind === "info",
+                ["border-yellow bg-yellow-light-4"]: kind === "warning",
+                ["border-green bg-green-light-6"]: kind === "success",
+                ["border-red bg-red-light-6"]: kind === "error",
+            })}
+        >
+            <AlertIcon kind={kind} />
             <div className={cx("w-full")}>
                 <div className={cx("relative")}>
                     <h4
-                        style={{ ..._headingTextStyles }}
-                        className={cx("leading-[26px] font-semibold text-lg mb-[14px]")}
+                        className={cx("leading-[26px] font-semibold text-lg mb-[14px]", {
+                            ["text-info-text"]: kind === "info",
+                            ["text-warning-text"]: kind === "warning",
+                            ["text-success-text"]: kind === "success",
+                            ["text-danger-text"]: kind === "error",
+                        })}
                     >
                         {title}
                     </h4>
@@ -86,7 +32,13 @@ export function Alert({ children, kind = "info", title, onCloseClick }: AlertPro
                         <CloseIcon />
                     </div>
                 </div>
-                <p style={{ ..._descTextStyles }} className={cx("text-base leading-6 font-normal")}>
+                <p
+                    className={cx("text-base leading-6 font-normal", {
+                        ["text-primary-text"]: kind === "info" || kind === "success",
+                        ["text-warning-text-light"]: kind === "warning",
+                        ["text-red-light"]: kind === "error",
+                    })}
+                >
                     {children}
                 </p>
             </div>
@@ -94,8 +46,9 @@ export function Alert({ children, kind = "info", title, onCloseClick }: AlertPro
     );
 }
 
+export type kindPropType = "error" | "warning" | "info" | "success";
 interface AlertProps {
-    kind?: "error" | "warning" | "info" | "success";
+    kind?: kindPropType;
     title: string;
     children: React.ReactNode;
     onCloseClick?: () => void;

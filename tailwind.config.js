@@ -6,6 +6,14 @@ module.exports = {
             boxShadow: {
                 dropdown: " 0px 1px 3px 0px rgba(166, 175, 195, 0.40)",
                 popover: " 0px 5px 12px 0px rgba(0, 0, 0, 0.10);",
+
+                // Custom Box Shadows
+                1: "0 1px 3px 0 rgb(166 175 195 / 40%)",
+                2: "0 5px 12px 0 rgba(0 0 0 / 10%)",
+                3: "0 4px 12px 0 rgb(13 10 44 / 6%)",
+                4: "0 10px 15px 0 rgb(5 13 29 / 18%)",
+                5: "0 12px 34px 0 rgb(13 10 44 / 8%), 0 34px 26px 0 rgb(13 10 44 / 8%)",
+                6: "0 20px 20px 0 rgb(5 13 29 / 20%)",
             },
             colors: {
                 primary: "#009AEE",
@@ -96,6 +104,13 @@ module.exports = {
                 "green-light-4": "#ACEFC8",
                 "green-light-5": "#C2F3D6",
                 "green-light-6": "#DAF8E6",
+                // Alert Component Colors
+                "warning-text": "#9D5425",
+                "success-text": "#004434",
+                "danger-text": "#BC1C21",
+                "info-text": "#0B76B7",
+                "warning-text-light": "#D0915C",
+                /* END */
             },
         },
     },
