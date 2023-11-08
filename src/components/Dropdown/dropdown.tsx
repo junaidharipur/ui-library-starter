@@ -37,9 +37,10 @@ export function Dropdown({ options, variant, outlined, defaultValue, getSelected
                 <div className={cx("text-primary-text", Textclasses)}>{value}</div>
                 <div
                     className={cx("cursor-pointer", {
+                        "pt-[0.6rem]": variant === "lg",
                         "pt-2": variant === "md",
 
-                        "py-[5px]": variant === "sm",
+                        "pt-[0.5rem]": variant === "sm",
                     })}
                 >
                     {!showdropdown ? <Icondropdownbottom /> : <IcondropdownUp />}

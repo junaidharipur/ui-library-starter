@@ -27,9 +27,9 @@ export function FormInput({
     name,
     onChange,
 }: InputProps): ReactElement {
-    return (
+    return (    
         <div className="flex flex-col gap-[5px]">
-            <p
+            <span
                 className={cx("block text-dark", {
                     "text-lg font-medium ": size === "large",
                     "text-base font-medium leading-6": size === "medium",
@@ -37,7 +37,7 @@ export function FormInput({
                 })}
             >
                 <Typography variant="body2-regular">{label}</Typography>
-            </p>
+            </span>
             <div className="relative">
                 {Icon && (
                     <div className="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none cursor-pointer">

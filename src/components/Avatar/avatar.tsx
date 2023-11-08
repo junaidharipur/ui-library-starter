@@ -12,44 +12,7 @@ interface AvatarProps {
 
 export function Avatar({ imgSrc, size, showIcon, label }: AvatarProps) {
     return (
-        <div>
-            {showIcon && (
-                <div
-                    className={cx("relative", {
-                        "pl-5 top-1.5": size === "xs",
-                        "pl-8 top-2.5": size === "sm",
-                        "pl-9 top-[0.7rem]": size === "md",
-                        "pl-11 top-[0.8rem]": size === "lg",
-                        "pl-[4.2rem] top-[1rem]": size === "xl",
-                    })}
-                >
-                    <AvatarOnline
-                        width={
-                            size === "xs"
-                                ? "8"
-                                : size === "sm"
-                                ? "14"
-                                : size === "md"
-                                ? "16"
-                                : size === "lg"
-                                ? "18"
-                                : "22"
-                        }
-                        height={
-                            size === "xs"
-                                ? "8"
-                                : size === "sm"
-                                ? "14"
-                                : size === "md"
-                                ? "16"
-                                : size === "lg"
-                                ? "18"
-                                : "22"
-                        }
-                    />
-                </div>
-            )}
-
+        <div className="relative">
             {imgSrc ? (
                 <img
                     className=" rounded"
@@ -81,6 +44,42 @@ export function Avatar({ imgSrc, size, showIcon, label }: AvatarProps) {
                         </span>
                     </div>
                 )
+            )}
+            {showIcon && (
+                <div
+                    className={cx("absolute", {
+                        "pl-5 top-0": size === "xs",
+                        "pl-8 top-0": size === "sm",
+                        "pl-9 top-0": size === "md",
+                        "pl-11 top-0": size === "lg",
+                        "pl-[4.2rem] top-0": size === "xl",
+                    })}
+                >
+                    <AvatarOnline
+                        width={
+                            size === "xs"
+                                ? "8"
+                                : size === "sm"
+                                ? "14"
+                                : size === "md"
+                                ? "16"
+                                : size === "lg"
+                                ? "18"
+                                : "22"
+                        }
+                        height={
+                            size === "xs"
+                                ? "8"
+                                : size === "sm"
+                                ? "14"
+                                : size === "md"
+                                ? "16"
+                                : size === "lg"
+                                ? "18"
+                                : "22"
+                        }
+                    />
+                </div>
             )}
         </div>
     );
