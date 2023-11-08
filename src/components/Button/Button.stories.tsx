@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { colors } from "../../utils/colors";
 
 import { Button } from "./Button";
-import { ButtonGroup } from "../ButtonGroup/ButtonGroup";
 import { PlusIcon } from "../icons/PlusIcon";
 
 const meta: Meta<typeof Button> = {
@@ -22,6 +21,8 @@ export const Default: Story = {
         color: "primary",
         disabled: false,
         size: "Large",
+        fullWidth: false,
+        children: "Button",
     },
     argTypes: {
         color: {
@@ -31,8 +32,26 @@ export const Default: Story = {
         disabled: {
             control: { type: "boolean" },
         },
+        type: {
+            table: {
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
+        icon: {
+            table: {
+                type: { summary: "React.FC<{}>" },
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
+        children: {
+            control: { type: "text" },
+            table: {
+                type: { summary: "string" },
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
     },
-    render: props => <Button {...props}>Button</Button>,
+    render: props => <Button {...props} />,
 };
 
 export const Outlined: Story = {
@@ -41,21 +60,10 @@ export const Outlined: Story = {
         color: "primary",
         disabled: false,
         size: "Large",
+        children: "Button",
     },
-    argTypes: {
-        color: {
-            options: ["primary", "secondary", "tertiary"],
-            control: { type: "radio" },
-        },
-        disabled: {
-            control: { type: "boolean" },
-        },
-        size: {
-            options: ["Large", "Medium", "Small"],
-            control: { type: "radio" },
-        },
-    },
-    render: props => <Button {...props}>Button</Button>,
+    argTypes: {},
+    render: props => <Button {...props} />,
 };
 
 export const IconDefault: Story = {
@@ -65,19 +73,7 @@ export const IconDefault: Story = {
         disabled: false,
         size: "Large",
     },
-    argTypes: {
-        color: {
-            options: ["primary", "secondary", "tertiary"],
-            control: { type: "radio" },
-        },
-        disabled: {
-            control: { type: "boolean" },
-        },
-        size: {
-            options: ["Large", "Medium", "Small"],
-            control: { type: "radio" },
-        },
-    },
+    argTypes: {},
     render: props => (
         <Button
             icon={<PlusIcon fill={props.variant === "outlined" ? (colors as any)[props.color!] : colors.white} />}
@@ -95,19 +91,7 @@ export const IconOutlined: Story = {
         disabled: false,
         size: "Large",
     },
-    argTypes: {
-        color: {
-            options: ["primary", "secondary", "tertiary"],
-            control: { type: "radio" },
-        },
-        disabled: {
-            control: { type: "boolean" },
-        },
-        size: {
-            options: ["Large", "Medium", "Small"],
-            control: { type: "radio" },
-        },
-    },
+    argTypes: {},
     render: props => (
         <Button
             icon={<PlusIcon fill={props.variant === "outlined" ? colors[props.color || "primary"] : "white"} />}
