@@ -5,7 +5,6 @@ import cx from "classnames";
 export function Dropdown({ options, variant, outlined, defaultValue, getSelectedData }: OptionsProps): ReactElement {
     const [showdropdown, setshowdropdown] = useState(false);
     const [value, setvalue] = useState(defaultValue);
-
     return (
         <div className="relative">
             <div
