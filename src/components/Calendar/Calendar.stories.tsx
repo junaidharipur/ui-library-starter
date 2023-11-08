@@ -34,7 +34,23 @@ type Story = StoryObj<typeof Calendar>;
 
 export const Default: Story = {
     args: {},
-    argTypes: {},
+    argTypes: {
+        onChange: {
+            table: {
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
+        onDoneClick: {
+            table: {
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
+        onRemoveClick: {
+            table: {
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
+    },
     render: props => {
         return <Calendar {...props} />;
     },
