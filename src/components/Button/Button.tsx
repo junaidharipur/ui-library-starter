@@ -13,6 +13,7 @@ export function Button({
     className = "",
     fullWidth = false,
     type,
+    onClick,
     ...other
 }: ButtonProps) {
     return (
@@ -20,6 +21,7 @@ export function Button({
             role="button"
             disabled={disabled}
             type={type}
+            onClick={onClick}
             className={cx(
                 "rounded-md px-7 py-3 border font-medium flex justify-center items-center",
                 {
@@ -66,11 +68,12 @@ interface ButtonProps {
     children: React.ReactNode;
     variant?: "default" | "outlined";
     color?: "primary" | "secondary" | "tertiary";
-    type: "button" | "submit" | "reset" | undefined;
+    type?: "button" | "submit" | "reset" | undefined;
     size?: "Large" | "Medium" | "Small";
     disabled?: boolean;
     icon?: React.ReactNode;
     style?: React.CSSProperties;
     fullWidth?: boolean;
     className?: string;
+    onClick?: () => void;
 }

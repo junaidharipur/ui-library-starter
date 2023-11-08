@@ -50,6 +50,11 @@ export const Default: Story = {
                 defaultValue: { summary: '"undefined" ' },
             },
         },
+        onClick: {
+            table: {
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
     },
     render: props => <Button {...props} />,
 };
