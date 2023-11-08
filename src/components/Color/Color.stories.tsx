@@ -13,7 +13,7 @@ const Color = () => {
                     className="flex flex-col items-center w-44 h-48 mb-10 rounded-md mr-3 last:mr-0 shadow-md overflow-hidden"
                 >
                     <div style={{ width: "100%", height: "100%", background: (colors as any)[key] }}></div>
-                    <div className="p-2 py-4 text-lg font-semibold">{key}</div>
+                    <div className="p-2 py-4 text-lg font-medium">{key}</div>
                 </div>
             ))}
         </div>

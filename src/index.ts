@@ -1,5 +1,4 @@
 import "./styles/index.css";
-import "./styles/shadow.css";
 
 export * from "./components/Button/Button";
 export * from "./components/ButtonGroup/ButtonGroup";
@@ -10,8 +9,8 @@ export * from "./components/Dropdown/dropdown";
 export * from "./components/Avatar/avatar";
 export * from "./components/Breadcrumbs/Breadcrumbs";
 export * from "./components/Checkbox/Checkbox";
-export * from "./components/ConfirmationModal/ConfirmationModal";
- export * from "./components/Avatar/avatar";
+export * from "./components/Modal/Modal";
+export * from "./components/Avatar/avatar";
 export * from "./components/Tabs/Tabs";
 export * from "./components/Tooltip/tooltip";
 export * from "./components/Notification/Notification";

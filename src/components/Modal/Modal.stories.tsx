@@ -2,15 +2,16 @@ import * as React from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Calendar } from "./Calendar";
+import { Modal } from "./Modal";
 
-const meta: Meta<typeof Calendar> = {
-    component: Calendar,
+const meta: Meta<typeof Modal> = {
+    title: "Components/Modal",
+    component: Modal,
     tags: ["autodocs"],
     parameters: {
         docs: {
             story: {
-                height: "600px",
+                height: "500px",
             },
         },
         backgrounds: {
@@ -30,28 +31,30 @@ const meta: Meta<typeof Calendar> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Calendar>;
+type Story = StoryObj<typeof Modal>;
 
 export const Default: Story = {
-    args: {},
+    args: {
+        open: true,
+        children: "Modal Content Here",
+        position: "center",
+    },
     argTypes: {
-        onChange: {
+        children: {
             table: {
+                type: { summary: "React.ReactNode" },
                 defaultValue: { summary: '"undefined" ' },
             },
         },
-        onDoneClick: {
-            table: {
-                defaultValue: { summary: '"undefined" ' },
-            },
-        },
-        onRemoveClick: {
+        onClose: {
             table: {
                 defaultValue: { summary: '"undefined" ' },
             },
         },
     },
-    render: props => {
-        return <Calendar {...props} />;
-    },
+    render: props => (
+        <div style={{ position: "relative", width: "100%", height: "500px" }}>
+            <Modal {...props} />
+        </div>
+    ),
 };
