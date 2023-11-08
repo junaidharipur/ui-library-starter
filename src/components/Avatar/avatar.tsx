@@ -1,7 +1,7 @@
 import React from "react";
-import { TextAvatar } from "./textavatar";
-import { OnlineIcon } from "./onineIcon";
-
+ import { OnlineIcon } from "./OnlineIcon";
+import { TextAvatarComponent } from "./AvatarText";
+   
 export function Avatar({ imgSrc, size, isIcon, label }: AvatarProps) {
     return (
         <div className="relative">
@@ -13,7 +13,7 @@ export function Avatar({ imgSrc, size, isIcon, label }: AvatarProps) {
                     height={size === "xs" ? 24 : size === "sm" ? 38 : size === "md" ? 42 : size === "lg" ? 52 : 80}
                 />
             ) : (
-                label && <TextAvatar size={size} label={label} />
+                label && <TextAvatarComponent size={size} label={label} />
             )}
             {isIcon && <OnlineIcon size={size} />}
         </div>

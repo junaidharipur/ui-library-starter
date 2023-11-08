@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Avatar } from "./avatar";
+import { Avatar } from "./Avatar";
 
 test("Avatar component should rendering properly.", async () => {
     render(

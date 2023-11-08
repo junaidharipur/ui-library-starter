@@ -2,7 +2,7 @@ import React from "react";
 import cx from "classnames";
 import { getFirstLetters } from "../../utils/customfunctions";
 
-export function TextAvatar({ size, label }: TextAvatarProps) {
+export function TextAvatarComponent({ size, label }: TextAvatarProps) {
     return (
         <div
             className={cx("flex justify-center align-middle items-center bg-primary rounded", {

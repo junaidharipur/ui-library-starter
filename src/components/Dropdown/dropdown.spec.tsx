@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Dropdown } from "./dropdown";
+import { Dropdown } from "./Dropdown";
 
 const options = [
     {
@@ -36,10 +36,10 @@ const options = [
 ];
 
 test("Input component should rendering properly.", async () => {
-    render(<Dropdown variant="md" options={options} outlined={true} defaultValue={options[0]?.label} />);
+    render(<Dropdown variant="Medium" options={options} outlined={true} defaultValue={options[0]?.label} />);
 });
 test("Dropdown component renders with initial options", () => {
-    render(<Dropdown variant="md" options={options} outlined={true} defaultValue={options[0]?.label} />);
+    render(<Dropdown variant="Medium" options={options} outlined={true} defaultValue={options[0]?.label} />);
 
     options.forEach(option => {
         const optionElement = screen.getByText(/option/i);
