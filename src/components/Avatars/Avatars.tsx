@@ -97,6 +97,7 @@ export function Avatar({ imgSrc, size, isIcon, label }: AvatarProps) {
         </div>
     );
 }
+
 interface AvatarProps {
     size?: "Extra Small" | "Small" | "Medium" | "Large" | "Extra Large";
     label?: string;

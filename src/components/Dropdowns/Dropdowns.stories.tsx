@@ -76,7 +76,7 @@ export const Default: Story = {
     argTypes: {
         options: { control: false },
         variant: {
-            defaultValue: { summary: "Medium" },
+            defaultValue: { summary: '"Medium"' },
         },
         defaultValue: {
             defaultValue: { summary: "undefined" },

@@ -3,7 +3,7 @@
 exports[`Calendar component is rendering properly 1`] = `
 <div>
   <div
-    class="shadow-4 inline-block overflow-hidden bg-white rounded-xl"
+    class="shadow-4 inline-block overflow-hidden bg-white rounded-xl w-[510px]"
   >
     <div
       class="react-calendar"
@@ -542,7 +542,7 @@ exports[`Calendar component is rendering properly 1`] = `
       </div>
     </div>
     <div
-      class="flex items-center justify-between px-6 pt-2 pb-10"
+      class="flex items-center justify-between px-6 pt-2 pb-[32px]"
     >
       <button
         class="rounded-md px-7 py-3 border font-medium flex justify-center items-center w-full text-base px-7 py-3 loading-6 bg-dark text-white hover:bg-primary-text cursor-pointer mr-[5px]"
