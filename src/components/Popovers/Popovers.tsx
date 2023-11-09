@@ -29,4 +29,8 @@ export function Popover({ children, title, description }: Props) {
         </div>
     );
 }
-type Props = { children: React.ReactNode; title: string; description: string };
+interface Props {
+    children: React.ReactNode;
+    title: string;
+    description: string;
+}
