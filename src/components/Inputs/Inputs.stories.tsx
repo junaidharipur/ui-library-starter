@@ -58,8 +58,6 @@ export const Default: Story = {
                 defaultValue: { summary: '"undefined" ' },
             },
         },
-       
-        
     },
     render: props => <FormInput {...props} />,
 };
