@@ -38,6 +38,14 @@ export const Default: Story = {
         description:
             "Lorem ipsum dolor sit amet, consect adipiscing elit. Mauris facilisis congue exclamate justo nec facilisis.",
     },
+    argTypes: {
+        title: {
+            defaultValue: { summary: '"undefined"' },
+        },
+        description: {
+            defaultValue: { summary: '"undefined"' },
+        },
+    },
     render: props => (
         <Popover {...props}>
             {" "}

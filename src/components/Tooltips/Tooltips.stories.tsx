@@ -12,12 +12,30 @@ const meta: Meta<typeof Tooltip> = {
 export default meta;
 type Story = StoryObj<typeof Tooltip>;
 
-export const Left: Story = {
+export const Default: Story = {
     args: {
         direction: "left",
         description: "Tooltip on left",
         dark: true,
-        classdiv: "flex justify-center",
+        className: "flex justify-center",
+    },
+    argTypes: {
+        direction: {
+            defaultValue: { summary: "left" },
+        },
+        description: {
+            defaultValue: { summary: "undefined" },
+        },
+        dark: {
+            control: { type: "boolean" },
+            defaultValue: { summary: "true" },
+        },
+        className: {
+            defaultValue: { summary: " " },
+        },
+        title: {
+            defaultValue: { summary: '"undefined"' },
+        },
     },
     render: props => (
         <Tooltip {...props}>
@@ -31,7 +49,7 @@ export const Right: Story = {
         direction: "right",
         description: "Tooltip on right",
         dark: true,
-        classdiv: "flex justify-center",
+        className: "flex justify-center",
     },
     render: props => (
         <Tooltip {...props}>
@@ -45,7 +63,7 @@ export const TopWithoutTitle: Story = {
         direction: "top",
         description: "The users wants to find a specific page or site.",
         dark: true,
-        classdiv: "flex justify-center mt-[5rem] ",
+        className: "flex justify-center mt-[5rem] ",
     },
     render: props => (
         <Tooltip {...props}>
@@ -60,7 +78,7 @@ export const TopWithTitle: Story = {
         title: "Navigational",
         description: "The users wants to find a specific page or site.",
         dark: true,
-        classdiv: "flex justify-center mt-[5rem] ",
+        className: "flex justify-center mt-[5rem] ",
     },
     render: props => (
         <Tooltip {...props}>
@@ -74,7 +92,7 @@ export const Bottom: Story = {
         direction: "bottom",
         description: "Tooltip on bottom",
         dark: true,
-        classdiv: "flex justify-center ",
+        className: "flex justify-center ",
     },
     render: props => (
         <Tooltip {...props}>
