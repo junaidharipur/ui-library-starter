@@ -126,6 +126,21 @@
     background: none;
 }
 
+.react-calendar__year-view__months__month:hover {
+    background: transparent !important;
+}
+
+.react-calendar__year-view__months__month abbr {
+    padding: 20px !important;
+    font-weight: 500;
+}
+
+.react-calendar__year-view__months__month abbr:hover {
+    background: #009aee !important;
+    color: white;
+    border-radius: 7px !important;
+}
+
 .react-calendar__tile--now abbr {
     border: 1px solid #dfe4ea;
     background: #f3f4f6;
