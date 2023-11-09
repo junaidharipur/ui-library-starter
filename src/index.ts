@@ -9,6 +9,7 @@ export * from "./components/Breadcrumbs/Breadcrumbs";
 export * from "./components/Avatars/Avatars";
 export * from "./components/Inputs/Inputs";
 export * from "./components/Popovers/Popovers";
+export * from "./components/Tooltips/Tooltips";
 export * from "./components/Checkbox/Checkbox";
 export * from "./components/ConfirmationModal/ConfirmationModal";
 export * from "./components/Tabs/Tabs";
