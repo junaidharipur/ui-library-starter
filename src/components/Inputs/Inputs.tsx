@@ -23,7 +23,7 @@ export function FormInput({
                     "text-sm font-normal leading-6 ": size === "Small",
                 })}
             >
-                <Typography variant="body2-regular">{label}</Typography>
+                <Typography variant="body2">{label}</Typography>
             </span>
             <div className="relative">
                 {Icon && (

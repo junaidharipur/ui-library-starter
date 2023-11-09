@@ -42,12 +42,12 @@ export const Default: Story = {
     argTypes: {
         desc: {
             table: {
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
         onCloseClick: {
             table: {
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
     },

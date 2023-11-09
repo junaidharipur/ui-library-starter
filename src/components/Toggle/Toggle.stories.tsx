@@ -21,7 +21,7 @@ export const Warning: Story = {
         setState: {
             control: false,
             table: {
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
     },

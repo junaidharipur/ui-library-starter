@@ -34,25 +34,25 @@ export const Default: Story = {
         },
         type: {
             table: {
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
         icon: {
             table: {
                 type: { summary: "React.FC<{}>" },
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
         children: {
             control: { type: "text" },
             table: {
                 type: { summary: "string" },
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
         onClick: {
             table: {
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
     },
@@ -81,7 +81,7 @@ export const IconDefault: Story = {
     argTypes: {},
     render: props => (
         <Button
-            icon={<PlusIcon fill={props.variant === "outlined" ? (colors as any)[props.color!] : colors.white} />}
+            icon={<PlusIcon fill={props.variant === "outlined" ? colors[props.color!] : colors.white} />}
             {...props}
         >
             Button
