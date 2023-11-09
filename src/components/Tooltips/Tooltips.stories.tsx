@@ -21,7 +21,7 @@ export const Default: Story = {
     },
     argTypes: {
         direction: {
-            defaultValue: { summary: "left" },
+            defaultValue: { summary: '"left"' },
         },
         description: {
             defaultValue: { summary: "undefined" },
@@ -34,7 +34,7 @@ export const Default: Story = {
             defaultValue: { summary: " " },
         },
         title: {
-            defaultValue: { summary: '"undefined"' },
+            defaultValue: { summary: "undefined" },
         },
     },
     render: props => (

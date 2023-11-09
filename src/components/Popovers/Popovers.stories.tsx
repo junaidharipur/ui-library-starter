@@ -40,10 +40,10 @@ export const Default: Story = {
     },
     argTypes: {
         title: {
-            defaultValue: { summary: '"undefined"' },
+            defaultValue: { summary: "" },
         },
         description: {
-            defaultValue: { summary: '"undefined"' },
+            defaultValue: { summary: "" },
         },
     },
     render: props => (

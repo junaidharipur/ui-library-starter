@@ -15,7 +15,7 @@ type Story = StoryObj<typeof FormInput>;
 export const Default: Story = {
     args: {
         label: "Form Field",
-        variant: "Normal",
+        variant: "Default",
         helperText: "This is Helper Text",
         palceholder: "A Form Field",
         type: "text",
@@ -26,36 +26,36 @@ export const Default: Story = {
     },
     argTypes: {
         label: {
-            defaultValue: { summary: '"undefined" ' },
+            defaultValue: { summary: "undefined" },
         },
         size: {
-            defaultValue: { summary: "Small" },
+            defaultValue: { summary: '"Small"' },
         },
         variant: {
-            defaultValue: { summary: "Normal" },
+            defaultValue: { summary: '"Default"' },
         },
         helperText: {
-            defaultValue: { summary: "This is Helper Text" },
+            defaultValue: { summary: "" },
         },
         palceholder: {
-            defaultValue: { summary: "A Form Field" },
+            defaultValue: { summary: "" },
         },
         type: {
-            defaultValue: { summary: "text" },
+            defaultValue: { summary: '"text"' },
         },
         name: {
-            defaultValue: { summary: "defaultform" },
+            defaultValue: { summary: "" },
         },
         value: {
             defaultValue: { summary: "undefined" },
         },
         onChange: {
-            defaultValue: { summary: '"undefined" ' },
+            defaultValue: { summary: "undefined" },
         },
         icon: {
             table: {
                 type: { summary: "React.FC<{}>" },
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
     },
@@ -65,7 +65,7 @@ export const Default: Story = {
 export const InputWithIcon: Story = {
     args: {
         label: "Form Field 01",
-        variant: "Normal",
+        variant: "Default",
         helperText: "This is Helper Text",
         palceholder: "Type Your Password",
         size: "Small",
@@ -107,13 +107,13 @@ export const NormalInputWithIcon: Story = {
     render: () => (
         <FormInput
             label="Form Field 3"
-            variant="Normal"
+            variant="Default"
             helperText="This is Helper Text"
             palceholder="Type Your Text"
             size="Medium"
             type="text"
             icon={InfoNormal}
-            name="normal"
+            name="Default"
         />
     ),
 };

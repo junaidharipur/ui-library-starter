@@ -5,11 +5,11 @@ import "@testing-library/jest-dom";
 import { FormInput } from "./Inputs";
 
 test("Input component should rendering properly.", async () => {
-    render(<FormInput name="formfiled" palceholder="Input placeholder" type="Normal" />);
+    render(<FormInput name="formfiled" palceholder="Input placeholder" type="Default" />);
 });
 
 test("renders label and placeholder correctly", () => {
-    render(<FormInput name="formfiled" label="Test Label" palceholder="Test Placeholder" type="Normal" />);
+    render(<FormInput name="formfiled" label="Test Label" palceholder="Test Placeholder" type="Default" />);
     const ElemgetByLabelText = screen.getByText(/Test Label/i);
     const ElemgetByPlaceholderText = screen.getByPlaceholderText(/Test Placeholder/i);
 
