@@ -50,7 +50,10 @@ export const Default: Story = {
             defaultValue: { summary: "undefined" },
         },
         onChange: {
-            defaultValue: { summary: "undefined" },
+            table: {
+                type: { summary: "(event) => void" },
+                defaultValue: { summary: "undefined" },
+            },
         },
         icon: {
             table: {

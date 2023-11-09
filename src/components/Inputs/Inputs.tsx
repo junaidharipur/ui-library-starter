@@ -37,13 +37,11 @@ export function FormInput({
                     value={value}
                     onChange={onChange}
                     className={cx(
-                        " border placeholder-input-placeholder text-base font-normal rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
+                        "border placeholder-input-placeholder text-base font-normal rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
                         {
                             "border-stroke": variant === "Default",
                             "border-green": variant === "Success",
                             "border-red": variant === "Error",
-                        },
-                        {
                             "py-2 pl-5 pr-4 ": size === "Large",
                             "py-[5px] pl-5 pr-4": size === "Medium",
                             "py-[3px] pl-5 pr-4 ": size === "Small",

@@ -16,7 +16,7 @@ export function Dropdown({
         <div className="relative">
             <div
                 className={cx(
-                    "  flex justify-between   text-base border border-input-border-normal-500 focus:ring-primary focus:outline-primary focus:border-primary rounded-md  px-3  w-full",
+                    "flex justify-between text-base border border-input-border-normal-500 focus:ring-primary focus:outline-primary focus:border-primary rounded-md  px-3  w-full",
                     {
                         "py-2 px-5": variant === "Large",
                         "py-[5px] px-5": variant === "Medium",
@@ -83,5 +83,5 @@ interface OptionsProps {
     variant: "Medium" | "Small" | "Large";
     outlined: boolean;
     defaultValue: string;
-    getSelectedData?: (data: string) => void;
+    getSelectedData?: (_data: string) => void;
 }
