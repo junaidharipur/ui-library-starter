@@ -46,27 +46,27 @@ export const Default: Story = {
     argTypes: {
         desc: {
             table: {
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
         onClose: {
             table: {
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
         icon: {
             table: {
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
         actionButtonBgColor: {
             table: {
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
         onActionButtonClick: {
             table: {
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
     },

@@ -23,14 +23,14 @@ export const Warning: Story = {
         children: {
             table: {
                 type: { summary: "string" },
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
         onCloseClick: {
             type: "function",
             table: {
                 type: { summary: "() => void" },
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
     },

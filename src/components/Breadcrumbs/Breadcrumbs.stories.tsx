@@ -45,7 +45,7 @@ const itemsWithHomeIcon: BreadcrumbsItem[] = [
     },
 ];
 
-const BreadcrumbsRenderer = ({ path, text, icon }: BreadcrumbsItem) => {
+const BreadcrumbsRenderer = ({ path, text }: BreadcrumbsItem) => {
     return <a href={path}>{text}</a>;
 };
 
@@ -58,21 +58,21 @@ export const Default: Story = {
         currentItemRenderer: {
             table: {
                 type: { summary: "React.FC<BreadcrumbsItem>" },
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
             control: { type: false },
         },
         items: {
             table: {
                 type: { summary: "BreadcrumbsItem[]" },
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
             control: { type: false },
         },
         className: {
             table: {
                 type: { summary: "string" },
-                defaultValue: { summary: '"" ' },
+                defaultValue: { summary: '""' },
             },
             control: { type: "text" },
         },

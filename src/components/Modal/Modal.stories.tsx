@@ -43,12 +43,12 @@ export const Default: Story = {
         children: {
             table: {
                 type: { summary: "React.ReactNode" },
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
         onClose: {
             table: {
-                defaultValue: { summary: '"undefined" ' },
+                defaultValue: { summary: "undefined" },
             },
         },
     },
