@@ -10,7 +10,6 @@ export * from "./components/Inputs/Inputs";
 export * from "./components/Popovers/Popovers";
 export * from "./components/Tooltips/Tooltips";
 export * from "./components/Checkbox/Checkbox";
-export * from "./components/ConfirmationModal/ConfirmationModal";
 export * from "./components/Modal/Modal";
 export * from "./components/Tabs/Tabs";
 export * from "./components/Notification/Notification";
