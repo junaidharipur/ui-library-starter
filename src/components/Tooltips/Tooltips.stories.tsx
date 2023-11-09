@@ -14,7 +14,7 @@ type Story = StoryObj<typeof Tooltip>;
 
 export const Left: Story = {
     args: {
-        direction: "Left",
+        direction: "left",
         description: "Tooltip on left",
         dark: true,
         classdiv: "flex justify-center",
@@ -28,7 +28,7 @@ export const Left: Story = {
 };
 export const Right: Story = {
     args: {
-        direction: "Right",
+        direction: "right",
         description: "Tooltip on right",
         dark: true,
         classdiv: "flex justify-center",
@@ -42,7 +42,7 @@ export const Right: Story = {
 };
 export const TopWithoutTitle: Story = {
     args: {
-        direction: "Top",
+        direction: "top",
         description: "The users wants to find a specific page or site.",
         dark: true,
         classdiv: "flex justify-center mt-[5rem] ",
@@ -56,7 +56,7 @@ export const TopWithoutTitle: Story = {
 };
 export const TopWithTitle: Story = {
     args: {
-        direction: "Top",
+        direction: "top",
         title: "Navigational",
         description: "The users wants to find a specific page or site.",
         dark: true,
@@ -71,7 +71,7 @@ export const TopWithTitle: Story = {
 };
 export const Bottom: Story = {
     args: {
-        direction: "Bottom",
+        direction: "bottom",
         description: "Tooltip on bottom",
         dark: true,
         classdiv: "flex justify-center ",

@@ -10,7 +10,7 @@ test("Tooltip component should rendering properly.", async () => {
         <Tooltip
             title="We use cookies"
             description="The users wants to find a specific page or site."
-            direction="Top"
+            direction="top"
             dark={true}
         >
             {tooltipchild}

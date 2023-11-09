@@ -2,15 +2,25 @@ import React from "react";
 import cx from "classnames";
 import "../../styles/tooltip.css";
 
+type position = "top" | "bottom" | "left" | "right";
+interface Props {
+    children: React.ReactNode;
+    direction: position;
+    description: string;
+    dark: boolean;
+    classdiv?: string;
+    title?: string;
+}
+
 export function Tooltip({ children, description, direction, classdiv, dark, title }: Props) {
     const getDirection = () => {
         switch (direction) {
-            case "Top":
-            case "Right":
-            case "Left":
+            case "top":
+            case "right":
+            case "left":
                 return `${direction}`;
             default:
-                return `Bottom`;
+                return `bottom`;
         }
     };
     return (
@@ -45,13 +55,4 @@ export function Tooltip({ children, description, direction, classdiv, dark, titl
             </div>
         </div>
     );
-}
-type position = "Top" | "Bottom" | "Left" | "Right";
-interface Props {
-    children: React.ReactNode;
-    direction: position;
-    description: string;
-    dark: boolean;
-    classdiv?: string;
-    title?: string;
 }

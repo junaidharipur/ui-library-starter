@@ -60,106 +60,106 @@
     display: block;
 }
 
-.Right .description {
+.right .description {
     top: 3px;
     margin-left: 107%;
     padding: 6px 0.6rem;
 }
 
-.Right .description::before {
+.right .description::before {
     left: -10px;
     top: 30%;
     transform: rotate(-90deg);
 }
 
-.Right .descriptionlight {
+.right .descriptionlight {
     top: 3px;
     margin-left: 105%;
     padding: 6px 0.6rem;
 }
 
-.Right .descriptionlight::before {
+.right .descriptionlight::before {
     left: -10px;
     top: 30%;
     transform: rotate(-90deg);
 }
 
-.Bottom .description {
+.bottom .description {
     margin-top: 3%;
     left: 30%;
     padding: 6px 0.6rem;
     transform: translate(-50%);
 }
 
-.Bottom .description::before {
+.bottom .description::before {
     top: 0.1rem;
     left: 50%;
     transform: rotate(0);
     margin-top: -7%;
 }
 
-.Bottom .descriptionlight {
+.bottom .descriptionlight {
     margin-top: 3%;
     left: 30%;
     padding: 6px 0.6rem;
     transform: translate(-50%);
 }
 
-.Bottom .descriptionlight::before {
+.bottom .descriptionlight::before {
     top: 0.1rem;
     left: 50%;
     transform: rotate(0);
     margin-top: -7%;
 }
 
-.Top .description {
+.top .description {
     bottom: 102%;
     margin-left: 0%;
     padding: 6px 0.6rem;
     transform: translate(-40%);
 }
 
-.Top .description::before {
+.top .description::before {
     left: 50%;
     transform: rotate(180deg);
     bottom: -8px;
 }
 
-.Top .descriptionlight {
+.top .descriptionlight {
     bottom: 102%;
     margin-left: 0%;
     padding: 6px 0.6rem;
     transform: translate(-40%);
 }
 
-.Top .descriptionlight::before {
+.top .descriptionlight::before {
     left: 50%;
     transform: rotate(180deg);
     bottom: -8px;
 }
 
-.Left .description {
+.left .description {
     right: 0;
     margin-right: 105%;
     top: 0;
     padding: 6px 0.6rem;
 }
 
-.Left .description::before {
+.left .description::before {
     transform: rotate(90deg);
     right: 0;
     top: 0.7rem;
     margin-right: -10px;
 }
 
-.Left .descriptionlight {
+.left .descriptionlight {
     right: 0;
     margin-right: 105%;
     top: 0;
     padding: 6px 0.6rem;
 }
 
-.Left .descriptionlight::before {
+.left .descriptionlight::before {
     transform: rotate(90deg);
     right: 0;
     top: 0.7rem;
