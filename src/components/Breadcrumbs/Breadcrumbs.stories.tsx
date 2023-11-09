@@ -45,7 +45,7 @@ const itemsWithHomeIcon: BreadcrumbsItem[] = [
     },
 ];
 
-const BreadcrumbsRenderer = ({ path, text, icon }: BreadcrumbsItem) => {
+const BreadcrumbsRenderer = ({ path, text }: BreadcrumbsItem) => {
     return <a href={path}>{text}</a>;
 };
 
@@ -54,7 +54,39 @@ export const Default: Story = {
         currentItemRenderer: BreadcrumbsRenderer,
         items,
     },
-    argTypes: {},
+    argTypes: {
+        currentItemRenderer: {
+            table: {
+                type: { summary: "React.FC<BreadcrumbsItem>" },
+                defaultValue: { summary: "undefined" },
+            },
+            control: { type: false },
+        },
+        items: {
+            table: {
+                type: { summary: "BreadcrumbsItem[]" },
+                defaultValue: { summary: "undefined" },
+            },
+            control: { type: false },
+        },
+        className: {
+            table: {
+                type: { summary: "string" },
+                defaultValue: { summary: '""' },
+            },
+            control: { type: "text" },
+        },
+        linksTextColor: {
+            table: {
+                type: { summary: 'hex code, e.g "#FFFFFF"' },
+            },
+        },
+        currentLinkTextColor: {
+            table: {
+                type: { summary: 'hex code, e.g "#A91320"' },
+            },
+        },
+    },
     render: props => <Breadcrumbs {...props} />,
 };
 
@@ -72,8 +104,8 @@ export const WithPrimaryBackground: Story = {
         currentItemRenderer: BreadcrumbsRenderer,
         items: itemsWithHomeIcon,
         className: "bg-primary",
-        color: "white",
-        activeColor: "white",
+        linksTextColor: "white",
+        currentLinkTextColor: "white",
     },
     argTypes: {},
     render: props => <Breadcrumbs {...props} />,
@@ -84,8 +116,8 @@ export const WithTertiaryBackground: Story = {
         currentItemRenderer: BreadcrumbsRenderer,
         items: itemsWithHomeIcon,
         className: "bg-black",
-        color: "white",
-        activeColor: "white",
+        linksTextColor: "white",
+        currentLinkTextColor: "white",
     },
     argTypes: {},
     render: props => <Breadcrumbs {...props} />,

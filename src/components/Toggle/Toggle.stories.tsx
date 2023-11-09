@@ -17,7 +17,14 @@ export const Warning: Story = {
         defaultState: false,
         state: false,
     },
-    argTypes: {},
+    argTypes: {
+        setState: {
+            control: false,
+            table: {
+                defaultValue: { summary: "undefined" },
+            },
+        },
+    },
     render: props => {
         const [checked, setChecked] = React.useState(props.state!);
 

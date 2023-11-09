@@ -16,7 +16,24 @@ export const Default: Story = {
     args: {
         label: "Checkbox Text",
     },
-    argTypes: {},
+    argTypes: {
+        label: {
+            table: {
+                type: { summary: "string" },
+                defaultValue: { summary: "undefined" },
+            },
+        },
+        value: {
+            table: {
+                defaultValue: { summary: '"" ' },
+            },
+        },
+        onChange: {
+            table: {
+                defaultValue: { summary: "undefined" },
+            },
+        },
+    },
     render: props => {
         return <Checkbox {...props} />;
     },
@@ -27,7 +44,7 @@ export const ExampleUsage: Story = {
         label: "Checkbox Text",
     },
     argTypes: {},
-    render: props => {
+    render: () => {
         const [value, setValue] = React.useState("xyz");
 
         return (
@@ -45,7 +62,7 @@ export const ExampleUsage: Story = {
                     label="Checkmark Type (value: xyz)"
                     boxType="checkmark"
                 />
-                Current Value: "{value}"
+                Current Value: {value}
             </div>
         );
     },

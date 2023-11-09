@@ -17,7 +17,7 @@ export function Tag({ children, disabled = false }: TagProps) {
                 },
             )}
         >
-            <Typography variant="body2-regular">{children}</Typography>
+            <Typography variant="body2">{children}</Typography>
         </button>
     );
 }

@@ -1,23 +1,23 @@
 /* stylelint-disable selector-class-pattern */
 .react-calendar {
-    width: 510px;
-    max-width: 100%;
+    width: 100%;
     background: white;
     border: none;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 
 .react-calendar__navigation {
-    padding: 30px !important;
+    margin: 30px !important;
+    box-sizing: inherit;
 }
 
 .react-calendar__navigation button {
     color: #111928;
-    font-size: 36px;
-    line-height: 0;
+    font-size: 48px;
     border-radius: 7px;
-    padding: 22px 11px;
     font-weight: 200;
+    border: 1px solid #dfe4ea;
+    box-sizing: inherit;
 }
 
 .react-calendar__navigation button:first-child {
@@ -34,6 +34,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 46px;
+    height: 46px;
+    padding-bottom: 5px !important;
+}
+
+.react-calendar__navigation__label {
+    padding: 10px !important;
+    background: transparent !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none !important;
 }
 
 .react-calendar__navigation__label__labelText--from {
@@ -43,13 +56,9 @@
     line-height: 26px;
 }
 
-.react-calendar__navigation__label {
-    padding: 10px !important;
-    background: transparent !important;
-}
-
 .react-calendar__viewContainer {
-    margin-top: 36px;
+    margin-top: 32px;
+    box-sizing: inherit;
     padding: 10px;
 }
 
@@ -73,9 +82,14 @@
     font-style: normal;
     font-weight: 500;
     line-height: 26px;
-    padding: 14px 11px;
     display: inline-block;
-    margin: 5px 0;
+    padding: 0;
+}
+
+.react-calendar__month-view__days button abbr {
+    display: inline-block;
+    padding: 11px 14px;
+    margin: 4px;
 }
 
 .react-calendar__month-view__days button:hover {
@@ -95,7 +109,6 @@
     color: white;
     border-radius: 7px;
     min-width: 24px;
-    padding: 14px !important;
 }
 
 .react-calendar__month-view__days button:hover abbr {
@@ -103,7 +116,6 @@
     color: white;
     border-radius: 7px;
     min-width: 24px;
-    padding: 14px !important;
 }
 
 .react-calendar__month-view__days__day--weekend {
@@ -114,11 +126,25 @@
     background: none;
 }
 
+.react-calendar__year-view__months__month:hover {
+    background: transparent !important;
+}
+
+.react-calendar__year-view__months__month abbr {
+    padding: 20px !important;
+    font-weight: 500;
+}
+
+.react-calendar__year-view__months__month abbr:hover {
+    background: #009aee !important;
+    color: white;
+    border-radius: 7px !important;
+}
+
 .react-calendar__tile--now abbr {
     border: 1px solid #dfe4ea;
     background: #f3f4f6;
     border-radius: 7px;
-    padding: 14px !important;
     color: #111928;
 }
 

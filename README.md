@@ -6,14 +6,16 @@ This Project uses [Conventional Commits](https://www.conventionalcommits.org/en/
 
 ## Development
 
-**Prerequisites:** Node.js v18+ (see version specified in .nvmrc), Yarn v3+ (see version specified in .yarnrc)
+**Prerequisites:** Node.js v18+ (see version specified in `.nvmrc`), Yarn v3+ (see version specified in `.yarnrc`)
 
 ### One-time setup
 
-First, ensure you have nvm (Node Version Manager) installed.
+First, ensure you have [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md) (Node Version Manager) installed.
 
 After cloning this repo, run:
 
--   `nvm use` to use the supported Node version for development.
--   ``yarn install`` to install all dependencies.
--   ``yarn start`` to start storybook and watch changes
+-   `nvm install` to install the required [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) version.
+-   `nvm use` to use the required Node version for development.
+-   `yarn install` to install the dependencies.
+-   `yarn postinstall` to setup [husky](https://typicode.github.io/husky/) and [lint-staged](https://www.npmjs.com/package/lint-staged).
+-   `yarn start` to start storybook and watch the output while you are developing.

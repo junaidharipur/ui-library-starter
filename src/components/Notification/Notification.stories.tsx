@@ -36,10 +36,21 @@ export const Default: Story = {
     args: {
         title: "Congratulations",
         desc: "your message sent successfully",
-        position: "top-right",
+        position: "top",
         variant: "success",
     },
-    argTypes: {},
+    argTypes: {
+        desc: {
+            table: {
+                defaultValue: { summary: "undefined" },
+            },
+        },
+        onCloseClick: {
+            table: {
+                defaultValue: { summary: "undefined" },
+            },
+        },
+    },
     render: props => {
         return <Notification {...props} />;
     },

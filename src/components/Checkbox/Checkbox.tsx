@@ -6,7 +6,6 @@ import { Typography } from "../Typography/Typography";
 import { UncheckedIcon } from "../icons/UncheckedIcon";
 import { RectangularChecked } from "../icons/RectangularChecked";
 import { CheckmarkedChecked } from "../icons/CheckmarkChecked";
-import { InputType } from "zlib";
 
 export function Checkbox({ label, checked = false, boxType = "default", value, onChange, ...other }: CheckboxProps) {
     const [isChecked, setIsChecked] = React.useState(false);
@@ -28,7 +27,7 @@ export function Checkbox({ label, checked = false, boxType = "default", value, o
             <span className={cx("inline-block mr-[10px] cursor-pointer")}>
                 {isChecked ? checkedIcon : <UncheckedIcon />}
             </span>
-            {label && <Typography variant="body2-regular">{label}</Typography>}
+            {label && <Typography variant="body2">{label}</Typography>}
             <input
                 checked={isChecked}
                 onChange={e => onChange(e.target.value)}

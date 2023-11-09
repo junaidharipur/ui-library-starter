@@ -14,7 +14,23 @@ type Story = StoryObj<typeof Tabs>;
 
 export const Default: Story = {
     args: {},
-    argTypes: {},
+    argTypes: {
+        children: {
+            control: { type: undefined },
+            description: "``Tabs.Tab``",
+            table: {
+                type: { summary: "string" },
+                defaultValue: { summary: "undefined" },
+            },
+        },
+        titleRenderer: {
+            control: false,
+            table: {
+                type: { summary: "string" },
+                defaultValue: { summary: "DefaultRenderer" },
+            },
+        },
+    },
     render: props => (
         <Tabs {...props}>
             <Tabs.Tab title="Profile">Tab One Content</Tabs.Tab>
@@ -31,7 +47,11 @@ export const Button: Story = {
     args: {
         titleRenderer: ButtonRenderer,
     },
-    argTypes: {},
+    argTypes: {
+        children: {
+            control: { type: "string", source: true },
+        },
+    },
     render: props => (
         <Tabs {...props}>
             <Tabs.Tab title="Profile">Tab One Content</Tabs.Tab>
