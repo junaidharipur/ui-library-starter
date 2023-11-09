@@ -1,7 +1,9 @@
 {
-    "*.js": ["prettier --write", "stylelint \"**/*.css\"", "eslint", "jest --coverage --ci -u"],
-    "*.jsx": ["prettier --write", "stylelint \"**/*.css\"", "eslint", "jest --coverage --ci -u"],
-    "*.ts": ["prettier --write", "stylelint \"**/*.css\"", "eslint", "jest --coverage --ci -u"],
-    "*.tsx": ["prettier --write", "stylelint \"**/*.css\"", "eslint", "jest --coverage --ci -u"],
-    "*.json": ["prettier --write"]
+    "*.ts": ["prettier --write", "eslint"],
+    "*.tsx": ["prettier --write", "eslint"],
+    "*.md": ["prettier --write"],
+    "*.spec.tsx": ["jest"],
+    "*.spec.ts": ["jest"],
+    "*.json": ["prettier --write"],
+    "*.css": ["stylelint"]
 }

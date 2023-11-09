@@ -49,7 +49,7 @@ export function ConfirmationModal({
             {!Icon && <span className={cx("inline-block w-[90px] h-[3px] bg-primary rounded-xl mt-[18px]")} />}
             {desc && (
                 <div className="mt-6 text-center text-primary-text">
-                    <Typography variant="body2-regular">{desc}</Typography>
+                    <Typography variant="body2">{desc}</Typography>
                 </div>
             )}
             <div className={cx("w-full flex items-center justify-between mt-[35px]")}>

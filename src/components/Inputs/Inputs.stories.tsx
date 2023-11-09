@@ -41,7 +41,7 @@ export const InputWithIcon: Story = {
     render: props => <FormInput {...props} />,
 };
 export const SuccessInputWithIcon: Story = {
-    render: props => (
+    render: () => (
         <FormInput
             label="Form Field 01"
             variant="Success"
@@ -55,7 +55,7 @@ export const SuccessInputWithIcon: Story = {
     ),
 };
 export const ErrorInputWithIcon: Story = {
-    render: props => (
+    render: () => (
         <FormInput
             label="Form Field 2"
             variant="Error"
@@ -69,7 +69,7 @@ export const ErrorInputWithIcon: Story = {
     ),
 };
 export const NormalInputWithIcon: Story = {
-    render: props => (
+    render: () => (
         <FormInput
             label="Form Field 3"
             variant="Normal"

@@ -18,15 +18,7 @@ export function H4({ children, className }: { children: React.ReactNode; classNa
     return <h4 className={cx("text-[20px] font-semibold leading-[26px]", className)}>{children}</h4>;
 }
 
-export function Body1({
-    children,
-    variant,
-    className = "",
-}: {
-    children: React.ReactNode;
-    variant: "regular" | "medium" | "semibold" | "bold";
-    className: string;
-}) {
+export function Body1({ children, variant, className = "" }: BodyProps) {
     return (
         <p
             className={cx(
@@ -45,15 +37,7 @@ export function Body1({
     );
 }
 
-export function Body2({
-    children,
-    variant,
-    className = "",
-}: {
-    children: React.ReactNode;
-    variant: "regular" | "medium" | "semibold" | "bold";
-    className: string;
-}) {
+export function Body2({ children, variant, className = "" }: BodyProps) {
     return (
         <p
             className={cx(
@@ -72,15 +56,7 @@ export function Body2({
     );
 }
 
-export function Body3({
-    children,
-    variant,
-    className = "",
-}: {
-    children: React.ReactNode;
-    variant: "regular" | "medium" | "semibold" | "bold";
-    className: string;
-}) {
+export function Body3({ children, variant, className = "" }: BodyProps) {
     return (
         <p
             className={cx(
@@ -99,15 +75,7 @@ export function Body3({
     );
 }
 
-export function Body4({
-    children,
-    variant,
-    className,
-}: {
-    children: React.ReactNode;
-    variant: "regular" | "medium" | "semibold" | "bold";
-    className: string;
-}) {
+export function Body4({ children, variant, className }: BodyProps) {
     return (
         <p
             className={cx(
@@ -165,6 +133,12 @@ export function Typography({ children, variant = "body2", weight = "regular", cl
             {children}
         </Body2>
     );
+}
+
+interface BodyProps {
+    children: React.ReactNode;
+    variant: "regular" | "medium" | "semibold" | "bold";
+    className: string;
 }
 
 interface TypographyProps {

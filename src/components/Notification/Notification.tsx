@@ -59,9 +59,11 @@ export function Notification({
             <div className={cx("flex items-center")}>
                 {Icon}
                 <div className={cx("ml-5")}>
-                    <Typography variant="body1-semibold">{title}</Typography>
+                    <Typography variant="body1" weight="semibold">
+                        {title}
+                    </Typography>
                     <div className="text-primary-text">
-                        <Typography variant="body3-regular">{desc}</Typography>
+                        <Typography variant="body3">{desc}</Typography>
                     </div>
                 </div>
             </div>
