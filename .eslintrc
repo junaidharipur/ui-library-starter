@@ -26,7 +26,6 @@
     ],
     "rules": {
         "no-console": "off",
-        "no-unused-vars": "warn",
         "strict": [
             "error",
             "never"
@@ -35,7 +34,9 @@
         "jest/no-focused-tests": "error",
         "jest/no-disabled-tests": "warn",
         "jest/no-identical-title": "error",
-        "jest/prefer-to-have-length": "warn"
+        "jest/prefer-to-have-length": "warn",
+        "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
     },
     "settings": {
         "react": {
