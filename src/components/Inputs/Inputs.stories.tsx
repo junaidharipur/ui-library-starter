@@ -24,6 +24,43 @@ export const Default: Story = {
         value: "",
         onChange: value => console.log(value), // Add this line to handle the change event
     },
+    argTypes: {
+        label: {
+            defaultValue: { summary: '"undefined" ' },
+        },
+        size: {
+            defaultValue: { summary: "Small" },
+        },
+        variant: {
+            defaultValue: { summary: "Normal" },
+        },
+        helperText: {
+            defaultValue: { summary: "This is Helper Text" },
+        },
+        palceholder: {
+            defaultValue: { summary: "A Form Field" },
+        },
+        type: {
+            defaultValue: { summary: "text" },
+        },
+        name: {
+            defaultValue: { summary: "defaultform" },
+        },
+        value: {
+            defaultValue: { summary: "undefined" },
+        },
+        onChange: {
+            defaultValue: { summary: '"undefined" ' },
+        },
+        icon: {
+            table: {
+                type: { summary: "React.FC<{}>" },
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
+       
+        
+    },
     render: props => <FormInput {...props} />,
 };
 

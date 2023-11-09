@@ -64,6 +64,7 @@ export function FormInput({
         </div>
     );
 }
+
 interface InputProps {
     variant?: "Success" | "Error" | "Normal";
     size?: "Small" | "Medium" | "Large";

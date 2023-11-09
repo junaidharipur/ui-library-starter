@@ -2,14 +2,15 @@ import React, { ReactElement, useState } from "react";
 import { Icondropdownbottom, IcondropdownUp } from "../icons/InputIcons";
 import cx from "classnames";
 
-export function Dropdown({ options, variant, outlined, defaultValue, getSelectedData }: OptionsProps): ReactElement {
+export function Dropdown({
+    options = [],
+    variant,
+    outlined,
+    defaultValue,
+    getSelectedData,
+}: OptionsProps): ReactElement {
     const [showdropdown, setshowdropdown] = useState(false);
     const [value, setvalue] = useState(defaultValue);
-
-    const Textclasses = {
-        "text-base font-normal": variant === "Medium",
-        "text-sm font-medium": variant === "Small",
-    };
 
     return (
         <div className="relative">
@@ -19,19 +20,24 @@ export function Dropdown({ options, variant, outlined, defaultValue, getSelected
                     {
                         "py-2 px-5": variant === "Large",
                         "py-[5px] px-5": variant === "Medium",
-
                         "py-[3px] px-4": variant === "Small",
                         "bg-dark-8": !outlined,
                     },
                 )}
                 onClick={() => setshowdropdown(!showdropdown)}
             >
-                <div className={cx("text-primary-text", Textclasses)}>{value}</div>
+                <div
+                    className={cx("text-primary-text", {
+                        "text-base font-normal": variant === "Medium",
+                        "text-sm font-medium": variant === "Small",
+                    })}
+                >
+                    {value}
+                </div>
                 <div
                     className={cx("cursor-pointer", {
                         "pt-[0.6rem]": variant === "Large",
                         "pt-2": variant === "Medium",
-
                         "pt-[0.5rem]": variant === "Small",
                     })}
                 >
@@ -41,18 +47,19 @@ export function Dropdown({ options, variant, outlined, defaultValue, getSelected
             {showdropdown && (
                 <div
                     className={cx(
+                        "z-10 absolute bg-white w-full flex flex-col gap-3 justify-between  py-3 border rounded-lg h-auto max-h-[20rem] overflow-auto mt-3 shadow-dropdown",
                         {
                             "top-12": variant === "Medium",
-
                             "top-10": variant === "Small",
                         },
-                        "z-10 absolute  bg-white w-full flex flex-col gap-3 justify-between  py-3 border rounded-lg h-auto max-h-[20rem] overflow-auto mt-3 shadow-dropdown",
                     )}
                 >
                     {options?.map((option, index) => (
                         <p
                             key={index}
-                            className={cx("py-3 cursor-pointer hover:bg-primary pl-3 hover:text-white", Textclasses, {
+                            className={cx("py-3 cursor-pointer hover:bg-primary pl-3 hover:text-white", {
+                                "text-base font-normal": variant === "Medium",
+                                "text-sm font-medium": variant === "Small",
                                 "bg-primary text-white": value === option?.value,
                                 "text-primary-text": value !== option?.value,
                             })}
@@ -70,10 +77,11 @@ export function Dropdown({ options, variant, outlined, defaultValue, getSelected
         </div>
     );
 }
-type OptionsProps = {
+
+interface OptionsProps {
     options: { value: string; label: string }[];
     variant: "Medium" | "Small" | "Large";
     outlined: boolean;
     defaultValue: string;
     getSelectedData?: (data: string) => void;
-};
+}

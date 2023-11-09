@@ -8,11 +8,11 @@ interface Props {
     direction: position;
     description: string;
     dark: boolean;
-    classdiv?: string;
+    className?: string;
     title?: string;
 }
 
-export function Tooltip({ children, description, direction, classdiv, dark, title }: Props) {
+export function Tooltip({ children, description, direction, className, dark, title }: Props) {
     const getDirection = () => {
         switch (direction) {
             case "top":
@@ -24,7 +24,7 @@ export function Tooltip({ children, description, direction, classdiv, dark, titl
         }
     };
     return (
-        <div className={cx(classdiv)}>
+        <div className={cx(className)}>
             <div className={`tooltip-wrapper ${getDirection()}`}>
                 <span className="relative">{children}</span>
                 <div

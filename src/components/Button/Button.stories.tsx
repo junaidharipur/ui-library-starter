@@ -31,7 +31,7 @@ export const Default: Story = {
         },
         disabled: {
             control: { type: "boolean" },
-        },
+        }, 
         type: {
             table: {
                 defaultValue: { summary: '"undefined" ' },

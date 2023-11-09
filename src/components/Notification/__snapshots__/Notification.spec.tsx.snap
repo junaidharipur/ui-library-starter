@@ -51,7 +51,7 @@ exports[`Notification component is rendering properly 1`] = `
         class="ml-5"
       >
         <p
-          class="text-lg leading-[26px] font-semibold"
+          class="text-base leading-6 font-normal"
         >
           TITLE
         </p>
@@ -59,9 +59,10 @@ exports[`Notification component is rendering properly 1`] = `
           class="text-primary-text"
         >
           <p
-            class="text-sm leading-[22px] font-normal"
+            class="text-base leading-6 font-normal"
           >
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+ industry's standard dummy text ever since the 1500s, when
           </p>
         </div>
       </div>
