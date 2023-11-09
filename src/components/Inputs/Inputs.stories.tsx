@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { FormInput } from "./FormInput";
+import { FormInput } from "./Inputs";
 import { InfoSuccess, Iconeye, InfoError, InfoNormal } from "../icons/InputIcons";
 
 const meta: Meta<typeof FormInput> = {
@@ -12,17 +12,17 @@ const meta: Meta<typeof FormInput> = {
 
 export default meta;
 type Story = StoryObj<typeof FormInput>;
- export const Default: Story = {
+export const Default: Story = {
     args: {
         label: "Form Field",
-        variant: "normal",
+        variant: "Normal",
         helperText: "This is Helper Text",
         palceholder: "A Form Field",
         type: "text",
-        size: "small",
+        size: "Small",
         name: "defaultform",
         value: "",
-        onChange: (value) => console.log(value) // Add this line to handle the change event
+        onChange: value => console.log(value), // Add this line to handle the change event
     },
     render: props => <FormInput {...props} />,
 };
@@ -30,10 +30,10 @@ type Story = StoryObj<typeof FormInput>;
 export const InputWithIcon: Story = {
     args: {
         label: "Form Field 01",
-        variant: "normal",
+        variant: "Normal",
         helperText: "This is Helper Text",
         palceholder: "Type Your Password",
-        size: "small",
+        size: "Small",
         type: "password",
         icon: Iconeye,
         name: "pass",
@@ -44,10 +44,10 @@ export const SuccessInputWithIcon: Story = {
     render: props => (
         <FormInput
             label="Form Field 01"
-            variant="success"
+            variant="Success"
             helperText="This is Helper Text"
             palceholder="Type Your Text"
-            size="medium"
+            size="Medium"
             type="text"
             icon={InfoSuccess}
             name="success"
@@ -58,10 +58,10 @@ export const ErrorInputWithIcon: Story = {
     render: props => (
         <FormInput
             label="Form Field 2"
-            variant="error"
+            variant="Error"
             helperText="This is Helper Text"
             palceholder="Type Your Text"
-            size="medium"
+            size="Medium"
             type="text"
             icon={InfoError}
             name="error"
@@ -72,10 +72,10 @@ export const NormalInputWithIcon: Story = {
     render: props => (
         <FormInput
             label="Form Field 3"
-            variant="normal"
+            variant="Normal"
             helperText="This is Helper Text"
             palceholder="Type Your Text"
-            size="medium"
+            size="Medium"
             type="text"
             icon={InfoNormal}
             name="normal"

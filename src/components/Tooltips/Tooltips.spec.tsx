@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Tooltip } from "./tooltip";
+import { Tooltip } from "./Tooltips";
 
 test("Tooltip component should rendering properly.", async () => {
     const tooltipchild = <h2>Tootip Child</h2>;

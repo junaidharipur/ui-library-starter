@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Popover } from "./Popover";
+import { Popover } from "./Popovers";
 
 test("Popover component should rendering properly.", async () => {
     const Popoverchild = <h2>popover Child</h2>;

@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { Dropdown } from "./dropdown";
+import { Dropdown } from "./Dropdowns";
 
 const options = [
     {
@@ -67,7 +67,7 @@ type Story = StoryObj<typeof Dropdown>;
 
 export const Default: Story = {
     args: {
-        variant: "md",
+        variant: "Medium",
         options: options,
         outlined: true,
         defaultValue: options[2].value,
