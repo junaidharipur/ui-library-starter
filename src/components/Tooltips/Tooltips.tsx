@@ -1,8 +1,10 @@
-import React from "react";
-import cx from "classnames";
 import "../../styles/tooltip.css";
 
-export function Tooltip({ children, description, direction, className, dark, title }: Props) {
+import * as React from "react";
+
+import cx from "classnames";
+
+export function Tooltip({ children, description, direction, className, dark, title }: TooltipProps) {
     const getDirection = () => {
         switch (direction) {
             case "top":
@@ -46,8 +48,9 @@ export function Tooltip({ children, description, direction, className, dark, tit
         </div>
     );
 }
+
 type position = "top" | "bottom" | "left" | "right";
-interface Props {
+interface TooltipProps {
     children: React.ReactNode;
     direction: position;
     description: string;

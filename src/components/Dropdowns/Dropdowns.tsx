@@ -1,6 +1,8 @@
-import React, { ReactElement, useState } from "react";
-import { Icondropdownbottom, IcondropdownUp } from "../icons/InputIcons";
+import * as React from "react";
+
 import cx from "classnames";
+
+import { Icondropdownbottom, IcondropdownUp } from "../icons/InputIcons";
 
 export function Dropdown({
     options = [],
@@ -8,9 +10,9 @@ export function Dropdown({
     outlined,
     defaultValue,
     getSelectedData,
-}: OptionsProps): ReactElement {
-    const [showdropdown, setshowdropdown] = useState(false);
-    const [value, setvalue] = useState(defaultValue);
+}: DropdownProps): React.ReactElement {
+    const [showdropdown, setshowdropdown] = React.useState(false);
+    const [value, setvalue] = React.useState(defaultValue);
 
     return (
         <div className="relative">
@@ -78,7 +80,7 @@ export function Dropdown({
     );
 }
 
-interface OptionsProps {
+interface DropdownProps {
     options: { value: string; label: string }[];
     variant: "Medium" | "Small" | "Large";
     outlined: boolean;

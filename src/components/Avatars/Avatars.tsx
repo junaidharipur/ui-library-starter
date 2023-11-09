@@ -1,5 +1,7 @@
-import React from "react";
+import * as React from "react";
+
 import cx from "classnames";
+
 import { AvatarOnline } from "../icons/AvatarIcons";
 import { getFirstLetters } from "../../utils/customfunctions";
 
