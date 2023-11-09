@@ -19,26 +19,23 @@ export const Default: Story = {
         dark: true,
         className: "flex justify-center",
     },
-    argTypes:{
-direction:{
-    defaultValue: { summary: "left" },
-},
-description:{
-    defaultValue: { summary: "undefined" },
-},
-dark: {
-    control: { type: "boolean" },
-    defaultValue: { summary: "true" },
-},
-className:{
-    defaultValue: { summary: " " },
-
-},
-title:{
-    defaultValue: { summary: '"undefined"' },
-
-}
-
+    argTypes: {
+        direction: {
+            defaultValue: { summary: "left" },
+        },
+        description: {
+            defaultValue: { summary: "undefined" },
+        },
+        dark: {
+            control: { type: "boolean" },
+            defaultValue: { summary: "true" },
+        },
+        className: {
+            defaultValue: { summary: " " },
+        },
+        title: {
+            defaultValue: { summary: '"undefined"' },
+        },
     },
     render: props => (
         <Tooltip {...props}>
