@@ -76,17 +76,17 @@ export const Default: Story = {
     argTypes: {
         options: { control: false },
         variant: {
-            defaultValue: { summary: "Normal" },
+            defaultValue: { summary: "Medium" },
         },
         defaultValue: {
-            defaultValue: { summary: '"undefined"' },
+            defaultValue: { summary: "undefined" },
         },
         outlined: {
             control: { type: "boolean" },
             defaultValue: { summary: "true" },
         },
         getSelectedData: {
-            defaultValue: { summary: '"undefined" ' },
+            defaultValue: { summary: "undefined" },
         },
     },
     render: props => <Dropdown {...props} />,
