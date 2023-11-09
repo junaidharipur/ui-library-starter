@@ -3,12 +3,10 @@
 exports[`Alert component is rendering properly 1`] = `
 <div>
   <div
-    class="p-[35px] rounded-lg flex items-start"
-    style="background: rgb(233, 249, 255); border-left: 6px solid #1484CD;"
+    class="p-[35px] rounded-lg flex items-start border-l-[6px] border-blue-dark bg-blue-light-6"
   >
     <div
-      class="inline-block rounded-md p-2 mr-[22px]"
-      style="background: rgb(20, 132, 205);"
+      class="inline-block rounded-md p-2 mr-[22px] bg-blue-dark"
     >
       <svg
         fill="none"
@@ -53,8 +51,7 @@ exports[`Alert component is rendering properly 1`] = `
         class="relative"
       >
         <h4
-          class="leading-[26px] font-semibold text-lg mb-[14px]"
-          style="color: rgb(11, 118, 183);"
+          class="leading-[26px] font-semibold text-lg mb-[14px] text-info-text"
         >
           TITLE
         </h4>
@@ -76,8 +73,7 @@ exports[`Alert component is rendering properly 1`] = `
         </div>
       </div>
       <p
-        class="text-base leading-6 font-normal"
-        style="color: rgb(99, 115, 129);"
+        class="text-base leading-6 font-normal text-primary-text"
       >
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
       </p>

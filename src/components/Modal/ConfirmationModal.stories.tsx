@@ -8,6 +8,7 @@ import { WarningIcon } from "../icons/WarningRedIcon";
 import { colors } from "../../utils/colors";
 
 const meta: Meta<typeof ConfirmationModal> = {
+    title: "Components/ConfirmationModal",
     component: ConfirmationModal,
     tags: ["autodocs"],
     parameters: {
@@ -39,10 +40,41 @@ export const Default: Story = {
     args: {
         open: true,
         title: "Your Message Sent Successfully",
+        position: "top",
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since",
     },
-    argTypes: {},
-    render: props => <ConfirmationModal {...props} />,
+    argTypes: {
+        desc: {
+            table: {
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
+        onClose: {
+            table: {
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
+        icon: {
+            table: {
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
+        actionButtonBgColor: {
+            table: {
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
+        onActionButtonClick: {
+            table: {
+                defaultValue: { summary: '"undefined" ' },
+            },
+        },
+    },
+    render: props => (
+        <div style={{ position: "relative", width: "100%", height: "500px" }}>
+            <ConfirmationModal {...props} />
+        </div>
+    ),
 };
 
 export const WithIcon: Story = {
@@ -55,5 +87,9 @@ export const WithIcon: Story = {
         icon: () => <WarningIcon />,
     },
     argTypes: {},
-    render: props => <ConfirmationModal {...props} />,
+    render: props => (
+        <div style={{ position: "relative", width: "100%", height: "600px" }}>
+            <ConfirmationModal {...props} />
+        </div>
+    ),
 };

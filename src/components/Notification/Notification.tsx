@@ -11,12 +11,20 @@ import { WarningIcon } from "../icons/WarningIcon";
 import { CrossCircleIcon } from "../icons/CrossCircleIcon";
 
 export function Notification({
-    title,
+    title = "",
     desc,
     variant = "info",
-    position = "bottom-right",
+    position = "bottom",
     onCloseClick,
 }: NotificationProps) {
+    const [open, setOpen] = React.useState(true);
+
+    const handleClose = () => {
+        onCloseClick && onCloseClick();
+
+        setOpen(false);
+    };
+
     const Icon =
         variant === "success" ? (
             <div className={cx("bg-green text-white p-2 rounded-full")}>
@@ -40,14 +48,13 @@ export function Notification({
 
     return (
         <div
-            className={cx(
-                "bg-white shadow-2 py-[18px] px-[30px] rounded-lg w-[422px] absolute",
-                "flex justify-between items-center",
-                {
-                    ["top-[5%] right-5"]: position === "top-right",
-                    ["bottom-[5%] right-5"]: position === "bottom-right",
-                },
-            )}
+            className={cx("bg-white shadow-2 py-[18px] px-[30px] rounded-lg w-[422px] absolute", {
+                ["top-[30px] right-5"]: position === "top",
+                ["bottom-[30px] right-5"]: position === "bottom",
+                ["top-1/2 right-5 translate-y-[-50%]"]: position === "center",
+                ["flex justify-between items-center"]: open,
+                ["hidden"]: !open,
+            })}
         >
             <div className={cx("flex items-center")}>
                 {Icon}
@@ -58,7 +65,7 @@ export function Notification({
                     </div>
                 </div>
             </div>
-            <div onClick={onCloseClick} className={cx("cursor-pointer")}>
+            <div onClick={handleClose} className={cx("cursor-pointer")}>
                 <CloseIcon />
             </div>
         </div>
@@ -69,6 +76,6 @@ interface NotificationProps {
     title: string;
     desc?: string;
     variant?: "success" | "danger" | "info" | "warning";
-    position?: "top-right" | "bottom-right";
+    position?: "top" | "center" | "bottom";
     onCloseClick?: () => void;
 }

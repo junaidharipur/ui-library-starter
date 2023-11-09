@@ -23,7 +23,7 @@ export function Calendar({ value = new Date(), onChange, onRemoveClick, onDoneCl
 
     return (
         <div className={cx("shadow-4 inline-block overflow-hidden bg-white rounded-xl")}>
-            <ReactCalender value={value} onChange={onChange} />
+            <ReactCalender value={value} onChange={(v, _e) => onChange && onChange(new Date(v?.toString()!))} />
             <div className="flex items-center justify-between px-6 pt-2 pb-10">
                 <Button onClick={onRemoveClick} className="mr-[5px]" fullWidth color="tertiary">
                     Remove
@@ -38,7 +38,7 @@ export function Calendar({ value = new Date(), onChange, onRemoveClick, onDoneCl
 
 interface CalendarProps {
     value?: Date;
-    onChange?: (...args: any) => any;
+    onChange?: (value: Date) => void;
     onRemoveClick?: () => void;
     onDoneClick?: () => void;
 }

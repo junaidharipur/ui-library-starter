@@ -4,19 +4,20 @@ import cx from "classnames";
 
 import { colors } from "../../utils/colors";
 
-import { WarningIcon } from "../icons/WarningRedIcon";
 import { Typography } from "../Typography/Typography";
 import { Button } from "../Button/Button";
 
+import { Modal } from "./Modal";
+
 export function ConfirmationModal({
-    title,
+    open = false,
+    onClose,
+    position = "top",
+    title = "",
     desc,
-    position = "top-center",
     actionButtonText = "View Details",
     onActionButtonClick,
     icon: Icon,
-    open = false,
-    onClose,
     iconBgColor = colors.redLight5,
     actionButtonBgColor,
 }: ConfirmationModalProps) {
@@ -32,17 +33,12 @@ export function ConfirmationModal({
     };
 
     return (
-        <div
-            className={cx(
-                "absolute translate-x-[-50%] translate-y-[-50%]",
-                "w-[530px] rounded-[20px] p-[50px] shadow-2 bg-white z-50",
-                {
-                    ["left-1/2 top-[22vh]"]: position === "top-center",
-                    ["left-1/2 top-1/2"]: position === "center",
-                    ["flex flex-col justify-center items-center"]: _open,
-                    ["hidden"]: !_open,
-                },
-            )}
+        <Modal
+            open={_open}
+            onClose={onClose}
+            showCloseIcon={false}
+            position={position}
+            className={cx("flex flex-col justify-center items-center")}
         >
             {Icon && (
                 <div style={{ background: iconBgColor }} className={cx("p-[18px] rounded-full mb-[22px]")}>
@@ -80,19 +76,19 @@ export function ConfirmationModal({
                     {actionButtonText}
                 </Button>
             </div>
-        </div>
+        </Modal>
     );
 }
 
 interface ConfirmationModalProps {
-    title: string;
     open?: boolean;
+    onClose?: () => void;
+    position?: "top" | "center" | "bottom";
+    title: string;
     desc?: string;
     icon?: React.FC;
     actionButtonText?: string;
     actionButtonBgColor?: string;
     iconBgColor?: string;
-    position?: "top-center" | "center";
     onActionButtonClick?: () => void;
-    onClose?: () => void;
 }

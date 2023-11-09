@@ -3,7 +3,7 @@
 exports[`Notification component is rendering properly 1`] = `
 <div>
   <div
-    class="bg-white shadow-2 py-[18px] px-[30px] rounded-lg w-[422px] absolute flex justify-between items-center bottom-[5%] right-5"
+    class="bg-white shadow-2 py-[18px] px-[30px] rounded-lg w-[422px] absolute bottom-[30px] right-5 flex justify-between items-center"
   >
     <div
       class="flex items-center"
@@ -61,8 +61,7 @@ exports[`Notification component is rendering properly 1`] = `
           <p
             class="text-sm leading-[22px] font-normal"
           >
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
- industry's standard dummy text ever since the 1500s, when
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
           </p>
         </div>
       </div>

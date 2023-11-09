@@ -2,15 +2,9 @@ import * as React from "react";
 
 import cx from "classnames";
 
-import { Button, ButtonProps } from "../Button/Button";
+import { ButtonGroupChild } from "./ButtonChild";
 
-type Sizes = "Large" | "Small" | "Medium";
-
-interface SizeContextType {
-    value: Sizes;
-}
-
-const SizeContext = React.createContext<SizeContextType>({ value: "Large" });
+import { SizeContext } from "./context";
 
 export function ButtonGroup({ children, size = "Large" }: ButtonGroupProps) {
     return (
@@ -22,33 +16,11 @@ export function ButtonGroup({ children, size = "Large" }: ButtonGroupProps) {
     );
 }
 
-export function ButtonGroupChild({ children, active = false, ...other }: ButtonChildProps & ButtonProps) {
-    const { value: size } = React.useContext(SizeContext);
-
-    const _baseStyles = { borderColor: "normal", borderRadius: 0, border: "none", borderRightWidth: 1 };
-    const _unActiveStyles = !active ? { color: "normal" } : {};
-
-    return (
-        <div className={cx("border-r last:border-r-0")}>
-            <Button
-                size={size}
-                variant={active ? "default" : "outlined"}
-                style={{ ..._baseStyles, ..._unActiveStyles }}
-                {...other}
-            >
-                {children}
-            </Button>
-        </div>
-    );
-}
-
-ButtonGroup.Child = ButtonGroupChild;
+export type sizePropType = "Large" | "Small" | "Medium";
 
 export interface ButtonGroupProps {
     children: React.ReactNode;
-    size?: Sizes;
+    size?: sizePropType;
 }
 
-interface ButtonChildProps {
-    active?: boolean;
-}
+ButtonGroup.Child = ButtonGroupChild;

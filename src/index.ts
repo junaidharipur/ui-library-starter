@@ -1,5 +1,4 @@
 import "./styles/index.css";
-import "./styles/shadow.css";
 
 export * from "./components/Button/Button";
 export * from "./components/ButtonGroup/ButtonGroup";
@@ -12,6 +11,7 @@ export * from "./components/Popovers/Popovers";
 export * from "./components/Tooltips/Tooltips";
 export * from "./components/Checkbox/Checkbox";
 export * from "./components/ConfirmationModal/ConfirmationModal";
+export * from "./components/Modal/Modal";
 export * from "./components/Tabs/Tabs";
 export * from "./components/Notification/Notification";
 export * from "./components/Toggle/Toggle";
