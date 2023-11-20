@@ -23,7 +23,8 @@
     "license": "MIT",
     "scripts": {
         "start": "yarn storybook",
-        "compile": "rimraf \"./lib\" && npm-run-all --parallel compile:esm compile:cjs",
+        "compile": "rimraf \"./lib\" && npm-run-all --parallel compile:esm compile:cjs && npm-run-all post:compile",
+        "post:compile": "./scripts/post-build.sh",
         "compile:esm": "webpack --mode production",
         "compile:cjs": "webpack --mode production --env=cjs",
         "lint": "npm-run-all --parallel lint:prettier lint:stylelint lint:eslint lint:tsc",
