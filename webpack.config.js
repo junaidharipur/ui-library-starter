@@ -4,16 +4,13 @@ module.exports = function (env, argv) {
     return {
         mode: argv.mode,
         entry: "./src/index.ts",
-        externals: {
-            react: "react",
-            reactDOM: "react-dom",
-            tailwindcss: "tailwindcss",
-        },
         output: {
-            filename: env.cjs ? "cjs/index.js" : "esm/index.js",
             path: path.resolve(__dirname, "lib"),
-            library: "$",
+            filename: env.cjs ? "cjs/index.js" : "esm/index.js",
+            library: "ui-library-testing-junaid",
             libraryTarget: "umd",
+            umdNamedDefine: true,
+            globalObject: "typeof self !== 'undefined' ? self : this", // Required for server rendering
         },
         module: {
             rules: [
@@ -50,11 +47,14 @@ module.exports = function (env, argv) {
             ],
         },
         devtool: "source-map",
+        target: "node",
         resolve: {
-            // alias: {
-            //   "@root": path.resolve(__dirname, "src"),
-            // },
             extensions: [".js", ".jsx", ".ts", ".tsx"],
+        },
+        externals: {
+            react: "commonjs react", // Tell webpack to use external versions of React and React DOM and Tailwind for server rendering
+            "react-dom": "commonjs react-dom",
+            tailwindcss: "tailwindcss",
         },
     };
 };
