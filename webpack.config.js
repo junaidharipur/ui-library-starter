@@ -1,4 +1,5 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = function (env, argv) {
     return {
@@ -12,12 +13,17 @@ module.exports = function (env, argv) {
             umdNamedDefine: true,
             globalObject: "typeof self !== 'undefined' ? self : this", // Required for server rendering
         },
+        plugins: [
+            new MiniCssExtractPlugin({
+                filename: env.cjs ? "cjs/styles.css" : "esm/styles.css",
+            }),
+        ],
         module: {
             rules: [
                 {
                     test: /\.css$/,
                     use: [
-                        "style-loader",
+                        MiniCssExtractPlugin.loader,
                         "css-loader",
                         {
                             loader: "postcss-loader",
