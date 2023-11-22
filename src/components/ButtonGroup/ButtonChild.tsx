@@ -15,9 +15,8 @@ export function ButtonGroupChild({ children, active = false, onClick, ...other }
                 size={size}
                 onClick={onClick}
                 variant={active ? "default" : "outlined"}
-                className={cx("border-transparent rounded-none border-r", {
-                    ["text-current"]: !active,
-                })}
+                className={cx("border-transparent rounded-none border-r")}
+                style={!active ? { color: "#111928" } : { color: "white" }}
                 {...other}
             >
                 {children}
