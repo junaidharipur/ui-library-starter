@@ -18,11 +18,21 @@ export const Group: GroupStory = {
         size: "Large",
     },
     argTypes: {},
-    render: props => (
-        <ButtonGroup {...props}>
-            <ButtonGroup.Child active>About</ButtonGroup.Child>
-            <ButtonGroup.Child>Profile</ButtonGroup.Child>
-            <ButtonGroup.Child>Services</ButtonGroup.Child>
-        </ButtonGroup>
-    ),
+    render: props => {
+        const [active, setActive] = React.useState(0);
+
+        return (
+            <ButtonGroup {...props}>
+                <ButtonGroup.Child onClick={() => setActive(0)} active={active === 0}>
+                    About
+                </ButtonGroup.Child>
+                <ButtonGroup.Child onClick={() => setActive(1)} active={active === 1}>
+                    Profile
+                </ButtonGroup.Child>
+                <ButtonGroup.Child onClick={() => setActive(2)} active={active === 2}>
+                    Services
+                </ButtonGroup.Child>
+            </ButtonGroup>
+        );
+    },
 };
