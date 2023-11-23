@@ -4,16 +4,14 @@ import { Tab } from "./Tab";
 import { DefaultRenderer } from "./TitleRenderers";
 import { TabContext } from "./Context";
 
-export function Tabs({ children, titleRenderer: TitleRenderer = DefaultRenderer }: TabsProps) {
+export function Tabs({ children, titleRenderer: TitleRenderer = DefaultRenderer, className }: TabsProps) {
     const [titles, setTitles] = React.useState<string[]>([]);
     const [activeIndex, setActiveIndex] = React.useState<number>(0);
 
-    const value = React.useMemo(() => ({ titles, setTitles, activeIndex, setActiveIndex }), [setTitles]);
-
     return (
-        <TabContext.Provider value={value}>
+        <TabContext.Provider value={{ titles, setTitles, activeIndex, setActiveIndex }}>
             <TitleRenderer titles={titles} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
-            <div>{children}</div>
+            <div className={className}>{children}</div>
         </TabContext.Provider>
     );
 }
@@ -21,6 +19,7 @@ export function Tabs({ children, titleRenderer: TitleRenderer = DefaultRenderer 
 interface TabsProps {
     children: React.ReactNode;
     titleRenderer?: React.FC<RendererProps>;
+    className?: string;
 }
 
 export interface RendererProps {

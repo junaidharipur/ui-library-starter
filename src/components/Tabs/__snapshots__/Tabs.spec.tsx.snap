@@ -16,6 +16,10 @@ exports[`group-button component is rendering properly 1`] = `
       TITLE_2
     </p>
   </div>
-  <div />
+  <div>
+    <div>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+    </div>
+  </div>
 </div>
 `;
