@@ -10,8 +10,10 @@ export function Tabs({ children, titleRenderer: TitleRenderer = DefaultRenderer,
 
     return (
         <TabContext.Provider value={{ titles, setTitles, activeIndex, setActiveIndex }}>
-            <TitleRenderer titles={titles} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
-            <div className={className}>{children}</div>
+            <div className={className}>
+                <TitleRenderer titles={titles} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+                <div>{children}</div>
+            </div>
         </TabContext.Provider>
     );
 }
