@@ -6,7 +6,7 @@ import { RendererProps } from "./Tabs";
 
 export const DefaultRenderer = ({ titles, activeIndex, setActiveIndex }: RendererProps) => {
     return (
-        <div className="flex items-center">
+        <div className="flex items-center bg-white">
             {titles.map((title, index) => {
                 const isActive = activeIndex === index;
 
