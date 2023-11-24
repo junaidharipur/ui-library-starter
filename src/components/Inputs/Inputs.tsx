@@ -1,5 +1,6 @@
 import React, { ChangeEvent, ReactElement } from "react";
 import cx from "classnames";
+
 import { Typography } from "../Typography/Typography";
 
 export function FormInput({
@@ -13,11 +14,13 @@ export function FormInput({
     icon: Icon,
     name,
     onChange,
+    onIconClick,
+    ...other
 }: InputProps): ReactElement {
     return (
-        <div className="flex flex-col gap-[5px]">
+        <div className="flex flex-col">
             <span
-                className={cx("block text-dark", {
+                className={cx("block text-dark mb-[5px]", {
                     "text-lg font-medium ": size === "Large",
                     "text-base font-medium leading-6": size === "Medium",
                     "text-sm font-normal leading-6 ": size === "Small",
@@ -27,7 +30,10 @@ export function FormInput({
             </span>
             <div className="relative">
                 {Icon && (
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none cursor-pointer">
+                    <div
+                        onClick={onIconClick}
+                        className="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none cursor-pointer"
+                    >
                         <Icon />
                     </div>
                 )}
@@ -48,10 +54,11 @@ export function FormInput({
                         },
                     )}
                     placeholder={palceholder}
+                    {...other}
                 />
             </div>
             <p
-                className={cx(" text-xs font-normal leading-5", {
+                className={cx(" text-xs font-normal leading-5 mb-[5px]", {
                     "text-[#4B5563]": variant === "Default",
                     "text-green": variant === "Success",
                     "text-red": variant === "Error",
@@ -74,4 +81,5 @@ interface InputProps {
     type: string;
     icon?: React.ComponentType;
     name: string;
+    onIconClick?: () => void;
 }
