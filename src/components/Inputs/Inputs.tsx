@@ -16,10 +16,12 @@ export function FormInput({
     name,
     onChange,
     onIconClick,
+    className,
+    style,
     ...other
 }: InputProps) {
     return (
-        <div className="flex flex-col">
+        <div className={`flex flex-col ${className}`}>
             {label && (
                 <span
                     className={cx("block text-dark mb-[5px]", {
@@ -45,6 +47,7 @@ export function FormInput({
                     type={type}
                     value={value}
                     onChange={onChange}
+                    style={style}
                     className={cx(
                         "border placeholder-input-placeholder text-base font-normal rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
                         {
@@ -87,4 +90,6 @@ interface InputProps {
     icon?: React.ComponentType;
     name: string;
     onIconClick?: () => void;
+    style: React.CSSProperties;
+    className: string;
 }
