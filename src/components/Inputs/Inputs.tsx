@@ -1,4 +1,5 @@
-import React, { ChangeEvent, ReactElement } from "react";
+import * as React from "react";
+
 import cx from "classnames";
 
 import { Typography } from "../Typography/Typography";
@@ -16,18 +17,20 @@ export function FormInput({
     onChange,
     onIconClick,
     ...other
-}: InputProps): ReactElement {
+}: InputProps) {
     return (
         <div className="flex flex-col">
-            <span
-                className={cx("block text-dark mb-[5px]", {
-                    "text-lg font-medium ": size === "Large",
-                    "text-base font-medium leading-6": size === "Medium",
-                    "text-sm font-normal leading-6 ": size === "Small",
-                })}
-            >
-                <Typography variant="body2">{label}</Typography>
-            </span>
+            {label && (
+                <span
+                    className={cx("block text-dark mb-[5px]", {
+                        "text-lg font-medium ": size === "Large",
+                        "text-base font-medium leading-6": size === "Medium",
+                        "text-sm font-normal leading-6 ": size === "Small",
+                    })}
+                >
+                    <Typography variant="body2">{label}</Typography>
+                </span>
+            )}
             <div className="relative">
                 {Icon && (
                     <div
@@ -76,7 +79,7 @@ interface InputProps {
     label?: string;
     helperText?: string;
     value?: string;
-    onChange?: (_e: ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (_e: React.ChangeEvent<HTMLInputElement>) => void;
     palceholder: string;
     type: string;
     icon?: React.ComponentType;
