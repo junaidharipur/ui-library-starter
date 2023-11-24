@@ -18,6 +18,8 @@ export function FormInput({
     onIconClick,
     className,
     style,
+    disabled,
+    readOnly,
     ...other
 }: InputProps) {
     return (
@@ -48,6 +50,8 @@ export function FormInput({
                     value={value}
                     onChange={onChange}
                     style={style}
+                    disabled={disabled}
+                    readOnly={readOnly}
                     className={cx(
                         "border placeholder-input-placeholder text-base font-normal rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
                         {
@@ -90,6 +94,8 @@ interface InputProps {
     icon?: React.ComponentType;
     name: string;
     onIconClick?: () => void;
-    style: React.CSSProperties;
-    className: string;
+    style?: React.CSSProperties;
+    className?: string;
+    readOnly?: boolean;
+    disabled?: boolean;
 }
