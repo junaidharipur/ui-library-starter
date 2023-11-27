@@ -117,3 +117,33 @@ export const NormalInputWithIcon: Story = {
         />
     ),
 };
+
+export const Required: Story = {
+    render: () => (
+        <FormInput
+            label="Form Field 3"
+            variant="Default"
+            helperText="This is Helper Text"
+            palceholder="Type Your Text"
+            size="Medium"
+            type="text"
+            required={true}
+            name="Default"
+        />
+    ),
+};
+
+export const ReadOnly: Story = {
+    render: () => (
+        <FormInput
+            label="Form Field 3"
+            variant="Default"
+            helperText="This is Helper Text"
+            palceholder="Type Your Text"
+            size="Medium"
+            type="text"
+            readOnly={true}
+            name="Default"
+        />
+    ),
+};
