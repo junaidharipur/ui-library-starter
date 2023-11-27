@@ -1,7 +1,5 @@
-import * as React from "react";
+import React, { ChangeEvent, ReactElement } from "react";
 import cx from "classnames";
-import { Typography } from "../Typography/Typography";
-
 
 export function FormInput({
     variant = "Default",
@@ -17,15 +15,8 @@ export function FormInput({
     readOnly,
     className,
     onChange,
-    onIconClick,
-    className,
-    style,
-    disabled,
-    readOnly,
-    ...other
-}: InputProps) {
+}: InputProps): ReactElement {
     return (
-
         <div className="flex flex-col gap-[5px]">
             <span
                 className={cx(
@@ -41,26 +32,9 @@ export function FormInput({
             >
                 <p>{label}</p> {required && <span>*</span>}
             </span>
-
-        <div className={`flex flex-col ${className}`}>
-            {label && (
-                <span
-                    className={cx("block text-dark mb-[5px]", {
-                        "text-lg font-medium ": size === "Large",
-                        "text-base font-medium leading-6": size === "Medium",
-                        "text-sm font-normal leading-6 ": size === "Small",
-                    })}
-                >
-                    <Typography variant="body2">{label}</Typography>
-                </span>
-            )}
-
             <div className="relative">
                 {Icon && (
-                    <div
-                        onClick={onIconClick}
-                        className="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none cursor-pointer"
-                    >
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none cursor-pointer">
                         <Icon />
                     </div>
                 )}
@@ -69,11 +43,8 @@ export function FormInput({
                     type={type}
                     value={value}
                     onChange={onChange}
-                    style={style}
-                    disabled={disabled}
-                    readOnly={readOnly}
                     className={cx(
-                        "border placeholder-input-placeholder text-base font-normal rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
+                        " border placeholder-input-placeholder text-base font-normal rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
                         {
                             "border-stroke": variant === "Default",
                             "border-green": variant === "Success",
@@ -85,7 +56,6 @@ export function FormInput({
                         },
                     )}
                     placeholder={palceholder}
-
                     readOnly={readOnly}
                     required={required}
                 />
@@ -100,21 +70,6 @@ export function FormInput({
             >
                 {helperText}
             </p>
-
-                    {...other}
-                />
-            </div>
-            {helperText && (
-                <p
-                    className={cx(" text-xs font-normal leading-5 mb-[5px]", {
-                        "text-[#4B5563]": variant === "Default",
-                        "text-green": variant === "Success",
-                        "text-red": variant === "Error",
-                    })}
-                >
-                    {helperText}
-                </p>
-            )}
         </div>
     );
 }
@@ -133,15 +88,4 @@ interface InputProps {
     required?: boolean;
     readOnly?: boolean;
     className?: string;
-    value?: string;
-    onChange?: (_e: React.ChangeEvent<HTMLInputElement>) => void;
-    palceholder: string;
-    type: string;
-    icon?: React.ComponentType;
-    name: string;
-    onIconClick?: () => void;
-    style?: React.CSSProperties;
-    className?: string;
-    readOnly?: boolean;
-    disabled?: boolean;
 }
