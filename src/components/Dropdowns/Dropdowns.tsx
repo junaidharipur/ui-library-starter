@@ -1,6 +1,8 @@
-import React, { ReactElement, useState } from "react";
-import { Icondropdownbottom, IcondropdownUp } from "../icons/InputIcons";
+import * as React from "react";
+
 import cx from "classnames";
+
+import { Icondropdownbottom, IcondropdownUp } from "../icons/InputIcons";
 
 export function Dropdown({
     options = [],
@@ -8,15 +10,15 @@ export function Dropdown({
     outlined,
     defaultValue,
     getSelectedData,
-}: OptionsProps): ReactElement {
-    const [showdropdown, setshowdropdown] = useState(false);
-    const [value, setvalue] = useState(defaultValue);
+}: DropdownProps): React.ReactElement {
+    const [showdropdown, setshowdropdown] = React.useState(false);
+    const [value, setvalue] = React.useState(defaultValue);
 
     return (
         <div className="relative">
             <div
                 className={cx(
-                    "  flex justify-between   text-base border border-input-border-normal-500 focus:ring-primary focus:outline-primary focus:border-primary rounded-md  px-3  w-full",
+                    "flex justify-between text-base border border-input-border-normal-500 focus:ring-primary focus:outline-primary focus:border-primary rounded-md  px-3  w-full",
                     {
                         "py-2 px-5": variant === "Large",
                         "py-[5px] px-5": variant === "Medium",
@@ -78,10 +80,10 @@ export function Dropdown({
     );
 }
 
-interface OptionsProps {
+interface DropdownProps {
     options: { value: string; label: string }[];
     variant: "Medium" | "Small" | "Large";
     outlined: boolean;
     defaultValue: string;
-    getSelectedData?: (data: string) => void;
+    getSelectedData?: (_data: string) => void;
 }
