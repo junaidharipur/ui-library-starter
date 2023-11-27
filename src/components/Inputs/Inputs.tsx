@@ -82,7 +82,7 @@ interface InputProps {
     value?: string | ReadonlyArray<string> | number | undefined;
     onChange?: (_e: ChangeEvent<HTMLInputElement>) => void;
     palceholder?: string;
-    type: "number" | "text" | "password" | "email" | "date";
+    type: "number" | "text" | "password" | "email" | "date" | "range";
     icon?: React.ComponentType;
     name?: string;
     required?: boolean;
