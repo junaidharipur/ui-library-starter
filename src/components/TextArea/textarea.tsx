@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, ReactElement } from "react";
+import * as React from "react";
 import cx from "classnames";
 
 export function TextArea({
@@ -12,10 +12,10 @@ export function TextArea({
     required,
     readOnly,
     className,
-    rows = 3,
+    rows = 4,
     cols,
     onChange,
-}: InputProps): ReactElement {
+}: InputProps) {
     return (
         <div className="flex flex-col gap-[5px]">
             <span
@@ -38,7 +38,7 @@ export function TextArea({
                     value={value}
                     onChange={onChange}
                     className={cx(
-                        "text-primary-text py-[3px] pl-5 pr-4 border placeholder-input-placeholder text-base font-normal rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
+                        "text-primary-text py-[9px] px-[15px] border placeholder-input-placeholder text-base font-normal rounded-md focus:ring-primary focus:outline-primary focus:border-primary block w-full",
                         {
                             "border-stroke": variant === "Default",
                             "border-green": variant === "Success",
@@ -77,7 +77,7 @@ interface InputProps {
     label?: string;
     helperText?: string;
     value?: string | ReadonlyArray<string> | number | undefined;
-    onChange?: ChangeEventHandler | undefined;
+    onChange?: (_e: React.ChangeEvent<HTMLTextAreaElement>) => void;
     palceholder?: string;
     name?: string;
     required?: boolean;

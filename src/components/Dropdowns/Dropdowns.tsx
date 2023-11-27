@@ -6,16 +6,34 @@ import { Icondropdownbottom, IcondropdownUp } from "../icons/InputIcons";
 
 export function Dropdown({
     options = [],
-    variant,
-    outlined,
-    defaultValue,
-    getSelectedData,
+    variant = "Small",
+    readOnly,
+    value,
+    label,
+    className,
+    onChange,
+    required,
 }: DropdownProps): React.ReactElement {
     const [showdropdown, setshowdropdown] = React.useState(false);
-    const [value, setvalue] = React.useState(defaultValue);
+    const [dropdownvalue, setdropdownvalue] = React.useState(value);
 
     return (
         <div className="relative">
+            <span
+                className={cx(
+                    " flex gap-1",
+                    {
+                        "text-base font-medium ": variant === "Large",
+                        "text-sm font-medium leading-[22px]": variant === "Medium",
+                        "text-[12px] font-medium leading-[20px] ": variant === "Small",
+                        "text-gray-500 ": readOnly,
+                        "text-dark": !readOnly,
+                    },
+                    className,
+                )}
+            >
+                <p>{label}</p> {required && <span>*</span>}
+            </span>
             <div
                 className={cx(
                     "flex justify-between text-base border border-input-border-normal-500 focus:ring-primary focus:outline-primary focus:border-primary rounded-md  px-3  w-full",
@@ -23,10 +41,10 @@ export function Dropdown({
                         "py-2 px-5": variant === "Large",
                         "py-[5px] px-5": variant === "Medium",
                         "py-[3px] px-4": variant === "Small",
-                        "bg-dark-8": !outlined,
+                        "bg-dark-8": readOnly,
                     },
                 )}
-                onClick={() => setshowdropdown(!showdropdown)}
+                onClick={() => !readOnly && setshowdropdown(!showdropdown)}
             >
                 <div
                     className={cx("text-primary-text", {
@@ -34,7 +52,7 @@ export function Dropdown({
                         "text-sm font-medium": variant === "Small",
                     })}
                 >
-                    {value}
+                    {dropdownvalue}
                 </div>
                 <div
                     className={cx("cursor-pointer", {
@@ -51,7 +69,8 @@ export function Dropdown({
                     className={cx(
                         "z-10 absolute bg-white w-full flex flex-col gap-3 justify-between  py-3 border rounded-lg h-auto max-h-[20rem] overflow-auto mt-3 shadow-dropdown",
                         {
-                            "top-12": variant === "Medium",
+                            "top-13": variant === "Medium",
+                            "top-15": variant === "Large",
                             "top-10": variant === "Small",
                         },
                     )}
@@ -59,16 +78,16 @@ export function Dropdown({
                     {options?.map((option, index) => (
                         <p
                             key={index}
-                            className={cx("py-3 cursor-pointer hover:bg-primary pl-3 hover:text-white", {
-                                "text-base font-normal": variant === "Medium",
-                                "text-sm font-medium": variant === "Small",
-                                "bg-primary text-white": value === option?.value,
-                                "text-primary-text": value !== option?.value,
+                            className={cx(" cursor-pointer hover:bg-primary px-[16px] hover:text-white", {
+                                "text-base font-normal py-[7px]": variant === "Medium" || variant === "Large",
+                                "text-sm font-medium py-[3px]": variant === "Small",
+                                "bg-primary text-white": dropdownvalue === option?.value,
+                                "text-primary-text": dropdownvalue !== option?.value,
                             })}
                             onClick={() => {
-                                setvalue(option?.label);
+                                setdropdownvalue(option?.value);
                                 setshowdropdown(false);
-                                getSelectedData && getSelectedData(option?.value);
+                                onChange && onChange(option);
                             }}
                         >
                             {option?.label}
@@ -83,7 +102,10 @@ export function Dropdown({
 interface DropdownProps {
     options: { value: string; label: string }[];
     variant: "Medium" | "Small" | "Large";
-    outlined: boolean;
-    defaultValue: string;
-    getSelectedData?: (_data: string) => void;
+    readOnly?: boolean;
+    value: string;
+    onChange?: (_data: { label: string; value: string }) => void;
+    label?: string;
+    className?: string;
+    required?: boolean;
 }

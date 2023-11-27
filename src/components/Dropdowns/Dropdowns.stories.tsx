@@ -33,7 +33,7 @@ const options = [
         value: "option7",
     },
 ];
-const getSelectedData = (data: string) => {
+const onChange = (data: { label: string; value: string }) => {
     console.log(data);
 };
 const meta: Meta<typeof Dropdown> = {
@@ -69,24 +69,25 @@ export const Default: Story = {
     args: {
         variant: "Medium",
         options: options,
-        outlined: true,
-        defaultValue: options[2].value,
-        getSelectedData: getSelectedData,
+        readOnly: false,
+        value: options[2].value,
+        onChange: onChange,
+        label: "Dropdown",
     },
     argTypes: {
         options: { control: false },
         variant: {
-            defaultValue: { summary: '"Medium"' },
+            value: { summary: '"Medium"' },
         },
-        defaultValue: {
-            defaultValue: { summary: "undefined" },
+        value: {
+            value: { summary: "undefined" },
         },
-        outlined: {
+        readOnly: {
             control: { type: "boolean" },
-            defaultValue: { summary: "true" },
+            value: { summary: "true" },
         },
-        getSelectedData: {
-            defaultValue: { summary: "undefined" },
+        onChange: {
+            value: { summary: "undefined" },
         },
     },
     render: props => <Dropdown {...props} />,
