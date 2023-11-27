@@ -17,3 +17,5 @@ export * from "./components/Toggle/Toggle";
 export * from "./components/Calendar/Calendar";
 export * from "./components/Tag/Tag";
 export * from "./components/ProgressBar/ProgressBar";
+export * from "./components/Dropdowns/Dropdowns";
+export * from "./components/TextArea/textarea";
