@@ -5,7 +5,9 @@
     },
     "ignorePatterns": [
         "/node_modules/**/*",
-        "/^.*/"
+        "/^.*/",
+        "webpack.config.js",
+        "commitlint.config.js"
     ],
     "env": {
         "node": true,

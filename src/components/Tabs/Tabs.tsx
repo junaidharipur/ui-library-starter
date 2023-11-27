@@ -1,28 +1,19 @@
 import * as React from "react";
 
-import cx from "classnames";
-
 import { Tab } from "./Tab";
-import { ButtonRenderer, DefaultRenderer } from "./TitleRenderers";
+import { DefaultRenderer } from "./TitleRenderers";
 import { TabContext } from "./Context";
 
-export function Tabs({ children, titleRenderer: TitleRenderer = DefaultRenderer }: TabsProps) {
+export function Tabs({ children, titleRenderer: TitleRenderer = DefaultRenderer, className }: TabsProps) {
     const [titles, setTitles] = React.useState<string[]>([]);
     const [activeIndex, setActiveIndex] = React.useState<number>(0);
 
     return (
         <TabContext.Provider value={{ titles, setTitles, activeIndex, setActiveIndex }}>
-            <div className={cx("flex items-center")}>
-                {titles.map((title, index) => (
-                    <TitleRenderer
-                        key={title + index}
-                        isActive={index === activeIndex}
-                        title={title}
-                        activeTabHandler={() => setActiveIndex(index)}
-                    />
-                ))}
+            <div className={className}>
+                <TitleRenderer titles={titles} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+                <div>{children}</div>
             </div>
-            <div>{children}</div>
         </TabContext.Provider>
     );
 }
@@ -30,13 +21,14 @@ export function Tabs({ children, titleRenderer: TitleRenderer = DefaultRenderer 
 interface TabsProps {
     children: React.ReactNode;
     titleRenderer?: React.FC<RendererProps>;
+    className?: string;
 }
 
 export interface RendererProps {
-    title: string;
-    isActive: boolean;
-    activeTabHandler: () => void;
+    titles: string[];
+    activeIndex: number;
+    setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 Tabs.Tab = Tab;
-export { ButtonRenderer, Tab };
+export { Tab };

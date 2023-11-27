@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import * as React from "react";
+
 import { PopOverIcon } from "../icons/InputIcons";
 
-export function Popover({ children, title, description }: Props) {
-    const [isShow, setisShow] = useState(false);
+export function Popover({ children, title, description }: PopoverProps) {
+    const [isShow, setisShow] = React.useState(false);
 
     return (
         <div className=" relative flex justify-center">
@@ -29,4 +30,9 @@ export function Popover({ children, title, description }: Props) {
         </div>
     );
 }
-type Props = { children: React.ReactNode; title: string; description: string };
+
+interface PopoverProps {
+    children: React.ReactNode;
+    title: string;
+    description: string;
+}
