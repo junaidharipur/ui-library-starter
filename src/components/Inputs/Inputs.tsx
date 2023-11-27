@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactElement } from "react";
+import * as React from "react";
 import cx from "classnames";
 
 export function FormInput({
@@ -15,7 +15,7 @@ export function FormInput({
     readOnly,
     className,
     onChange,
-}: InputProps): ReactElement {
+}: InputProps) {
     return (
         <div className="flex flex-col gap-[5px]">
             <span
@@ -82,7 +82,7 @@ interface InputProps {
     label?: string;
     helperText?: string;
     value?: string | ReadonlyArray<string> | number | undefined;
-    onChange?: (_e: ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (_e: React.ChangeEvent<HTMLInputElement>) => void;
     palceholder?: string;
     type?: "number" | "text" | "password" | "email" | "date" | "range";
     icon?: React.ComponentType;

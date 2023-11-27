@@ -13,12 +13,12 @@ const options = [
 ];
 
 test("Input component should rendering properly.", async () => {
-    render(<Dropdown variant="Medium" options={options} outlined={true} defaultValue={options[0]?.value} />);
+    render(<Dropdown variant="Medium" options={options} readOnly={false} value={options[0]?.value} />);
 });
 test("Dropdown component renders with initial options", () => {
-    render(<Dropdown variant="Medium" options={options} outlined={true} defaultValue={options[0]?.value} />);
+    render(<Dropdown variant="Medium" options={options} readOnly={false} value={options[0]?.value} />);
 
-    options.forEach(option => {
+    options.forEach(_option => {
         const optionElement = screen.getByText(/option/i);
         expect(optionElement).toBeInTheDocument();
     });
