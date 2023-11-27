@@ -62,16 +62,18 @@ export function FormInput({
                     required={required}
                 />
             </div>
-            <p
-                className={cx(" text-xs font-normal leading-5", {
-                    "text-[#4B5563]": variant === "Default",
-                    "text-green": variant === "Success",
-                    "text-red": variant === "Error",
-                    "text-gray-500": readOnly,
-                })}
-            >
-                {helperText}
-            </p>
+            {helperText && (
+                <p
+                    className={cx(" text-xs font-normal leading-5", {
+                        "text-[#4B5563]": variant === "Default",
+                        "text-green": variant === "Success",
+                        "text-red": variant === "Error",
+                        "text-gray-500": readOnly,
+                    })}
+                >
+                    {helperText}
+                </p>
+            )}
         </div>
     );
 }
