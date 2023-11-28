@@ -5,31 +5,31 @@ import { Dropdown } from "./Dropdowns";
 
 const options = [
     {
-        label: "option1",
+        label: "Option1",
         value: "option1",
     },
     {
-        label: "option2",
+        label: "Option2",
         value: "option2",
     },
     {
-        label: "option3",
+        label: "Option3",
         value: "option3",
     },
     {
-        label: "option4",
+        label: "Option4",
         value: "option4",
     },
     {
-        label: "option5",
+        label: "Option5",
         value: "option5",
     },
     {
-        label: "option6",
+        label: "Option6",
         value: "option6",
     },
     {
-        label: "option7",
+        label: "Option7",
         value: "option7",
     },
 ];
