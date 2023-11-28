@@ -15,6 +15,7 @@ export function FormInput({
     readOnly,
     className,
     onChange,
+    style,
 }: InputProps) {
     return (
         <div className="flex flex-col gap-[5px]">
@@ -44,6 +45,7 @@ export function FormInput({
                     type={type}
                     value={value}
                     onChange={onChange}
+                    style={style}
                     className={cx(
                         " text-primary-text border placeholder-input-placeholder text-base font-normal rounded-md  block w-full",
                         {
@@ -92,4 +94,5 @@ interface InputProps {
     required?: boolean;
     readOnly?: boolean;
     className?: string;
+    style?: React.CSSProperties;
 }
