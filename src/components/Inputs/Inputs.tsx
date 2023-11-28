@@ -53,7 +53,7 @@ export function FormInput({
                             "py-2 pl-5 pr-4 ": size === "Large",
                             "py-[5px] pl-5 pr-4": size === "Medium",
                             "py-[3px] pl-5 pr-4 ": size === "Small",
-                            "bg-grey-3 focus:ring-0 focus:outline-0 focus:border-none": readOnly,
+                            "bg-grey-3 focus:outline-grey-3 focus:border-grey-3 cursor-not-allowed": readOnly,
                             "focus:ring-primary focus:outline-primary focus:border-primary": !readOnly,
                         },
                     )}

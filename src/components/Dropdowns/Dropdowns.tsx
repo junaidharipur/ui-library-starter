@@ -18,7 +18,7 @@ export function Dropdown({
     const [dropdownvalue, setdropdownvalue] = React.useState(value);
 
     return (
-        <div className="relative">
+        <div className="relative w-full">
             <span
                 className={cx(
                     " flex gap-1 mb-[5px]",
@@ -39,8 +39,8 @@ export function Dropdown({
                     "flex justify-between text-base border border-stroke  border-input-border-normal-500 focus:ring-primary focus:outline-primary focus:border-primary rounded-md  px-3  w-full",
                     {
                         "py-2 px-5": variant === "Large",
-                        "py-[5px] px-5": variant === "Medium",
-                        "py-[4px] px-5": variant === "Small",
+                        "py-[5.4px] px-5": variant === "Medium",
+                        "py-[5px] px-5": variant === "Small",
                         "bg-dark-8": readOnly,
                         "bg-white": !readOnly,
                     },
@@ -68,7 +68,7 @@ export function Dropdown({
             {showdropdown && (
                 <div
                     className={cx(
-                        "z-100 absolute bg-white w-full flex flex-col gap-2 justify-between  py-3 border rounded-lg h-auto max-h-[20rem] overflow-auto mt-3 shadow-dropdown",
+                        "z-10 absolute bg-white w-full flex flex-col gap-2 justify-between  py-3 border rounded-lg h-auto max-h-[20rem] overflow-auto mt-3 shadow-dropdown",
                         {
                             "top-13": variant === "Medium",
                             "top-15": variant === "Large",
