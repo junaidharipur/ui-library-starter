@@ -21,11 +21,11 @@ export function Dropdown({
         <div className="relative">
             <span
                 className={cx(
-                    " flex gap-1",
+                    " flex gap-1 mb-[5px]",
                     {
-                        "text-base font-medium ": variant === "Large",
-                        "text-sm font-medium leading-[22px]": variant === "Medium",
-                        "text-[12px] font-medium leading-[20px] ": variant === "Small",
+                        "text-lg font-medium ": variant === "Large",
+                        "text-base font-medium leading-6": variant === "Medium",
+                        "text-sm font-medium leading-6 ": variant === "Small",
                         "text-gray-500 ": readOnly,
                         "text-dark": !readOnly,
                     },
@@ -36,12 +36,13 @@ export function Dropdown({
             </span>
             <div
                 className={cx(
-                    "flex justify-between text-base border border-input-border-normal-500 focus:ring-primary focus:outline-primary focus:border-primary rounded-md  px-3  w-full",
+                    "flex justify-between text-base border border-stroke  border-input-border-normal-500 focus:ring-primary focus:outline-primary focus:border-primary rounded-md  px-3  w-full",
                     {
                         "py-2 px-5": variant === "Large",
                         "py-[5px] px-5": variant === "Medium",
-                        "py-[3px] px-4": variant === "Small",
+                        "py-[4px] px-5": variant === "Small",
                         "bg-dark-8": readOnly,
+                        "bg-white": !readOnly,
                     },
                 )}
                 onClick={() => !readOnly && setshowdropdown(!showdropdown)}
@@ -58,7 +59,7 @@ export function Dropdown({
                     className={cx("cursor-pointer", {
                         "pt-[0.6rem]": variant === "Large",
                         "pt-2": variant === "Medium",
-                        "pt-[0.5rem]": variant === "Small",
+                        "pt-[0.4rem]": variant === "Small",
                     })}
                 >
                     {!showdropdown ? <Icondropdownbottom /> : <IcondropdownUp />}
@@ -67,11 +68,11 @@ export function Dropdown({
             {showdropdown && (
                 <div
                     className={cx(
-                        "z-10 absolute bg-white w-full flex flex-col gap-3 justify-between  py-3 border rounded-lg h-auto max-h-[20rem] overflow-auto mt-3 shadow-dropdown",
+                        "z-100 absolute bg-white w-full flex flex-col gap-2 justify-between  py-3 border rounded-lg h-auto max-h-[20rem] overflow-auto mt-3 shadow-dropdown",
                         {
                             "top-13": variant === "Medium",
                             "top-15": variant === "Large",
-                            "top-10": variant === "Small",
+                            "top-[3.5rem]": variant === "Small",
                         },
                     )}
                 >
@@ -81,11 +82,11 @@ export function Dropdown({
                             className={cx(" cursor-pointer hover:bg-primary px-[16px] hover:text-white", {
                                 "text-base font-normal py-[7px]": variant === "Medium" || variant === "Large",
                                 "text-sm font-medium py-[3px]": variant === "Small",
-                                "bg-primary text-white": dropdownvalue === option?.value,
-                                "text-primary-text": dropdownvalue !== option?.value,
+                                "bg-primary text-white": dropdownvalue === option?.label,
+                                "text-primary-text": dropdownvalue !== option?.label,
                             })}
                             onClick={() => {
-                                setdropdownvalue(option?.value);
+                                setdropdownvalue(option?.label);
                                 setshowdropdown(false);
                                 onChange && onChange(option);
                             }}

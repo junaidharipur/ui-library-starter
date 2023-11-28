@@ -1,9 +1,8 @@
 import * as React from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { FormInput } from "./Inputs";
 import { InfoSuccess, Iconeye, InfoError, InfoNormal } from "../icons/InputIcons";
-
+import { FormInput } from "./Inputs";
 const meta: Meta<typeof FormInput> = {
     title: "Components/Forms Inputs",
     component: FormInput,

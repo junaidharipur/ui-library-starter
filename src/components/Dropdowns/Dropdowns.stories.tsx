@@ -57,6 +57,10 @@ const meta: Meta<typeof Dropdown> = {
                     name: "grey",
                     value: "#E5E5E5",
                 },
+                {
+                    name: "primary",
+                    value: "#009AEE",
+                },
             ],
         },
     },
