@@ -15,7 +15,7 @@ export function Dropdown({
     required,
 }: DropdownProps): React.ReactElement {
     const [showdropdown, setshowdropdown] = React.useState(false);
-    const [dropdownvalue, setdropdownvalue] = React.useState(value);
+    const [dropdownvalue, setdropdownvalue] = React.useState(options?.filter(data => data?.value === value)[0].label);
 
     return (
         <div className="relative w-full">
