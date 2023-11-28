@@ -16,8 +16,8 @@ export function Tooltip({ children, description, direction = "top", className, t
     };
     return (
         <div className={cx(className)}>
-            <div className={`tooltip-wrapper z-10 ${getDirection()}`}>
-                <span className="relative">{children}</span>
+            <div className={`tooltip-wrapper z-10  ${getDirection()}`}>
+                <span className="relative ">{children}</span>
                 <div
                     className={cx({
                         "bg-dark-2   description": theme === "dark",
@@ -52,7 +52,7 @@ type position = "top" | "bottom" | "left" | "right";
 interface TooltipProps {
     children: React.ReactNode;
     direction?: position;
-    description: string;
+    description?: string;
     theme?: "dark" | "light";
     className?: string;
     title?: string;
