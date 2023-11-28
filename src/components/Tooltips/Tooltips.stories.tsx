@@ -16,7 +16,7 @@ export const Default: Story = {
     args: {
         direction: "left",
         description: "Tooltip on left",
-        dark: true,
+        theme: "dark",
         className: "flex justify-center",
     },
     argTypes: {
@@ -26,9 +26,8 @@ export const Default: Story = {
         description: {
             defaultValue: { summary: "undefined" },
         },
-        dark: {
-            control: { type: "boolean" },
-            defaultValue: { summary: "true" },
+        theme: {
+            defaultValue: { summary: "dark" },
         },
         className: {
             defaultValue: { summary: " " },
@@ -48,7 +47,7 @@ export const Right: Story = {
     args: {
         direction: "right",
         description: "Tooltip on right",
-        dark: true,
+        theme: "dark",
         className: "flex justify-center",
     },
     render: props => (
@@ -62,7 +61,7 @@ export const TopWithoutTitle: Story = {
     args: {
         direction: "top",
         description: "The users wants to find a specific page or site.",
-        dark: true,
+        theme: "dark",
         className: "flex justify-center mt-[5rem] ",
     },
     render: props => (
@@ -77,7 +76,7 @@ export const TopWithTitle: Story = {
         direction: "top",
         title: "Navigational",
         description: "The users wants to find a specific page or site.",
-        dark: true,
+        theme: "light",
         className: "flex justify-center mt-[5rem] ",
     },
     render: props => (
@@ -91,7 +90,7 @@ export const Bottom: Story = {
     args: {
         direction: "bottom",
         description: "Tooltip on bottom",
-        dark: true,
+        theme: "dark",
         className: "flex justify-center ",
     },
     render: props => (
