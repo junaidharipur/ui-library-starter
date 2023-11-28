@@ -39,7 +39,9 @@ export const Default: Story = {
     render: props => (
         <Tooltip {...props}>
             {" "}
-            <h2>Tooltip on left </h2>
+            <div className="bg-primary text-white h-[100px] w-5">
+                <h2>Tooltip on left </h2>
+            </div>
         </Tooltip>
     ),
 };

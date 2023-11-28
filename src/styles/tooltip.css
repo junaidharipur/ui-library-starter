@@ -61,7 +61,8 @@
 }
 
 .right .description {
-    top: 3px;
+    top: 50%;
+    transform: translateY(-50%);
     margin-left: 107%;
     padding: 6px 0.6rem;
 }
@@ -73,7 +74,8 @@
 }
 
 .right .descriptionlight {
-    top: 3px;
+    top: 50%;
+    transform: translateY(-50%);
     margin-left: 105%;
     padding: 6px 0.6rem;
 }
@@ -86,29 +88,29 @@
 
 .bottom .description {
     margin-top: 3%;
-    left: 30%;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 6px 0.6rem;
-    transform: translate(-50%);
 }
 
 .bottom .description::before {
     top: 0.1rem;
     left: 50%;
-    transform: rotate(0);
+    transform: translateX(-50%);
     margin-top: -7%;
 }
 
 .bottom .descriptionlight {
     margin-top: 3%;
-    left: 30%;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 6px 0.6rem;
-    transform: translate(-50%);
 }
 
 .bottom .descriptionlight::before {
     top: 0.1rem;
     left: 50%;
-    transform: rotate(0);
+    transform: translateX(-50%);
     margin-top: -7%;
 }
 
@@ -116,11 +118,13 @@
     bottom: 102%;
     margin-left: 0%;
     padding: 6px 0.6rem;
-    transform: translate(-40%);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .top .description::before {
     left: 50%;
+    transform: translateX(-50%);
     transform: rotate(180deg);
     bottom: -8px;
 }
@@ -129,11 +133,13 @@
     bottom: 102%;
     margin-left: 0%;
     padding: 6px 0.6rem;
-    transform: translate(-40%);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .top .descriptionlight::before {
     left: 50%;
+    transform: translateX(-50%);
     transform: rotate(180deg);
     bottom: -8px;
 }
@@ -141,7 +147,8 @@
 .left .description {
     right: 0;
     margin-right: 105%;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     padding: 6px 0.6rem;
 }
 
@@ -155,7 +162,8 @@
 .left .descriptionlight {
     right: 0;
     margin-right: 105%;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     padding: 6px 0.6rem;
 }
 
