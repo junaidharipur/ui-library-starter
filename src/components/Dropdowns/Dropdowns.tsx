@@ -14,8 +14,11 @@ export function Dropdown({
     onChange,
     required,
 }: DropdownProps): React.ReactElement {
+    console.log(value);
     const [showdropdown, setshowdropdown] = React.useState(false);
-    const [dropdownvalue, setdropdownvalue] = React.useState(options?.filter(data => data?.value === value)[0].label);
+    const [dropdownvalue, setdropdownvalue] = React.useState(
+        value ? options?.filter(data => data?.value === value)[0].label : options[0]?.label,
+    );
 
     return (
         <div className="relative w-full">
@@ -104,7 +107,7 @@ interface DropdownProps {
     options: { value: string; label: string }[];
     variant: "Medium" | "Small" | "Large";
     readOnly?: boolean;
-    value: string;
+    value?: string;
     onChange?: (_data: { label: string; value: string }) => void;
     label?: string;
     className?: string;

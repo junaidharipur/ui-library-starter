@@ -96,3 +96,14 @@ export const Default: Story = {
     },
     render: props => <Dropdown {...props} />,
 };
+export const WithoutValue: Story = {
+    args: {
+        variant: "Medium",
+        options: options,
+        readOnly: false,
+        onChange: onChange,
+        label: "Dropdown",
+    },
+
+    render: props => <Dropdown {...props} />,
+};
